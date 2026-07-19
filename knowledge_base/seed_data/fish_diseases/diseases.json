@@ -1,0 +1,187 @@
+[
+  {
+    "id": "AER_001",
+    "disease_id": "AER",
+    "title": "氣單胞菌感染 Aeromonas Infection (Aeromonas hydrophila)",
+    "content": "氣單胞菌感染由 Aeromonas hydrophila 引起，是淡水養殖中最常見的細菌性疾病之一。症狀：皮膚潰瘍、出血性敗血症、鰭條侵蝕和充血、腹部膨脹和腹水、肛門紅腫。常在水質惡化、魚體受傷或緊迫時爆發。治療方式：磺胺類或喹諾酮類藥物、改善水質、減少緊迫。",
+    "keywords": [
+      "氣單胞菌",
+      "aeromonas",
+      "潰瘍",
+      "出血",
+      "腹水"
+    ],
+    "species": [
+      "tilapia",
+      "catfish",
+      "carp"
+    ],
+    "severity": "severe",
+    "source": "seed/AER"
+  },
+  {
+    "id": "BGD_001",
+    "disease_id": "BGD",
+    "title": "細菌性鰓病 Bacterial Gill Disease (Flavobacterium branchiophilum)",
+    "content": "細菌性鰓病由 Flavobacterium branchiophilum 引起，主要感染鰓組織。症狀包括：鰓絲腫脹融合（lamellar fusion）、鰓黏液過度分泌、鰓色變淡（蒼白或棕色）、呼吸急促（浮頭行為）、食慾減退。幼魚和密養環境最易爆發。高有機物負荷和水溫 15-20°C 是好發條件。治療方式：食鹽浴（1-2%）、改善水質、過氧化氫處理、降低養殖密度。",
+    "keywords": [
+      "鰓病",
+      "bacterial gill disease",
+      "鰓絲腫脹",
+      "gill",
+      "浮頭",
+      "呼吸急促"
+    ],
+    "species": [
+      "trout",
+      "salmon",
+      "tilapia",
+      "freshwater fish"
+    ],
+    "severity": "severe",
+    "source": "seed/BGD"
+  },
+  {
+    "id": "BRD_001",
+    "disease_id": "BRD",
+    "title": "細菌性紅斑病 Bacterial Red Disease (Aeromonas spp.)",
+    "content": "細菌性紅斑病由氣單胞菌屬（Aeromonas spp.）引起，常見於淡水養殖魚類。症狀包括：體表大面積紅色出血斑（hemorrhagic patches）、皮膚充血發紅（reddening of skin）、鰭條基部充血、體側和腹部瀰漫性出血、鱗片脫落伴隨潰瘍。病魚食慾減退、游動無力。高水溫（>25°C）及水質惡化（高氨氮）為誘因。治療方式：氟喹諾酮類抗生素、改善水質、降低養殖密度。",
+    "keywords": [
+      "紅斑病",
+      "bacterial red disease",
+      "出血",
+      "hemorrhage",
+      "紅色斑塊",
+      "充血",
+      "reddening",
+      "ulcer"
+    ],
+    "species": [
+      "tilapia",
+      "carp",
+      "catfish",
+      "freshwater fish"
+    ],
+    "severity": "severe",
+    "source": "seed/BRD"
+  },
+  {
+    "id": "SAP_001",
+    "disease_id": "SAP",
+    "title": "水黴病 Saprolegniasis (Saprolegnia spp.)",
+    "content": "水黴病由水黴菌（Saprolegnia spp.）引起的真菌性感染。症狀：體表出現棉絮狀白色菌絲體、病灶周圍皮膚充血發紅、魚體虛弱游動遲緩。多在低水溫（<15°C）和魚體受傷後繼發感染。治療方式：甲基藍藥浴、食鹽浴（2-3%）、提高水溫、改善水質。",
+    "keywords": [
+      "水黴病",
+      "saprolegnia",
+      "棉絮狀",
+      "白色菌絲",
+      "真菌"
+    ],
+    "species": [
+      "tilapia",
+      "trout",
+      "salmon"
+    ],
+    "severity": "moderate",
+    "source": "seed/SAP"
+  },
+  {
+    "id": "HLT_001",
+    "disease_id": "HEALTHY",
+    "title": "健康魚體特徵 Healthy Fish Characteristics",
+    "content": "健康魚體的典型特徵：體色光亮均勻、鱗片完整無脫落、鰭條展開無破損、眼球清澈不突出、游動活潑有力、食慾正常、鰓絲鮮紅色、體表無異常斑點或潰瘍、黏液層適度。定期觀察這些指標有助於早期發現疾病。",
+    "keywords": [
+      "健康",
+      "healthy",
+      "正常",
+      "活潑",
+      "體色光亮"
+    ],
+    "species": [
+      "all"
+    ],
+    "severity": "none",
+    "source": "seed/HLT"
+  },
+  {
+    "id": "PAR_001",
+    "disease_id": "PAR",
+    "title": "寄生蟲病 Parasitic Diseases (Ichthyophthirius, Trichodina, Dactylogyrus, Gyrodactylus)",
+    "content": "Parasitic diseases of freshwater fish encompass a heterogeneous group caused by ciliated protozoa (Ichthyophthirius multifiliis — white spot disease), peritrich ciliates (Trichodina spp.), and monogenean trematodes (Dactylogyrus, Gyrodactylus). Cardinal signs include white pinpoint spots on body and fins (0.5-1 mm), excessive mucus secretion, flash rubbing against pond surfaces, fin clamping, lethargy, anorexia, and respiratory distress in heavy gill infestations. Most prevalent at 15-25°C and under stress conditions. Diagnostic workup: skin and gill scrapes microscopy. Treatment: salt bath (0.3-0.5%), formalin or methylene blue baths, temperature elevation to 30°C to accelerate Ichthyophthirius lifecycle.",
+    "keywords": [
+      "parasitic",
+      "parasite",
+      "parasites",
+      "parasitic disease",
+      "ich",
+      "ichthyophthirius",
+      "white spot",
+      "trichodina",
+      "monogenean",
+      "dactylogyrus",
+      "gyrodactylus",
+      "flash rubbing",
+      "mucus",
+      "pinpoint spots"
+    ],
+    "species": [
+      "tilapia",
+      "grouper",
+      "cobia",
+      "carp",
+      "koi",
+      "goldfish"
+    ],
+    "severity": "severe",
+    "source": "Fish Pathology 4th ed., chapter on parasitic infections"
+  },
+  {
+    "id": "WTD_001",
+    "disease_id": "WTD",
+    "title": "白尾病 White Tail Disease (Macrobrachium rosenbergii nodavirus)",
+    "content": "白尾病由 Macrobrachium rosenbergii nodavirus (MrNV) 引起，主要感染淡水蝦類幼體。症狀包括：尾部和身體後段呈乳白色不透明（whitish opaque tail）、肌肉壞死（muscle necrosis）、游動行為異常（沉底或螺旋游動）、高致死率（可達 100%）。病程急性，幼體 2-3 天內死亡。目前無有效藥物治療，預防措施：SPF（無特定病原）種蝦、消毒孵化設施、隔離檢疫新引入種群。",
+    "keywords": [
+      "白尾病",
+      "white tail disease",
+      "白色",
+      "肌肉壞死",
+      "nodavirus",
+      "蝦"
+    ],
+    "species": [
+      "freshwater prawn",
+      "Macrobrachium rosenbergii"
+    ],
+    "severity": "critical",
+    "source": "seed/WTD"
+  },
+  {
+    "id": "EUS_001",
+    "disease_id": "EUS",
+    "title": "流行性潰瘍症候群 Epizootic Ulcerative Syndrome (Aphanomyces invadans)",
+    "content": "Epizootic Ulcerative Syndrome (EUS), also known as Mycotic Granulomatosis or Red Spot Disease, is caused by the oomycete Aphanomyces invadans (formerly A. invaderis). EUS produces deep dermal ulcers, frequently haemorrhagic and granulomatous, that penetrate to the underlying musculature and may extend to the body cavity. Cardinal lesions: red haemorrhagic spots progressing to large open ulcers, exposed musculature, and severe necrosis. Outbreaks occur during periods of low water temperature (18-22°C) following heavy rainfall and are listed by the World Organisation for Animal Health (WOAH) as a notifiable aquatic-animal disease. Diagnosis: histopathology showing Aphanomyces hyphae within granulomas; PCR confirmation. EUS is the paper-designated eighth knowledge-base document, loaded only when EUS reference images are present in the retrieval gallery (Methods §Knowledge-base construction).",
+    "keywords": [
+      "EUS",
+      "epizootic ulcerative syndrome",
+      "aphanomyces",
+      "aphanomyces invadans",
+      "mycotic granulomatosis",
+      "red spot disease",
+      "deep ulcer",
+      "haemorrhagic ulcer",
+      "granuloma",
+      "oomycete",
+      "red haemorrhagic spots",
+      "necrosis"
+    ],
+    "species": [
+      "snakehead",
+      "mullet",
+      "catfish",
+      "carp",
+      "tilapia"
+    ],
+    "severity": "critical",
+    "source": "WOAH Aquatic Animal Health Code; Fish Pathology 4th ed."
+  }
+]

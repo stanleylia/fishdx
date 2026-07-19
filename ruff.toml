@@ -1,0 +1,65 @@
+# ruff.toml — supplementary settings (primary config in pyproject.toml [tool.ruff])
+# See pyproject.toml for full lint rules.
+line-length = 100
+target-version = "py310"
+extend-exclude = [
+    "_legacy_multimodal_rag_*",
+    "core/",
+    "proto/",
+    "services/",
+    "docs/archive/",
+    # Predecessor-project tests — not fishdx. Preserved under ADR-0006
+    # bootstrap-artifact policy; excluded from fishdx lint gates.
+    "tests/unit/test_fusion.py",
+    "tests/unit/test_knowledge_manager.py",
+    "tests/unit/test_llm_client.py",
+    "tests/unit/test_pareidolia.py",
+    "tests/unit/test_pipeline_unit.py",
+    "tests/unit/test_prompt_assembler.py",
+    "tests/unit/test_quality_gate.py",
+    "tests/unit/test_scoring.py",
+    "tests/unit/test_semantic_filter.py",
+    "tests/unit/test_verification.py",
+    "tests/integration/test_dataset_validation.py",
+    "tests/integration/test_pipeline.py",
+]
+
+[lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "TCH", "ARG", "PTH", "ERA", "PL"]
+ignore = ["E501"]
+
+# Pydantic v2 needs annotation targets resolvable at model-build time even
+# with `from __future__ import annotations`. Stage Protocols and skeleton
+# impls expose types as part of public contracts — moving into
+# TYPE_CHECKING blocks would break runtime ForwardRef resolution / Protocol
+# introspection.
+[lint.per-file-ignores]
+"src/fishdx/schemas/*.py" = ["TC001", "TC003"]
+"src/fishdx/config.py" = ["TC001", "TC003"]
+"src/fishdx/perception/__init__.py" = ["TC001", "TC003"]
+"src/fishdx/retrieval/__init__.py" = ["TC001", "TC003"]
+"src/fishdx/scoring/__init__.py" = ["TC001", "TC003"]
+"src/fishdx/perception/stage.py" = ["TC001", "TC003"]
+"src/fishdx/retrieval/stage.py" = ["TC001", "TC003"]
+"src/fishdx/scoring/stage.py" = ["TC001", "TC003"]
+# Per-equation stub modules: annotations reference types that stay at runtime
+# namespace. Decision function legitimately has >5 args per paper contract.
+"src/fishdx/perception/pareidolia.py" = ["TC001", "TC003"]
+"src/fishdx/scoring/score.py" = ["TC001", "TC003"]
+"src/fishdx/scoring/decision.py" = ["TC001", "TC003", "PLR0913"]
+# M1 data + KB modules: Pydantic runtime type resolution; fake test
+# fixtures legitimately ignore chroma-client kwargs.
+"src/fishdx/data/loaders.py" = ["TC001", "TC003"]
+"src/fishdx/data/splits.py" = ["TC001", "TC003", "PLR0913"]
+"src/fishdx/data/registry.py" = ["TC001", "TC003"]
+"src/fishdx/kb/builder.py" = ["TC001", "TC003", "PLR0913"]
+"src/fishdx/retrieval/clip_encoder.py" = ["TC001", "TC003", "PLC0415", "B905"]
+# Florence-2 wrapper: transformers loaded lazily inside warmup() to avoid
+# heavy import at CI-test collection time (deterministic skip pattern).
+"src/fishdx/perception/florence2.py" = ["TC001", "TC003", "PLC0415"]
+"src/fishdx/retrieval/store.py" = ["TC001", "TC003", "B905"]
+"src/fishdx/retrieval/fusion.py" = ["TC001", "TC003", "B905"]
+"src/fishdx/pipeline.py" = ["TC001", "TC003", "B905", "PLR2004"]
+"src/fishdx/retrieval/verification.py" = ["TC001", "TC003", "B905", "SIM108"]
+# Test assertions compare against expected values; magic-value lint is noise.
+"tests/**/*.py" = ["PLR2004", "TC001", "TC003", "PLR0913", "ARG002"]

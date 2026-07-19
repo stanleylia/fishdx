@@ -1,0 +1,192 @@
+# pyproject.toml — fishdx single source of dependency truth
+#
+# # Pinned for paper-faithful reproduction
+# Dependency pins: see [project] dependencies below
+# Paper reference: IEEE Access 2026, Liao et al.
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fishdx"
+version = "0.1.0"
+description = "Zero-Shot Fish Disease Classification via CLIP Fusion Embedding — paper-faithful reproduction"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+# fishdx Academic Research License v1.0 — see LICENSE.
+# Non-commercial, source-disclosure, share-alike. NOT an OSI-approved
+# open-source licence. Commercial licensing available by written agreement
+# (contact: ccchang@mail.ntou.edu.tw).
+license = { file = "LICENSE" }
+authors = [
+    { name = "Yen-Hsiang Liao" },
+    { name = "Chao-Feng Shih" },
+    { name = "Chung-Cheng Chang" },
+]
+keywords = ["CLIP", "Florence-2", "RAG", "aquaculture", "zero-shot-classification"]
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: Free for non-commercial use",
+    "License :: Other/Proprietary License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+]
+
+dependencies = [
+    "torch>=2.1,<2.5",          # per ADR-0009 (was <2.4)
+    "transformers>=4.44,<4.50", # per ADR-0009 (was ==4.44.*)
+    "open_clip_torch>=2.24,<3.0",
+    "chromadb>=0.5,<0.6",
+    "sentence-transformers>=3.0",
+    "numpy<2.0",
+    "scipy>=1.11",
+    "statsmodels>=0.14",
+    "pyyaml>=6.0",
+    "pydantic>=2.5",
+    "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+    "black>=24.0",
+    "mypy>=1.10",
+    "pre-commit>=3.7",
+]
+
+# ════════════════════════════════════════════════════════════
+# Package discovery — fishdx only (legacy multimodal-rag tree ignored)
+# ════════════════════════════════════════════════════════════
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["fishdx*"]
+
+[tool.setuptools.package-data]
+fishdx = ["py.typed"]
+
+# ════════════════════════════════════════════════════════════
+# Ruff 
+# ════════════════════════════════════════════════════════════
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = [
+    "_legacy_multimodal_rag_*",
+    "core/", "proto/", "services/",  # predecessor project trees
+    "docs/archive/",
+    # Predecessor-project tests preserved under ADR-0006.
+    "tests/unit/test_fusion.py",
+    "tests/unit/test_knowledge_manager.py",
+    "tests/unit/test_llm_client.py",
+    "tests/unit/test_pareidolia.py",
+    "tests/unit/test_pipeline_unit.py",
+    "tests/unit/test_prompt_assembler.py",
+    "tests/unit/test_quality_gate.py",
+    "tests/unit/test_scoring.py",
+    "tests/unit/test_semantic_filter.py",
+    "tests/unit/test_verification.py",
+    "tests/integration/test_dataset_validation.py",
+    "tests/integration/test_pipeline.py",
+]
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "W",    # pycodestyle + pyflakes
+    "I",              # isort
+    "N",              # pep8-naming
+    "UP",             # pyupgrade
+    "B",              # bugbear
+    "C4", "SIM",      # comprehensions + simplify
+    "TCH",            # type-checking imports
+    "ARG",            # unused arguments
+    "PTH",            # pathlib
+    "ERA",            # eradicate commented code
+    "PL",             # pylint subset
+]
+ignore = ["E501"]
+
+# Pydantic v2 needs annotation targets resolvable at model-build time even
+# with `from __future__ import annotations` — moving imports under
+# `if TYPE_CHECKING:` breaks runtime ForwardRef resolution. Stage Protocols
+# and impl skeletons likewise expose types as part of public contracts.
+[tool.ruff.lint.per-file-ignores]
+"src/fishdx/schemas/*.py" = ["TC001", "TC003"]
+"src/fishdx/config.py" = ["TC001", "TC003"]
+"src/fishdx/perception/__init__.py" = ["TC001"]
+"src/fishdx/retrieval/__init__.py" = ["TC001"]
+"src/fishdx/scoring/__init__.py" = ["TC001"]
+"src/fishdx/perception/stage.py" = ["TC001"]
+"src/fishdx/retrieval/stage.py" = ["TC001"]
+"src/fishdx/scoring/stage.py" = ["TC001"]
+"src/fishdx/perception/pareidolia.py" = ["TC001", "TC003"]
+"src/fishdx/retrieval/verification.py" = ["TC001", "TC003", "B905", "SIM108"]
+"src/fishdx/scoring/score.py" = ["TC001", "TC003"]
+"src/fishdx/scoring/decision.py" = ["TC001", "TC003", "PLR0913"]
+"src/fishdx/data/loaders.py" = ["TC001", "TC003"]
+"src/fishdx/data/splits.py" = ["TC001", "TC003", "PLR0913"]
+"src/fishdx/data/registry.py" = ["TC001", "TC003"]
+"src/fishdx/kb/builder.py" = ["TC001", "TC003", "PLR0913"]
+"src/fishdx/retrieval/clip_encoder.py" = ["TC001", "TC003", "PLC0415", "B905"]
+"src/fishdx/perception/florence2.py" = ["TC001", "TC003", "PLC0415"]
+"src/fishdx/retrieval/store.py" = ["TC001", "TC003", "B905"]
+"src/fishdx/pipeline.py" = ["TC001", "TC003", "B905", "PLR2004"]
+"src/fishdx/retrieval/fusion.py" = ["TC001", "TC003", "B905"]
+"tests/**/*.py" = ["PLR2004", "TC001", "TC003", "PLR0913", "ARG002"]
+
+# ════════════════════════════════════════════════════════════
+# Black 
+# ════════════════════════════════════════════════════════════
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+extend-exclude = "_legacy_multimodal_rag_.*|core/|proto/|services/|docs/archive/|tests/unit/test_(fusion|knowledge_manager|llm_client|pareidolia|pipeline_unit|prompt_assembler|quality_gate|scoring|semantic_filter|verification)\\.py|tests/integration/test_(dataset_validation|pipeline)\\.py"
+
+# ════════════════════════════════════════════════════════════
+# Mypy 
+# ════════════════════════════════════════════════════════════
+[tool.mypy]
+python_version = "3.10"
+strict = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+files = ["src/fishdx"]
+exclude = "_legacy_multimodal_rag_|core/|proto/|services/|docs/archive/"
+
+[[tool.mypy.overrides]]
+module = ["open_clip.*", "chromadb.*", "sentence_transformers.*"]
+ignore_missing_imports = true
+
+# ════════════════════════════════════════════════════════════
+# Pytest 
+# ════════════════════════════════════════════════════════════
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = [
+    "-q",
+    "--strict-markers",
+    "--tb=short",
+]
+markers = [
+    "unit: unit tests (fast, mocked)",
+    "integration: integration tests (real models)",
+    "reproducibility: paper-faithfulness regression tests",
+    "slow: takes > 30 seconds",
+]
+
+[tool.coverage.run]
+source = ["src/fishdx"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+]

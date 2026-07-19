@@ -1,0 +1,41 @@
+system:
+  version: "3.0.0"
+  environment: "production"
+  log_level: "WARNING"
+  temp_dir: "/tmp/multimodal_rag"
+
+models:
+  florence2:
+    device: "cuda"
+    num_beams: 3
+    max_new_tokens: 1024
+
+  clip:
+    device: "cuda"
+
+llm:
+  primary:
+    timeout: 60
+    enable_vision: true
+
+chromadb:
+  persist_directory: "/data/chroma_db"
+  top_k: 5
+
+services:
+  gateway:
+    host: "0.0.0.0"
+    port: 8000
+    total_timeout: 60
+  perception:
+    host: "perception-svc"
+    port: 8002
+  embedding:
+    host: "embedding-svc"
+    port: 8003
+  reasoning:
+    host: "0.0.0.0"
+    port: 8004
+  learning:
+    host: "0.0.0.0"
+    port: 8005

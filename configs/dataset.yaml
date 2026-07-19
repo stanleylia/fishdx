@@ -1,0 +1,93 @@
+# configs/dataset.yaml — fishdx D1-D9 registry (M1 Phase 2)
+#
+# Authored: 2026-04-18 under M1 Q1 resolution (YAML + Pydantic hybrid).
+# Paper reference: IEEE Access 2026, Liao et al., §IV.A Table 2.
+# Binding doc: docs/m1/architecture-draft.md §3
+#
+# Role taxonomy (Skill S6 Pillar 2):
+#   - train_eligible: allowed in TRAIN / SELECT phases
+#   - test_only    : not used for parameter selection (within D1 split)
+#   - held_out     : NEVER in TRAIN or SELECT (enforced by DatasetAccessGuard)
+#   - kb_source    : used only for knowledge-base construction
+
+datasets:
+  - dataset_id: D1
+    human_name: fish_disease_south_asia
+    root_path: "lab_dateset/external_datasets/fish_disease_south_asia/Freshwater Fish Disease Aquaculture in south asia"
+    role: train_eligible
+    expected_sample_count: 2444
+    expected_classes: 7
+    license: "Kaggle community (verify before redistribution)"
+    paper_citation: "Table 2 D1 — primary train/test"
+
+  - dataset_id: D2
+    human_name: fish_disease_detection
+    root_path: "lab_dateset/external_datasets/fish_disease_detection/New Dataset"
+    role: held_out
+    expected_sample_count: 3503
+    expected_classes: 8
+    license: "Kaggle community"
+    paper_citation: "Table 2 D2 — cross-dataset generalization; 3200 balanced + 303 test"
+
+  - dataset_id: D3
+    human_name: fish_disease_cleaned
+    root_path: "lab_dateset/external_datasets/fish_disease_cleaned"
+    role: train_eligible
+    expected_sample_count: 23805
+    expected_classes: 7
+    license: "Kaggle community"
+    paper_citation: "Table 2 D3 — large-scale validation (augmented)"
+
+  - dataset_id: D4
+    human_name: fish_disease_bd
+    root_path: "lab_dateset/external_datasets/fish_disease_bd"
+    role: train_eligible
+    expected_sample_count: 2447
+    expected_classes: 7
+    license: "Kaggle community"
+    paper_citation: "Table 2 D4 — cross-validation"
+
+  - dataset_id: D5
+    human_name: fish_disease_alaa
+    root_path: "lab_dateset/external_datasets/fish_disease_alaa"
+    role: train_eligible
+    expected_sample_count: 305
+    expected_classes: 2
+    license: "Kaggle community"
+    paper_citation: "Table 2 D5 — binary Fresh/Infected"
+
+  - dataset_id: D6
+    human_name: fish_disease_moonburnt
+    root_path: "lab_dateset/external_datasets/fish_disease_moonburnt"
+    role: train_eligible
+    expected_sample_count: 2009
+    expected_classes: 5
+    license: "Kaggle community"
+    paper_citation: "Table 2 D6 — high-resolution test"
+
+  - dataset_id: D7
+    human_name: fish_disease_freshwater
+    root_path: "lab_dateset/external_datasets/fish_disease_freshwater"
+    role: test_only
+    expected_sample_count: 92
+    expected_classes: 7
+    license: "Kaggle community"
+    paper_citation: "Table 2 D7 — EUS detection, completeness only"
+
+  - dataset_id: D8
+    human_name: large_scale_fish
+    root_path: "lab_dateset/external_datasets/large_scale_fish"
+    role: train_eligible
+    expected_sample_count: 18282
+    expected_classes: 9
+    license: "Kaggle community"
+    paper_citation: "Table 2 D8 — species classification"
+
+  - dataset_id: D9
+    human_name: brackish_underwater
+    root_path: "lab_dateset/external_datasets/brackish_underwater"
+    role: train_eligible
+    expected_sample_count: 14674
+    expected_classes: 7
+    license: "Kaggle community — NOT PRESENT IN ENVIRONMENT"
+    paper_citation: "Table 2 D9 — scene test (absent; loader raises DatasetNotFoundError)"

@@ -1,0 +1,34 @@
+# configs/schema/frozen_config.lock
+# Integrity pin for configs/default.yaml
+#
+# Established: 2026-04-18 (M0 Phase 2 Stage 1)
+# Authority: ADR-0005 (narrow C1 exception, one-occasion)
+#
+# Updated: 2026-04-18 (M2.1 Step 1 under ADR-0010)
+#   florence2.revision corrected from unreachable `ceaf371f…4ec`
+#   to HfApi-verified `5ca5edf5…3bac`.
+#
+# Updated: 2026-04-18 (M3 Step I-1 under ADR-0011)
+#   retrieval.similarity_cutoff: 0.5 → 0.25 after 4-source empirical
+#   evidence all showed top-1 similarity consistently below 0.5.
+#
+# Updated: 2026-04-19 (Phase P'-2 under ADR-0012d) — 4th narrow C1 exception
+#   Added retrieval.collection: "image_gallery" (Stage 2 retrieval target
+#   per paper §III-E + Table IV/V image-gallery architecture).
+#   Added scoring.keyword_dict: "fishdx_kb" (Stage 3 Eq. 8-9 keyword
+#   dictionary; preserves ADR-0007 text KB intact).
+#   Pydantic config schema updated concurrently in src/fishdx/config.py
+#   (RetrievalConfig.collection, ScoringConfig.keyword_dict both default-
+#   valued to match default.yaml literals).
+#
+# After this pin is established, any modification to configs/default.yaml
+# MUST update this SHA AND be covered by a new ADR. CI enforces
+# via the adr-metadata-check pre-commit hook (scheduled M0 Phase 3).
+
+# Updated: 2026-07-19 (ADR-0016) — verification: -> reweighting: single-pass alignment
+file: configs/default.yaml
+sha256: b44a0b44a2e5210eb197ee6641ef49e8af7167fa68af9bef026f29a4b3be6147
+established_at: 2026-04-18
+last_updated: 2026-07-19
+authority: ADR-0005 (initial), ADR-0010 (2026-04-18 SHA correction), ADR-0011 (2026-04-18 cutoff reduction), ADR-0012d (2026-04-19 dual-collection routing)
+schema_authority: Skill S8 config-governance §3

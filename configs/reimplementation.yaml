@@ -1,0 +1,20 @@
+# configs/reimplementation.yaml — open-licence consumer-grade reimplementation.
+#
+# Layered config: extends default.yaml with the operating point reported in
+# Methods §Independent reimplementation. Use this profile when running
+# against the open-licence WOAH/Wikipedia knowledge base on RTX 3070 / 8 GB
+# hardware.
+#
+# Reported KPIs at this operating point:
+#   D1 Test Retrieval DA  = 1.000  (95% Wilson CI 0.9945–1.0000)
+#   D1 Test Decision DA   = 0.963  (95% Wilson CI 0.945–0.974)
+#   End-to-end median lat = 533 ms / image
+#   Peak GPU memory       = 921 MB
+
+extends: default.yaml
+
+retrieval:
+  # Reduced from the paper-primary 0.5 to compensate for the open-licence
+  # KB's shorter symptom paragraphs and lower average term frequencies;
+  # restores comparable Top-K = 5 retrieval populations.
+  similarity_cutoff: 0.25

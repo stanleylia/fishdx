@@ -1,0 +1,87 @@
+version: "3.8"
+
+# MultimodalRAG — Hybrid Deployment Phase 1
+# GPU services in Docker, Host services run directly
+# See §C.9 for architecture diagram
+
+services:
+  # ─── GPU Services (Docker) ──────────────────────────
+
+  perception-svc:
+    build:
+      context: .
+      dockerfile: services/perception/Dockerfile
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./configs:/app/configs:ro
+      - model-cache:/root/.cache
+      - /tmp/multimodal_rag:/tmp/multimodal_rag
+    environment:
+      - MULTIMODAL_RAG_ENV=production
+      - NVIDIA_VISIBLE_DEVICES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  embedding-svc:
+    build:
+      context: .
+      dockerfile: services/embedding/Dockerfile
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./configs:/app/configs:ro
+      - model-cache:/root/.cache
+      - /tmp/multimodal_rag:/tmp/multimodal_rag
+    environment:
+      - MULTIMODAL_RAG_ENV=production
+      - NVIDIA_VISIBLE_DEVICES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  chromadb:
+    image: chromadb/chroma:latest
+    ports:
+      - "8006:8000"
+    volumes:
+      - chroma-data:/chroma/chroma
+    environment:
+      - ANONYMIZED_TELEMETRY=FALSE
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/heartbeat"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  model-cache:
+    driver: local
+  chroma-data:
+    driver: local
+
+# ─── Host Services (run directly, not in Docker) ─────
+# gateway-svc:    make run-gateway     (Port 8000)
+# learning-svc:   make run-learning    (Port 8005)

@@ -1,0 +1,48 @@
+# .pre-commit-config.yaml — fishdx code quality gates
+#
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: [--fix]
+        exclude: ^(_legacy_multimodal_rag_|core/|proto/|services/|docs/archive/)
+      - id: ruff-format
+        exclude: ^(_legacy_multimodal_rag_|core/|proto/|services/|docs/archive/)
+
+  - repo: https://github.com/psf/black
+    rev: 24.8.0
+    hooks:
+      - id: black
+        language_version: python3.10
+        exclude: ^(_legacy_multimodal_rag_|core/|proto/|services/|docs/archive/)
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.11.2
+    hooks:
+      - id: mypy
+        args: [--strict]
+        files: ^src/fishdx/
+        additional_dependencies: [pydantic>=2.5, types-PyYAML]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^(_legacy_multimodal_rag_|core/|proto/|services/|docs/archive/)
+      - id: end-of-file-fixer
+        exclude: ^(_legacy_multimodal_rag_|core/|proto/|services/|docs/archive/)
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+
+  # Local hook: frozen_config.lock integrity
+  - repo: local
+    hooks:
+      - id: frozen-config-check
+        name: Verify configs/default.yaml matches frozen_config.lock
+        entry: bash -c 'ACTUAL=$(sha256sum configs/default.yaml | awk "{print \$1}"); RECORDED=$(grep "^sha256:" configs/schema/frozen_config.lock | awk "{print \$2}"); [ "$ACTUAL" = "$RECORDED" ] || { echo "ERROR: configs/default.yaml SHA drift detected. Current: $ACTUAL, Locked: $RECORDED. Update via new ADR or revert changes."; exit 1; }'
+        language: system
+        files: ^configs/default\.yaml$
+        pass_filenames: false

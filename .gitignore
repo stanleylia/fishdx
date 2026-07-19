@@ -1,0 +1,71 @@
+# ── Python ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+build/
+dist/
+pip-wheel-metadata/
+
+# ── Virtualenvs ───────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Type checker / linter / test caches ───────────────────────────────
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.pre-commit-cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+.cache/
+
+# ── IDE / editor / OS cruft ───────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Environment files (never commit secrets) ──────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Project-specific runtime data (regenerable) ───────────────────────
+# Persistent vector DB, learning queue, dataset caches
+data/datasets/
+data/cache/
+data/kb/chromadb/
+knowledge_base/chroma_db/
+knowledge_base/learning_queue/
+
+# Experiment outputs
+experiments/output/
+experiments/*.log
+experiments/results/
+experiments/runs/
+
+# HuggingFace model cache (downloaded on demand)
+.cache/huggingface/
+HF_HOME/
+hf_home/
+
+# ── Author-side working files (not for distribution) ──────────────────
+*.docx
+*.pdf
+*.zip
+!docs/figures/*.pdf
+configs/schema/*.lock.bak
+
+# ── Local debug / scratch ─────────────────────────────────────────────
+scratch/
+tmp/
+.notebooks/

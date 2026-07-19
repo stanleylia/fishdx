@@ -1,0 +1,205 @@
+# configs/default.yaml — fishdx Paper Table IX authoritative reproduction
+#
+# ╔═══════════════════════════════════════════════════════════════════╗
+# ║  AUTHORITATIVE CONFIG — fishdx M0 Phase 2 Stage 1                 ║
+# ║                                                                   ║
+# ║  Authored: 2026-04-18 under ADR-0005 (narrow C1 exception)        ║
+# ║  Source of truth: Skill S8 `config-governance` §3                 ║
+# ║  Schema authority: configs/default.yaml only║
+# ║  Paper reference: IEEE Access 2026, Liao et al.                   ║
+# ║                                                                   ║
+# ║  After this file stabilizes, configs/schema/frozen_config.lock    ║
+# ║  pins its SHA256. Any future modification requires ADR +          ║
+# ║  frozen_config.lock update.                                       ║
+# ╚═══════════════════════════════════════════════════════════════════╝
+
+meta:
+  project: "fishdx"
+  version: "0.1.0"
+  seed: 42
+  paper_ref: "IEEE Access 2026, Liao et al., Zero-Shot Fish Disease Classification"
+
+# ═══════════════════════════════════════════════════════════════════
+# Stage 1: Visual Perception (§III.B)
+# ═══════════════════════════════════════════════════════════════════
+florence2:
+  model_id: "microsoft/Florence-2-base"
+  # Revision pinning mandated by ADR-0004 M1 — must be a 40-char
+  # commit SHA (NOT a branch name). Config loader enforces this via
+  # RevisionPinError (see docs/architecture.md §2.3 R2).
+  revision: "5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac"
+  parameters_billion: 0.23
+  num_beams: 3                  # Paper §III.B "Beam Search"
+  max_new_tokens: 1024          # Paper Table IX
+  do_sample: false              # DETERMINISTIC HARD RULE
+  trust_remote_code: true       # Accepted per ADR-0004 Option E (M0-M4)
+  precision: "fp16"
+  device: "cuda:0"
+
+pareidolia:
+  # K_s per Eq. 1 — structural keywords (|K_s| = 10 enforced by validator)
+  structural_keywords:
+    - net
+    - fence
+    - mesh
+    - cage
+    - grid
+    - wire
+    - pen
+    - enclosure
+    - lattice
+    - netting
+  # K_b per Eq. 1 — biological keywords (|K_b| = 7 enforced by validator)
+  biological_keywords:
+    - face
+    - person
+    - animal
+    - human
+    - head
+    - eye
+    - body
+  clip_threshold_tau: 0.75      # τ per Eq. 2
+  remap_label: "net_damage"     # per Eq. 4
+
+scene_classification:           # §III.B scene gating
+  rag_gate_threshold: 0.10
+  clip_override: 0.24
+
+# ═══════════════════════════════════════════════════════════════════
+# Stage 2: Knowledge Retrieval (§III.C)
+# ═══════════════════════════════════════════════════════════════════
+clip:
+  architecture: "ViT-B-32"
+  pretrained: "laion2b_s34b_b79k"
+  embedding_dim: 512
+  text_normalize: "l2"          # Always L2 normalize
+  image_normalize: "l2"
+  precision: "fp16"
+  # Zero-shot 7 templates (EXP-2 only, NOT for fusion path)
+  zero_shot_templates:
+    - "a photo of a {} fish"
+    - "an image showing {}"
+    - "a fish with {}"
+    - "aquaculture photo of {}"
+    - "underwater image of a fish with {}"
+    - "a diseased fish suffering from {}"
+    - "a {} infected fish"
+
+fusion:
+  lambda_star: 0.7              # λ* per Eq. 6
+  normalize_pre: true           # Eq. 5
+  normalize_post: true          # Eq. 7
+  compute_dtype: "fp32"         # Upcast for numerical stability
+
+retrieval:
+  index_type: "hnsw"
+  metric: "cosine"
+  top_k: 5                      # Paper Table IX
+  # Paper-primary value is 0.5 (Methods Table 2). The reimplementation on
+  # consumer-grade hardware with the open-licence WOAH/Wikipedia KB uses
+  # cutoff = 0.25 (Methods §Independent reimplementation). Override via
+  # configs/reimplementation.yaml when running against the open-licence KB.
+  similarity_cutoff: 0.5        # paper-primary operating point (Methods Table 2)
+  hnsw_ef_construction: 200
+  hnsw_ef_search: 100
+  hnsw_M: 16
+  # Determinism requires single-threaded HNSW build per ADR-0002 M2
+  hnsw_num_threads: 1
+  # ADR-0012d: Stage 2 retrieval target ChromaCollection name.
+  # image_gallery = 1,747 D1 Train fusion embeddings (paper §III-E target).
+  # Paired with scoring.keyword_dict (text KB preserved for Eq. 8-9 only).
+  collection: "image_gallery"
+
+reweighting:                    # Retrieval-confidence reweighting (Algorithm 1) — single pass (ADR-0016)
+  similarity_threshold: 0.85    # θ_sim: penalise if top-1 gallery similarity < θ_sim
+  margin_threshold: 0.02        # θ_margin: penalise if top-1/top-2 retrieval margin < θ_margin
+  penalty_factor: 0.5           # multiplicative down-weight (applied once)
+  min_score: 0.3                # drop candidates whose reweighted score < min_score
+
+negation:
+  window_chars: 50              # Paper Table IX
+  cn_patterns:
+    - "無"
+    - "沒有"
+    - "未見"
+    - "無明顯"
+    - "沒有任何"
+    - "缺乏"
+    - "未發現"
+  en_patterns:
+    - "no sign of"
+    - "absence of"
+    - "free from"
+    - "without"
+    - "negative for"
+
+# ═══════════════════════════════════════════════════════════════════
+# Stage 3: Scoring Decision (§III.D)
+# ═══════════════════════════════════════════════════════════════════
+scoring:
+  # Disease weights per Eq. 9 — monotonicity enforced: confirmed ≥ suspected ≥ mentioned
+  disease_weights:
+    confirmed: 3
+    suspected: 2
+    mentioned: 1
+  # Healthy weights per Eq. 8
+  healthy_weights:
+    explicit: 2
+    negation: 1
+  # ADR-0012d: Stage 3 keyword-dictionary ChromaCollection name.
+  # text KB (8 docs per ADR-0007 + ADR-0012a hold) preserved exclusively
+  # for Eq. 8-9 keyword scoring; Stage 2 retrieves from retrieval.collection.
+  keyword_dict: "fishdx_kb"
+
+decision:
+  healthy_threshold_Th: 2       # T_h per Eq. 10
+  inconclusive_margin_m: 1      # m per Eq. 10
+
+margin:
+  retrieval_margin_theta: 0.02  # θ_margin per Eq. 11 (strict < per R3 Operator Precision)
+
+# ═══════════════════════════════════════════════════════════════════
+# Knowledge Base (§III.E)
+# ═══════════════════════════════════════════════════════════════════
+kb:
+  documents_count: 8
+  root_path: "./data/kb/"
+  chromadb_persist: "./data/kb/chromadb"
+  collection_name: "fishdx_kb"
+  source_reference: "Fish Pathology 4th edition (Roberts 2012)"
+
+# ═══════════════════════════════════════════════════════════════════
+# Data Protocol (§IV.A)
+# ═══════════════════════════════════════════════════════════════════
+data_split:
+  train_test_ratio: [0.715, 0.285]
+  stratify: true
+  seed: 42
+
+# ═══════════════════════════════════════════════════════════════════
+# Statistics (§IV.B)
+# ═══════════════════════════════════════════════════════════════════
+statistics:
+  bootstrap_resamples: 1000     # Paper Table IX
+  alpha: 0.05                   # Paper Table IX
+  ci_method: "wilson"           # for proportions
+  semantic_sca_model: "sentence-transformers/all-MiniLM-L6-v2"
+  mcnemar_exact_threshold: 25   # Use exact test when b+c < 25
+
+# ═══════════════════════════════════════════════════════════════════
+# Performance Budget (engineering SLA)
+# ═══════════════════════════════════════════════════════════════════
+performance:
+  single_image_p95_seconds: 2.0
+  vram_peak_gb: 18.0
+  chromadb_build_p95_seconds: 90.0
+  unit_test_p95_seconds: 60.0
+
+# ═══════════════════════════════════════════════════════════════════
+# Logging & Observability
+# ═══════════════════════════════════════════════════════════════════
+logging:
+  level: "INFO"
+  format: "structured-json"
+  output_dir: "./logs/"
+  include_git_commit: true

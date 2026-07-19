@@ -1,0 +1,6 @@
+# Local deployment overlay — all services on host (no Docker)
+services:
+  perception:
+    host: "localhost"
+  embedding:
+    host: "localhost"
