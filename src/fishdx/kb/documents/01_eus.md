@@ -2,8 +2,8 @@
 doc_id: EUS
 disease_class: Epizootic Ulcerative Syndrome
 title: Epizootic Ulcerative Syndrome (EUS) — Aphanomyces invadans
-source_reference: Wikipedia "Epizootic ulcerative syndrome" + WOAH Aquatic Manual Ch. 2.3.2 (oldid pending curator capture at human-review commit)
-source_url: https://en.wikipedia.org/w/index.php?title=Epizootic_ulcerative_syndrome&oldid=PENDING_CURATOR_CAPTURE
+source_reference: Wikipedia "Epizootic ulcerative syndrome" + WOAH Aquatic Manual Ch. 2.3.2
+source_url: https://en.wikipedia.org/w/index.php?title=Epizootic_ulcerative_syndrome
 substitution_date: 2026-04-18
 rewrite_date: 2026-04-19
 substituted_under_adr: [0007, 0012a]

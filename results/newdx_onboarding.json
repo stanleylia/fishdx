@@ -1,0 +1,144 @@
+{
+  "experiment": "newdx_onboarding",
+  "purpose": "Gradient-free onboarding curve for two novel diseases; clean matched design (source-level split, fixed held-out test set as k grows).",
+  "base_gallery": "results/_cache_d1_gallery.npz (D1, 7 classes)",
+  "lambda": 0.7,
+  "seed": 42,
+  "k_grid": [
+    0,
+    1,
+    3,
+    5,
+    10
+  ],
+  "metric": "recognition_DA = fraction of held-out frames whose top-1 fused neighbour carries the onboarded class label",
+  "by_class": {
+    "argulus": {
+      "n_total_sources": 19,
+      "n_test_sources": 8,
+      "n_test_frames": 65,
+      "test_sources_are_fixed_across_k": true,
+      "curve": [
+        {
+          "k_ref_sources": 0,
+          "n_ref_frames": 0,
+          "recognition_DA": 0.0,
+          "n_correct": 0,
+          "n_test": 65,
+          "wilson_ci95": [
+            0.0,
+            0.0558
+          ]
+        },
+        {
+          "k_ref_sources": 1,
+          "n_ref_frames": 1,
+          "recognition_DA": 0.0462,
+          "n_correct": 3,
+          "n_test": 65,
+          "wilson_ci95": [
+            0.0158,
+            0.1271
+          ]
+        },
+        {
+          "k_ref_sources": 3,
+          "n_ref_frames": 21,
+          "recognition_DA": 0.6154,
+          "n_correct": 40,
+          "n_test": 65,
+          "wilson_ci95": [
+            0.4938,
+            0.7241
+          ]
+        },
+        {
+          "k_ref_sources": 5,
+          "n_ref_frames": 23,
+          "recognition_DA": 0.6308,
+          "n_correct": 41,
+          "n_test": 65,
+          "wilson_ci95": [
+            0.5092,
+            0.7377
+          ]
+        },
+        {
+          "k_ref_sources": 10,
+          "n_ref_frames": 37,
+          "recognition_DA": 0.9846,
+          "n_correct": 64,
+          "n_test": 65,
+          "wilson_ci95": [
+            0.9179,
+            0.9973
+          ]
+        }
+      ]
+    },
+    "oodinium": {
+      "n_total_sources": 18,
+      "n_test_sources": 8,
+      "n_test_frames": 17,
+      "test_sources_are_fixed_across_k": true,
+      "curve": [
+        {
+          "k_ref_sources": 0,
+          "n_ref_frames": 0,
+          "recognition_DA": 0.0,
+          "n_correct": 0,
+          "n_test": 17,
+          "wilson_ci95": [
+            0.0,
+            0.1843
+          ]
+        },
+        {
+          "k_ref_sources": 1,
+          "n_ref_frames": 12,
+          "recognition_DA": 1.0,
+          "n_correct": 17,
+          "n_test": 17,
+          "wilson_ci95": [
+            0.8157,
+            1.0
+          ]
+        },
+        {
+          "k_ref_sources": 3,
+          "n_ref_frames": 14,
+          "recognition_DA": 1.0,
+          "n_correct": 17,
+          "n_test": 17,
+          "wilson_ci95": [
+            0.8157,
+            1.0
+          ]
+        },
+        {
+          "k_ref_sources": 5,
+          "n_ref_frames": 16,
+          "recognition_DA": 1.0,
+          "n_correct": 17,
+          "n_test": 17,
+          "wilson_ci95": [
+            0.8157,
+            1.0
+          ]
+        },
+        {
+          "k_ref_sources": 10,
+          "n_ref_frames": 21,
+          "recognition_DA": 1.0,
+          "n_correct": 17,
+          "n_test": 17,
+          "wilson_ci95": [
+            0.8157,
+            1.0
+          ]
+        }
+      ]
+    }
+  },
+  "timestamp": "2026-07-08 05:35:38 UTC"
+}

@@ -1,0 +1,54 @@
+{
+  "experiment": "second_vlm_sca_control",
+  "adr": "0015",
+  "scorer": "core.algorithms.semantic_filter.classify_scene(caption).score",
+  "n_images": 700,
+  "n_per_class": 100,
+  "seed": 42,
+  "florence2_base": {
+    "model": "microsoft/Florence-2-base",
+    "avg_keyword_sca": 0.0413
+  },
+  "qwen2_vl_2b": {
+    "model": "Qwen/Qwen2-VL-2B-Instruct",
+    "avg_keyword_sca": 0.0412
+  },
+  "manuscript_florence_sca": 0.037,
+  "per_class": {
+    "Bacterial Red disease": {
+      "n": 100,
+      "florence_sca": 0.0362,
+      "qwen_sca": 0.0374
+    },
+    "Bacterial diseases - Aeromoniasis": {
+      "n": 100,
+      "florence_sca": 0.0404,
+      "qwen_sca": 0.0389
+    },
+    "Bacterial gill disease": {
+      "n": 100,
+      "florence_sca": 0.0447,
+      "qwen_sca": 0.0368
+    },
+    "Fungal diseases Saprolegniasis": {
+      "n": 100,
+      "florence_sca": 0.041,
+      "qwen_sca": 0.0434
+    },
+    "Healthy Fish": {
+      "n": 100,
+      "florence_sca": 0.0482,
+      "qwen_sca": 0.0508
+    },
+    "Parasitic diseases": {
+      "n": 100,
+      "florence_sca": 0.0369,
+      "qwen_sca": 0.0374
+    },
+    "Viral diseases White tail disease": {
+      "n": 100,
+      "florence_sca": 0.0415,
+      "qwen_sca": 0.044
+    }
+  }
+}

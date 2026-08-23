@@ -3,22 +3,12 @@ CI-09: Statistical Tests for All Key Metrics
 Computes Clopper-Pearson CI, Bootstrap CI, McNemar Test, Cohen's kappa CI
 """
 import json
-import os
 import numpy as np
 from scipy.stats import beta as beta_dist
 from scipy.stats import binom_test
 from pathlib import Path
 
-# Override via environment variable FISHDX_RESULTS_DIR; defaults to the
-# repository's lab_dateset/organized/experiment_results/large_scale directory
-# (resolved relative to this file's location, four levels up to the repo root).
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-RESULTS_DIR = Path(
-    os.environ.get(
-        "FISHDX_RESULTS_DIR",
-        PROJECT_ROOT / "lab_dateset" / "organized" / "experiment_results" / "large_scale",
-    )
-)
+RESULTS_DIR = (Path(__file__).resolve().parents[2] / "lab_dateset/organized/experiment_results/large_scale")
 
 def clopper_pearson(k, n, alpha=0.05):
     """Exact binomial (Clopper-Pearson) confidence interval."""

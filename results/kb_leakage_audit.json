@@ -1,0 +1,99 @@
+{
+  "experiment": "kb_leakage_audit",
+  "n_docs": 8,
+  "docs": [
+    "01_eus.md",
+    "02_aeromoniasis.md",
+    "03_bacterial_gill.md",
+    "04_bacterial_red.md",
+    "05_parasitic.md",
+    "06_saprolegniasis.md",
+    "07_viral_white_tail.md",
+    "08_healthy.md"
+  ],
+  "n_dataset_tokens_checked": 483,
+  "leakage_hits": [],
+  "leakage_clean": true,
+  "keyword_census": [
+    {
+      "file": "01_eus.md",
+      "confirmed": 11,
+      "suspected": 13,
+      "mentioned": 7,
+      "healthy": 0,
+      "negation_cn": 7,
+      "negation_en": 5,
+      "bridge": 0
+    },
+    {
+      "file": "02_aeromoniasis.md",
+      "confirmed": 8,
+      "suspected": 15,
+      "mentioned": 9,
+      "healthy": 0,
+      "negation_cn": 7,
+      "negation_en": 5,
+      "bridge": 0
+    },
+    {
+      "file": "03_bacterial_gill.md",
+      "confirmed": 9,
+      "suspected": 15,
+      "mentioned": 9,
+      "healthy": 0,
+      "negation_cn": 7,
+      "negation_en": 5,
+      "bridge": 0
+    },
+    {
+      "file": "04_bacterial_red.md",
+      "confirmed": 9,
+      "suspected": 16,
+      "mentioned": 9,
+      "healthy": 0,
+      "negation_cn": 7,
+      "negation_en": 5,
+      "bridge": 0
+    },
+    {
+      "file": "05_parasitic.md",
+      "confirmed": 12,
+      "suspected": 15,
+      "mentioned": 11,
+      "healthy": 0,
+      "negation_cn": 7,
+      "negation_en": 5,
+      "bridge": 0
+    },
+    {
+      "file": "06_saprolegniasis.md",
+      "confirmed": 12,
+      "suspected": 13,
+      "mentioned": 9,
+      "healthy": 0,
+      "negation_cn": 7,
+      "negation_en": 5,
+      "bridge": 0
+    },
+    {
+      "file": "07_viral_white_tail.md",
+      "confirmed": 7,
+      "suspected": 14,
+      "mentioned": 9,
+      "healthy": 0,
+      "negation_cn": 7,
+      "negation_en": 5,
+      "bridge": 0
+    },
+    {
+      "file": "08_healthy.md",
+      "confirmed": 8,
+      "suspected": 6,
+      "mentioned": 6,
+      "healthy": 23,
+      "negation_cn": 7,
+      "negation_en": 5,
+      "bridge": 0
+    }
+  ]
+}

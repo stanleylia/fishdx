@@ -1,0 +1,47 @@
+{
+  "experiment": "clip_geometry_and_crmr",
+  "purpose": "traceability artifact for \u00a74.2/Discussion geometry + CRMR numbers",
+  "geometry": {
+    "n_gallery": 1639,
+    "n_classes": 7,
+    "intra_class_mean_cos_dist": 0.2192,
+    "inter_class_mean_cos_dist": 0.0872,
+    "separability_ratio_inter_over_intra": 0.398,
+    "pairwise_prototype_cos_dist": {
+      "fungal <-> parasitic": 0.0199,
+      "fungal <-> viral_white_tail": 0.0213,
+      "parasitic <-> viral_white_tail": 0.0237,
+      "aeromoniasis <-> bacterial_red": 0.0264,
+      "bacterial_red <-> parasitic": 0.0294,
+      "bacterial_red <-> viral_white_tail": 0.0331,
+      "bacterial_red <-> fungal": 0.0354,
+      "bacterial_gill <-> bacterial_red": 0.0423,
+      "aeromoniasis <-> bacterial_gill": 0.0443,
+      "aeromoniasis <-> viral_white_tail": 0.0498,
+      "aeromoniasis <-> parasitic": 0.0506,
+      "aeromoniasis <-> fungal": 0.0557,
+      "bacterial_gill <-> parasitic": 0.0601,
+      "bacterial_gill <-> fungal": 0.0665,
+      "bacterial_gill <-> viral_white_tail": 0.0742,
+      "bacterial_red <-> healthy": 0.1812,
+      "aeromoniasis <-> healthy": 0.1844,
+      "fungal <-> healthy": 0.1992,
+      "healthy <-> viral_white_tail": 0.2021,
+      "healthy <-> parasitic": 0.205,
+      "bacterial_gill <-> healthy": 0.2273
+    }
+  },
+  "crmr": {
+    "crmr_overall": 0.1837,
+    "crmr_per_class": {
+      "bacterial_red": 0.02,
+      "aeromoniasis": 0.04,
+      "bacterial_gill": 0.004,
+      "fungal": 0.092,
+      "healthy": 0.984,
+      "parasitic": 0.044,
+      "viral_white_tail": 0.1012
+    },
+    "scorer": "all-MiniLM-L6-v2 top-1 caption->KB-doc match vs ground-truth class"
+  }
+}

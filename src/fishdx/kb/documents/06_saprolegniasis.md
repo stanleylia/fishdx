@@ -2,8 +2,8 @@
 doc_id: SAP
 disease_class: Fungal Saprolegniasis
 title: Saprolegniasis — Water-Mould Infection (Saprolegnia spp.)
-source_reference: Wikipedia "Saprolegnia" + Wikipedia "Saprolegniasis" (oldid pending curator capture)
-source_url: https://en.wikipedia.org/w/index.php?title=Saprolegnia&oldid=PENDING_CURATOR_CAPTURE
+source_reference: Wikipedia "Saprolegnia" + Wikipedia "Saprolegniasis"
+source_url: https://en.wikipedia.org/w/index.php?title=Saprolegnia
 substitution_date: 2026-04-18
 rewrite_date: 2026-04-19
 substituted_under_adr: [0007, 0012a]

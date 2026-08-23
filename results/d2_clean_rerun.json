@@ -1,0 +1,38 @@
+{
+  "n_d2_total": 3473,
+  "n_d2_clean_disjoint": 1941,
+  "n_clean_7class": 1499,
+  "n_clean_7class_noaug": 189,
+  "clean_7class_noaug": {
+    "caption_only_lambda0.0": 0.4497,
+    "fusion_lambda0.7": 0.6349,
+    "visual_only_lambda1.0": 0.6085
+  },
+  "clean_7class_full": {
+    "caption_only_lambda0.0": 0.4997,
+    "fusion_lambda0.7": 0.8579,
+    "visual_only_lambda1.0": 0.8519
+  },
+  "clean_8class_overall_lambda0.7": 0.6625,
+  "lambda_sweep_7class_noaug": {
+    "0.0": 0.4497,
+    "0.1": 0.5026,
+    "0.2": 0.5397,
+    "0.3": 0.5714,
+    "0.4": 0.5661,
+    "0.5": 0.6243,
+    "0.6": 0.6349,
+    "0.7": 0.6349,
+    "0.8": 0.6561,
+    "0.9": 0.6296,
+    "1.0": 0.6085
+  },
+  "original_contaminated_for_comparison": {
+    "caption_only": 0.72,
+    "visual_only": 0.94,
+    "fusion_0.7": 0.943,
+    "modality_caption": "0.536/0.569",
+    "modality_visual": 0.934,
+    "note": "original numbers were on D2 including ~44% D1 duplicates"
+  }
+}

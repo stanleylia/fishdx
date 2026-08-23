@@ -1,0 +1,162 @@
+{
+  "experiment": "sca_direction2_confirmed_phrases",
+  "vocabulary": "KB Confirmed disease phrases (Note S6 sources), substring-matched; SCA_i = |Ki ∩ tokens-of-present-Confirmed-phrases| / |Ki|",
+  "n_confirmed_phrases": 76,
+  "D1_Train_headline": {
+    "n": 1747,
+    "mean_keyword_sca_pct": 0.222,
+    "zero_vocab_pct": 95.54,
+    "per_class_mean_pct": {
+      "Bacterial Red disease": 0.19,
+      "Bacterial diseases - Aeromoniasis": 0.4,
+      "Bacterial gill disease": 0.56,
+      "Fungal diseases Saprolegniasis": 0.23,
+      "Healthy Fish": 0.05,
+      "Parasitic diseases": 0.08,
+      "Viral diseases White tail disease": 0.05
+    },
+    "between_class_range_pct": [
+      0.05,
+      0.56
+    ]
+  },
+  "D2_noaug_crosscheck": {
+    "n": 1537,
+    "mean_keyword_sca_pct": 0.28,
+    "zero_vocab_pct": 94.01,
+    "per_class_mean_pct": {
+      "Bacterial Red disease": 0.1,
+      "Bacterial diseases - Aeromoniasis": 0.4,
+      "Bacterial gill disease": 0.52,
+      "EUS": 0.43,
+      "Fungal diseases Saprolegniasis": 0.21,
+      "Healthy Fish": 0.14,
+      "Parasitic diseases": 0.11,
+      "Viral diseases White tail disease": 0.09
+    },
+    "between_class_range_pct": [
+      0.09,
+      0.52
+    ]
+  },
+  "old_published": {
+    "D1_Train_3.7pct": "classify_scene overlap (different method)",
+    "D2_0.17pct_92.6zero": "unpreserved strict metric (different method)"
+  },
+  "spotcheck_D1_phrase_hits": [
+    {
+      "label": "Bacterial diseases - Aeromoniasis",
+      "caption": "The image is a close-up of a fish. The fish appears to be a type of freshwater fish, with a dark brown body and white spots on its head and tail. Its mouth is open, revealing its sharp teeth. The body of the fish is slightly curved, and its fins are spread out. The background is white, making the fish the focal point of the image.",
+      "matched_phrases": [
+        "white spot"
+      ],
+      "hit_tokens": 2,
+      "sca_i": 0.069
+    },
+    {
+      "label": "Bacterial Red disease",
+      "caption": "The image is a close-up of a bird's head and neck. The bird appears to be a peacock, with its feathers spread out in a fan-like shape. The feathers are a mix of brown and black, with some areas appearing darker and others lighter. On the right side of the image, there is a large red spot, possibly a wound or a wound. The red spot is located in the center of the head, and it is surrounded by a thin black line. The background is blurred, so the focus is on the bird's face.",
+      "matched_phrases": [
+        "red spot"
+      ],
+      "hit_tokens": 4,
+      "sca_i": 0.0833
+    },
+    {
+      "label": "Bacterial gill disease",
+      "caption": "The image is a close-up of a fish's mouth. The fish appears to be a pufferfish, with a dark grey body and white spots on its head and neck. Its mouth is open wide, revealing a pinkish-red tongue. The tongue is slightly curled and the mouth is slightly open, as if it is about to take a bite out of something. The background is white, making the fish the focal point of the image.",
+      "matched_phrases": [
+        "white spot"
+      ],
+      "hit_tokens": 2,
+      "sca_i": 0.0556
+    },
+    {
+      "label": "Bacterial gill disease",
+      "caption": "The image is a close-up of a fish's head. The fish appears to be a pufferfish, with a silver body and a red mouth. Its eyes are large and round, and its mouth is slightly open, revealing its sharp teeth. The background is blurred, but it seems to be an indoor setting with a white wall and a window. The image is taken from a slightly elevated angle, looking down on the fish.",
+      "matched_phrases": [
+        "red mouth"
+      ],
+      "hit_tokens": 3,
+      "sca_i": 0.0882
+    },
+    {
+      "label": "Bacterial diseases - Aeromoniasis",
+      "caption": "The image is a close-up of a fish's head and neck. The fish appears to be a type of freshwater fish, possibly a freshwater bass, with a dark brown body and white spots on its head. The head is slightly tilted to the side, and its mouth is open, revealing a pinkish-red flesh. The flesh is slightly wrinkled and has a rough texture. The background is white, making the fish the focal point of the image.",
+      "matched_phrases": [
+        "white spot"
+      ],
+      "hit_tokens": 2,
+      "sca_i": 0.0526
+    },
+    {
+      "label": "Bacterial diseases - Aeromoniasis",
+      "caption": "The image shows a blue plastic basket filled with six fish. The fish are arranged in a pile, with some overlapping each other. They appear to be freshly caught, with their scales glistening in the light. The scales are dark grey in color and have a rough texture. Some of the fish have red spots on their bodies, indicating that they have been caught. The basket is placed on a white surface with a patterned design.",
+      "matched_phrases": [
+        "red spot"
+      ],
+      "hit_tokens": 1,
+      "sca_i": 0.0222
+    },
+    {
+      "label": "Bacterial diseases - Aeromoniasis",
+      "caption": "The image is a close-up of a person's hand holding a small fish. The fish appears to be a platypus, with a dark brown body and a pinkish-red mouth. Its eyes are closed and its mouth is slightly open, as if it is yawning or yawning. The background is blurred, so the focus is on the fish.",
+      "matched_phrases": [
+        "red mouth"
+      ],
+      "hit_tokens": 3,
+      "sca_i": 0.125
+    },
+    {
+      "label": "Parasitic diseases",
+      "caption": "The image is a close-up of a fish's head. The fish appears to be a type of fish, possibly a pike, with a brown body and white spots on its head and neck. Its eyes are large and round, and its mouth is slightly open, as if it is looking directly at the camera. The background is blurred, so the focus is on the fish's face. The image is taken from a slightly elevated angle, making it difficult to make out any details.",
+      "matched_phrases": [
+        "white spot"
+      ],
+      "hit_tokens": 1,
+      "sca_i": 0.027
+    }
+  ],
+  "spotcheck_D1_zero_hits": [
+    {
+      "label": "Bacterial Red disease",
+      "caption": "The image is a close-up of a small fish, specifically a piranha, swimming in a body of water. The fish is facing towards the right side of the image, with its head slightly tilted to the left. The body of the fish is covered in a light brownish-orange color, with a darker brown stripe running down the center of its head. The fins are silver and appear to be slightly curved. The background is blurred, but it appears to be a greenish-blue color. The water is a light beige color and there are small bubbles visible on the surface.",
+      "hit_tokens": 0
+    },
+    {
+      "label": "Parasitic diseases",
+      "caption": "The image is a close-up of a small fish's head. The fish appears to be a type of freshwater fish, with a reddish-brown body and a pointed snout. Its eyes are large and round, and its mouth is slightly open, as if it is looking directly at the camera. The body of the fish is covered in small hairs, and there is a small amount of water droplets on its surface. The background is blurred, so the focus is on the fish's face.",
+      "hit_tokens": 0
+    },
+    {
+      "label": "Fungal diseases Saprolegniasis",
+      "caption": "The image is a close-up of a fish swimming in a body of water. The fish appears to be a carp, with a long, slender body and a pointed snout. It is swimming towards the right side of the image, with its head slightly tilted downwards. The body of the fish is a light brown color, and its fins are a darker shade of brown. The water is a bright blue-green color and there are a few small bubbles visible in the background. The image is taken from a low angle, looking up at the fish.",
+      "hit_tokens": 0
+    },
+    {
+      "label": "Bacterial Red disease",
+      "caption": "The image is a close-up of a person's hand holding a small fish. The fish appears to be a type of fish, possibly a pufferfish, with a round body and a pointed snout. The body of the fish is covered in small bumps and ridges, and its fins are a bright yellow color. The person's fingers are gently cradling the fish, and the background is blurred, making the fish the focal point of the image.",
+      "hit_tokens": 0
+    },
+    {
+      "label": "Bacterial Red disease",
+      "caption": "The image is a close-up of a fish swimming in a body of water. The fish appears to be a type of freshwater fish, with a white body and orange fins. Its head is slightly tilted downwards, and its mouth is slightly open, as if it is about to take a bite out of something. The water is a dark green color, and there are a few small ripples visible on the surface. The background is blurred, making the fish the focal point of the image.",
+      "hit_tokens": 0
+    },
+    {
+      "label": "Bacterial Red disease",
+      "caption": "The image is a close-up of a white sphere with colorful splatters on it. The sphere appears to be floating in the air, with a blurred background. The splatters are in various colors, including red, orange, yellow, green, blue, and purple, and are scattered across the surface of the sphere. The background is out of focus, making the sphere the focal point of the image. The image is taken from a slightly elevated angle, looking down on the sphere and the surrounding area.",
+      "hit_tokens": 0
+    },
+    {
+      "label": "Bacterial diseases - Aeromoniasis",
+      "caption": "The image is a close-up of a small fish. The fish appears to be a crappie, with a dark green body and a pinkish-red eye. The eye is large and round, and it is slightly open, as if it is looking directly at the viewer. The body of the fish is covered in small bumps and ridges, and there are two small fins on either side of its head. The background is a light green color, and the fish's head is slightly tilted to the side.",
+      "hit_tokens": 0
+    },
+    {
+      "label": "Bacterial gill disease",
+      "caption": "The image shows a close-up of a fish with its mouth open, revealing its sharp teeth. The fish appears to be swimming in a body of water, with a yellow background. The mouth is slightly open, and the fish's body is slightly curved upwards. The image is taken from a slightly elevated angle, looking down on the fish.",
+      "hit_tokens": 0
+    }
+  ]
+}

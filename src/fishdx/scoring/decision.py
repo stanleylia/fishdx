@@ -58,13 +58,16 @@ def make_decision(
 
     # Step [2] — scoring margin precedence (fires over Healthy/Disease).
     if abs(score_healthy - score_disease) <= decision_config.inconclusive_margin_m:
+        low_health = (
+            score_healthy > score_disease and score_healthy < decision_config.healthy_threshold_Th
+        )
         return DiagnosisResult(
             decision=DecisionEnum.INCONCLUSIVE,
             disease_class=None,
             score_healthy=float(score_healthy),
             score_disease=float(score_disease),
             retrieval_margin=retrieval_margin,
-            inconclusive_reason="scoring_margin",
+            inconclusive_reason="low_health_score" if low_health else "scoring_margin",
         )
 
     # Step [3] — Healthy path (S_h ≥ T_h AND S_h > S_d, both strict-tight).
@@ -86,7 +89,7 @@ def make_decision(
             score_healthy=float(score_healthy),
             score_disease=float(score_disease),
             retrieval_margin=retrieval_margin,
-            inconclusive_reason="disease_path",
+            inconclusive_reason=None,
         )
 
     # Step [5] — Fallback (tie after step 2 / healthy threshold miss).

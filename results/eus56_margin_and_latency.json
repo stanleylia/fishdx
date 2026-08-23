@@ -1,0 +1,76 @@
+{
+  "experiment": "eus56_margin_interception_and_latency",
+  "purpose": "Recompute EUS OOD interception on the real 56-image EUS test subset and measure real single-image latency/VRAM (audit fixes 1 & 2).",
+  "gpu": "NVIDIA GeForce RTX 3070",
+  "eus_interception": {
+    "subset": "D2 test_split/EUS_* (the manuscript's 56-image EUS test set)",
+    "gallery": "results/_cache_d1_gallery.npz (D1 fused, 7 classes, no EUS)",
+    "lambda": 0.7,
+    "theta_margin": 0.02,
+    "margin_def": "top1_sim - top2_sim over fused gallery (Eq. 11)",
+    "n_test": 56,
+    "theta_sweep": {
+      "theta_0.01": {
+        "n_intercepted": 28,
+        "interception_rate": 0.5,
+        "wilson_ci95": [
+          0.3733,
+          0.6267
+        ]
+      },
+      "theta_0.02": {
+        "n_intercepted": 38,
+        "interception_rate": 0.6786,
+        "wilson_ci95": [
+          0.5482,
+          0.786
+        ]
+      },
+      "theta_0.05": {
+        "n_intercepted": 50,
+        "interception_rate": 0.8929,
+        "wilson_ci95": [
+          0.7853,
+          0.95
+        ]
+      }
+    },
+    "primary_theta": 0.02,
+    "n_intercepted": 38,
+    "interception_rate": 0.6786,
+    "wilson_ci95": [
+      0.5482,
+      0.786
+    ],
+    "bootstrap_ci95": [
+      0.5536,
+      0.8036
+    ],
+    "bootstrap_resamples": 10000,
+    "seed": 42,
+    "margin_mean": 0.0186,
+    "margin_min": 0.0001,
+    "margin_max": 0.084,
+    "decided_top1_distribution": {
+      "aeromoniasis": 2,
+      "bacterial_gill": 1,
+      "bacterial_red": 9,
+      "fungal": 2,
+      "healthy": 2,
+      "parasitic": 0,
+      "viral_white_tail": 2
+    }
+  },
+  "latency": {
+    "pipeline": "Florence-2 MORE_DETAILED_CAPTION (beam=3) + CLIP image+text encode + fused retrieval + margin, per image",
+    "n_images_timed": 56,
+    "median_ms": 559.0,
+    "mean_ms": 578.3,
+    "p95_ms": 689.7,
+    "min_ms": 417.8,
+    "max_ms": 1094.5,
+    "peak_cuda_mem_mb": 1200.3,
+    "note": "Retrieval-only pipeline (no LLM reasoning stage). Measured on the actual GPU above; not a simulated benchmark."
+  },
+  "timestamp": "2026-07-05 14:35:20 UTC"
+}

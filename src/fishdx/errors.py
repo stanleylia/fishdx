@@ -6,8 +6,7 @@ observability (stage, cause, trace_id, config_hash) per architecture.md §2.3.
 
 from __future__ import annotations
 
-from pathlib import Path
-from typing import Any, Final
+from typing import Any
 
 
 class FishdxError(Exception):
@@ -45,98 +44,6 @@ class ConfigMissingFieldError(ConfigError):
 
 class ConfigFileError(ConfigError):
     """YAML parse failure / file not found / unsafe loader invoked."""
-
-
-class ConfigNotFoundError(ConfigFileError):
-    """A YAML config file (main or any ``extends:`` parent) does not exist.
-
-    Subclass of ``ConfigFileError`` for backward-compatible exception
-    handling — code that catches ``ConfigFileError`` will continue to
-    catch ``ConfigNotFoundError``.
-
-    Attributes
-    ----------
-    missing_path : Path
-        The specific file that was not found.
-    extends_chain : list[Path]
-        Full inheritance chain ending at the missing file. Length 1
-        means the main config itself is missing; length ≥ 2 means a
-        parent in the ``extends:`` chain is missing.
-    """
-
-    def __init__(
-        self,
-        message: str = "",
-        *,
-        missing_path: Path,
-        extends_chain: list[Path],
-        context: dict[str, Any] | None = None,
-    ) -> None:
-        super().__init__(message or f"Config file not found: {missing_path}",
-                         context=context)
-        # Final = immutable post-construction (typing-level convention).
-        self.missing_path: Final[Path] = missing_path
-        self.extends_chain: Final[list[Path]] = list(extends_chain)
-
-    def __str__(self) -> str:
-        if len(self.extends_chain) <= 1:
-            return (
-                f"Config file not found: {self.missing_path}\n"
-                f"\n"
-                f"Hint: Check the file path and ensure the YAML file exists."
-            )
-        chain_repr = " → ".join(str(p) for p in self.extends_chain[:-1])
-        chain_repr += f" → {self.extends_chain[-1]} ← not found"
-        parent_in_chain = self.extends_chain[-2]
-        return (
-            f"Config inheritance chain broken:\n"
-            f"  {chain_repr}\n"
-            f"\n"
-            f"Hint: The 'extends:' line in {parent_in_chain} points to a "
-            f"non-existent file.\n"
-            f"Verify the path or remove the 'extends:' directive."
-        )
-
-
-class ConfigCircularExtendsError(ConfigError):
-    """Cyclic inheritance detected in the ``extends:`` chain.
-
-    Each YAML file's ``extends:`` must form a non-cyclic chain. If file
-    A extends B and B extends A (or any longer cycle), this exception is
-    raised the moment the cycle is detected by the visited-paths set.
-
-    Attributes
-    ----------
-    cycle_chain : list[Path]
-        Full chain leading into the cycle. The last element is the path
-        that was already visited (the cycle re-entry point).
-    """
-
-    def __init__(
-        self,
-        message: str = "",
-        *,
-        cycle_chain: list[Path],
-        context: dict[str, Any] | None = None,
-    ) -> None:
-        chain_repr = " → ".join(str(p) for p in cycle_chain)
-        super().__init__(
-            message or f"Circular extends detected: {chain_repr}",
-            context=context,
-        )
-        self.cycle_chain: Final[list[Path]] = list(cycle_chain)
-
-    def __str__(self) -> str:
-        chain_repr = " → ".join(str(p) for p in self.cycle_chain)
-        return (
-            f"Circular extends detected in config inheritance chain:\n"
-            f"  {chain_repr}\n"
-            f"\n"
-            f"Hint: Each YAML file's 'extends:' must form a non-cyclic "
-            f"chain.\n"
-            f"Review the 'extends:' line in each file in the cycle and "
-            f"break the loop."
-        )
 
 
 # ─────────────────────── ReproducibilityError family ───────────────────────
@@ -238,8 +145,6 @@ __all__ = [
     "ConfigFrozenMutationError",
     "ConfigMissingFieldError",
     "ConfigFileError",
-    "ConfigNotFoundError",
-    "ConfigCircularExtendsError",
     "ReproducibilityError",
     "SeedNotSetError",
     "NonDeterministicAlgorithmError",

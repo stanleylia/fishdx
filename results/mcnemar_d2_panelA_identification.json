@@ -1,0 +1,148 @@
+{
+  "experiment": "mcnemar_d2_panelA_identification",
+  "reviewer_point": "R5.3 — positively identify the manuscript's Table 3 Panel A configuration",
+  "note": "Full n=3,453, all 8 classes incl EUS, seed 42. Evidence pool 𝒪 = CAPTION ONLY (permits class-changing healthy-rescue). Stage-3 = full Eq. 10 three-way + Eq. 11 retrieval-margin valve; theta swept low to target ~1% abstention. Inconclusive = non-correct. Manuscript Panel A target under 'original_manuscript'.",
+  "metadata": {
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "seed": 42,
+    "lambda_star": 0.7,
+    "T_h": 2,
+    "m": 1,
+    "evidence_pool": "CAPTION ONLY",
+    "theta_sweep": [
+      0.005,
+      0.003,
+      0.002,
+      0.001,
+      0.0
+    ],
+    "n_eval": 3453,
+    "n_gallery": 1639,
+    "knn_lambda0.7_k1_DA": 0.8048,
+    "caption_only_healthy_rescues": 13,
+    "caption_only_scoring_inconclusive": 3309,
+    "max_achievable_b": 5,
+    "config_freeze_hash": "961d0a0934fa3c383cbf5e84d94c66ca3eb90da9634d2912109f6f61f9d82634"
+  },
+  "original_manuscript": {
+    "b": 21,
+    "c": 40,
+    "chi2": 5.31,
+    "p": 0.021,
+    "pipeline_DA": 0.811,
+    "abstention": "~1%"
+  },
+  "theta_sweep_results": [
+    {
+      "theta_margin": 0.005,
+      "abstention_count": 3330,
+      "abstention_rate": 0.9644,
+      "pipeline_decisive_DA": 0.0278,
+      "contingency_2x2": {
+        "both_correct": 94,
+        "pipeline_correct_knn_wrong": 2,
+        "pipeline_wrong_knn_correct": 2685,
+        "both_wrong": 672
+      },
+      "b_pipeline_correct_knn_wrong": 2,
+      "c_pipeline_wrong_knn_correct": 2685,
+      "chi2_continuity_corrected": 2677.0093,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true,
+      "panelA_match": false
+    },
+    {
+      "theta_margin": 0.003,
+      "abstention_count": 3325,
+      "abstention_rate": 0.9629,
+      "pipeline_decisive_DA": 0.0284,
+      "contingency_2x2": {
+        "both_correct": 95,
+        "pipeline_correct_knn_wrong": 3,
+        "pipeline_wrong_knn_correct": 2684,
+        "both_wrong": 671
+      },
+      "b_pipeline_correct_knn_wrong": 3,
+      "c_pipeline_wrong_knn_correct": 2684,
+      "chi2_continuity_corrected": 2673.0182,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true,
+      "panelA_match": false
+    },
+    {
+      "theta_margin": 0.002,
+      "abstention_count": 3321,
+      "abstention_rate": 0.9618,
+      "pipeline_decisive_DA": 0.029,
+      "contingency_2x2": {
+        "both_correct": 96,
+        "pipeline_correct_knn_wrong": 4,
+        "pipeline_wrong_knn_correct": 2683,
+        "both_wrong": 670
+      },
+      "b_pipeline_correct_knn_wrong": 4,
+      "c_pipeline_wrong_knn_correct": 2683,
+      "chi2_continuity_corrected": 2669.0301,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true,
+      "panelA_match": false
+    },
+    {
+      "theta_margin": 0.001,
+      "abstention_count": 3313,
+      "abstention_rate": 0.9595,
+      "pipeline_decisive_DA": 0.0307,
+      "contingency_2x2": {
+        "both_correct": 101,
+        "pipeline_correct_knn_wrong": 5,
+        "pipeline_wrong_knn_correct": 2678,
+        "both_wrong": 669
+      },
+      "b_pipeline_correct_knn_wrong": 5,
+      "c_pipeline_wrong_knn_correct": 2678,
+      "chi2_continuity_corrected": 2661.0451,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true,
+      "panelA_match": false
+    },
+    {
+      "theta_margin": 0.0,
+      "abstention_count": 3309,
+      "abstention_rate": 0.9583,
+      "pipeline_decisive_DA": 0.0313,
+      "contingency_2x2": {
+        "both_correct": 103,
+        "pipeline_correct_knn_wrong": 5,
+        "pipeline_wrong_knn_correct": 2676,
+        "both_wrong": 669
+      },
+      "b_pipeline_correct_knn_wrong": 5,
+      "c_pipeline_wrong_knn_correct": 2676,
+      "chi2_continuity_corrected": 2659.0451,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true,
+      "panelA_match": false
+    }
+  ],
+  "panelA_matching_thetas": [],
+  "closest_point": {
+    "theta_margin": 0.0,
+    "abstention_count": 3309,
+    "abstention_rate": 0.9583,
+    "pipeline_decisive_DA": 0.0313,
+    "contingency_2x2": {
+      "both_correct": 103,
+      "pipeline_correct_knn_wrong": 5,
+      "pipeline_wrong_knn_correct": 2676,
+      "both_wrong": 669
+    },
+    "b_pipeline_correct_knn_wrong": 5,
+    "c_pipeline_wrong_knn_correct": 2676,
+    "chi2_continuity_corrected": 2659.0451,
+    "p_value_two_tailed": 0.0,
+    "significant_at_0.05": true,
+    "panelA_match": false
+  },
+  "verdict": "NO — caption-only 𝒪 + low-theta margin does NOT reproduce Panel A. The class-changing healthy-rescue path yields at most b=5 (manuscript b=21), so cell b tops out below. Closest point: theta=0.0, abstain=95.83%, PipeDA=0.0313, b=5, c=2676.",
+  "reproduces_manuscript_panelA": false
+}

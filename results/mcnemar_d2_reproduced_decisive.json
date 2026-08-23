@@ -1,0 +1,125 @@
+{
+  "experiment": "mcnemar_d2_reproduced_decisive",
+  "reviewer_point": "R5.3 — actual 2x2 contingency tables from real paired D2 predictions",
+  "note": "VARIANT C — DECISIVE three-way pipeline. Full n=3,453, all 8 classes incl EUS, augmentations included, seed 42, cached captions, FAITHFUL 𝒪 (ADR-0012e Option B: caption ∪ top-1 KB doc text). The pipeline runs the full Stage-3 decision (Eq. 11 retrieval-margin valve theta=0.02, then Eq. 10 three-way on S_h/S_d with T_h=2, m=1) — NOT a forced-choice argmax. An Inconclusive verdict is a distinct outcome that counts as NON-correct in DA and McNemar (mirroring Overall DA counting abstentions as misses). This is the configuration hypothesised to match how the manuscript defined 'Pipeline' (DA=0.811, 0.6pp below kNN lambda0.7). Table (c) adds the third manuscript test: kNN lambda0.7 k=5 vs lambda1.0 k=5 majority vote. Original manuscript counts are under 'original_manuscript'.",
+  "metadata": {
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "device": "cuda:0",
+    "seed": 42,
+    "lambda_star": 0.7,
+    "retrieval_top_k": 5,
+    "retrieval_margin_theta": 0.02,
+    "scoring_disease_weights": {
+      "confirmed": 3,
+      "suspected": 2,
+      "mentioned": 1
+    },
+    "scoring_healthy_weights": {
+      "explicit": 2,
+      "negation": 1
+    },
+    "n_gallery": 1639,
+    "n_eval": 3453,
+    "n_d2_total": 3453,
+    "augmentations_included": true,
+    "eval_classes": [
+      "EUS",
+      "aeromoniasis",
+      "bacterial_gill",
+      "bacterial_red",
+      "fungal",
+      "healthy",
+      "parasitic",
+      "viral_white_tail"
+    ],
+    "n_eus_queries": 456,
+    "config_freeze_hash": "961d0a0934fa3c383cbf5e84d94c66ca3eb90da9634d2912109f6f61f9d82634",
+    "evidence_pool": "ADR-0012e Option B: caption ∪ top-1 KB doc text (caption + '\\n' + KB document body for retrieved class c1)",
+    "pipeline_decision": "DECISIVE Stage-3: Eq. 11 retrieval-margin valve (theta=0.02) then Eq. 10 three-way (T_h=2, m=1); Inconclusive = non-correct",
+    "decision_thresholds": {
+      "healthy_threshold_Th": 2,
+      "inconclusive_margin_m": 1,
+      "retrieval_margin_theta": 0.02
+    },
+    "decisive_verdict_counts": {
+      "healthy": 234,
+      "disease": 1941,
+      "inconclusive": 1278
+    },
+    "inconclusive_breakdown": {
+      "retrieval_margin_valve_Eq11": 1278,
+      "scoring_margin_or_fallback_Eq10": 0
+    },
+    "abstention_count": 1278,
+    "abstention_rate": 0.3701
+  },
+  "diagnostic_accuracy": {
+    "knn_lambda_1.0_k1": 0.8016,
+    "knn_lambda_0.7_k1": 0.8048,
+    "pipeline_decisive": 0.5844,
+    "knn_lambda_0.7_k5": 0.779,
+    "knn_lambda_1.0_k5": 0.7695
+  },
+  "table_a_pipeline_vs_knn_lambda0.7": {
+    "description": "McNemar: Pipeline (DECISIVE, Inconclusive=miss) vs CLIP k-NN (k=1, lambda=0.7)",
+    "contingency_2x2": {
+      "both_correct": 2018,
+      "pipeline_correct_knn_wrong": 0,
+      "pipeline_wrong_knn_correct": 761,
+      "both_wrong": 674
+    },
+    "b_pipeline_correct_knn_wrong": 0,
+    "c_pipeline_wrong_knn_correct": 761,
+    "chi2_continuity_corrected": 759.0013,
+    "p_value_two_tailed": 0.0,
+    "significant_at_0.05": true,
+    "n": 3453,
+    "original_manuscript": {
+      "b": 21,
+      "c": 40,
+      "chi2": 5.31,
+      "p": 0.021
+    }
+  },
+  "table_b_lambda0.7_vs_lambda1.0": {
+    "description": "McNemar: fused lambda=0.7 vs visual-only lambda=1.0 (both k-NN k=1)",
+    "contingency_2x2": {
+      "both_correct": 2709,
+      "lambda0.7_correct_lambda1.0_wrong": 70,
+      "lambda0.7_wrong_lambda1.0_correct": 59,
+      "both_wrong": 615
+    },
+    "b_lambda0.7_correct_lambda1.0_wrong": 70,
+    "c_lambda0.7_wrong_lambda1.0_correct": 59,
+    "chi2_continuity_corrected": 0.7752,
+    "p_value_two_tailed": 0.3786,
+    "significant_at_0.05": false,
+    "n": 3453,
+    "original_manuscript": {
+      "b": 20,
+      "c": 41,
+      "chi2": 6.56,
+      "p": 0.01
+    }
+  },
+  "table_c_lambda0.7_k5_vs_lambda1.0_k5": {
+    "description": "McNemar: fused lambda=0.7 k=5 vs visual-only lambda=1.0 k=5 (majority-vote k-NN)",
+    "contingency_2x2": {
+      "both_correct": 2574,
+      "lambda0.7_k5_correct_lambda1.0_k5_wrong": 116,
+      "lambda0.7_k5_wrong_lambda1.0_k5_correct": 83,
+      "both_wrong": 680
+    },
+    "b_lambda0.7_k5_correct_lambda1.0_k5_wrong": 116,
+    "c_lambda0.7_k5_wrong_lambda1.0_k5_correct": 83,
+    "chi2_continuity_corrected": 5.1457,
+    "p_value_two_tailed": 0.0233,
+    "significant_at_0.05": true,
+    "n": 3453,
+    "original_manuscript": {
+      "p": 0.033,
+      "da_lambda0.7_k5": 0.759,
+      "da_lambda1.0_k5": 0.749
+    }
+  }
+}

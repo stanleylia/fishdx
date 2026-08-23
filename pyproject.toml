@@ -1,8 +1,7 @@
 # pyproject.toml — fishdx single source of dependency truth
 #
-# # Pinned for paper-faithful reproduction
-# Dependency pins: see [project] dependencies below
-# Paper reference: IEEE Access 2026, Liao et al.
+# Dependency pins (version-locked for reproducibility)
+# Paper reference: Liao, Shih & Chang (2026)
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
@@ -11,14 +10,10 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "fishdx"
 version = "0.1.0"
-description = "Zero-Shot Fish Disease Classification via CLIP Fusion Embedding — paper-faithful reproduction"
+description = "Visual embedding retrieval for training-free fish-disease classification — code deposit for Liao, Shih & Chang (2026)"
 readme = "README.md"
 requires-python = ">=3.10,<3.12"
-# fishdx Academic Research License v1.0 — see LICENSE.
-# Non-commercial, source-disclosure, share-alike. NOT an OSI-approved
-# open-source licence. Commercial licensing available by written agreement
-# (contact: ccchang@mail.ntou.edu.tw).
-license = { file = "LICENSE" }
+license = { text = "AGPL-3.0-or-later" }
 authors = [
     { name = "Yen-Hsiang Liao" },
     { name = "Chao-Feng Shih" },
@@ -28,11 +23,8 @@ keywords = ["CLIP", "Florence-2", "RAG", "aquaculture", "zero-shot-classificatio
 classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
-    "License :: Free for non-commercial use",
-    "License :: Other/Proprietary License",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
-    "Intended Audience :: Science/Research",
-    "Intended Audience :: Education",
 ]
 
 dependencies = [
@@ -59,6 +51,10 @@ dev = [
     "pre-commit>=3.7",
 ]
 
+[project.urls]
+Repository = "https://github.com/stanleylia/fishdx"
+Deposit = "https://doi.org/10.5281/zenodo.21415577"
+
 # ════════════════════════════════════════════════════════════
 # Package discovery — fishdx only (legacy multimodal-rag tree ignored)
 # ════════════════════════════════════════════════════════════
@@ -67,10 +63,10 @@ where = ["src"]
 include = ["fishdx*"]
 
 [tool.setuptools.package-data]
-fishdx = ["py.typed"]
+fishdx = ["py.typed", "kb/documents/*.md"]
 
 # ════════════════════════════════════════════════════════════
-# Ruff 
+# Ruff
 # ════════════════════════════════════════════════════════════
 [tool.ruff]
 line-length = 100
@@ -139,7 +135,7 @@ ignore = ["E501"]
 "tests/**/*.py" = ["PLR2004", "TC001", "TC003", "PLR0913", "ARG002"]
 
 # ════════════════════════════════════════════════════════════
-# Black 
+# Black
 # ════════════════════════════════════════════════════════════
 [tool.black]
 line-length = 100
@@ -147,7 +143,7 @@ target-version = ["py310"]
 extend-exclude = "_legacy_multimodal_rag_.*|core/|proto/|services/|docs/archive/|tests/unit/test_(fusion|knowledge_manager|llm_client|pareidolia|pipeline_unit|prompt_assembler|quality_gate|scoring|semantic_filter|verification)\\.py|tests/integration/test_(dataset_validation|pipeline)\\.py"
 
 # ════════════════════════════════════════════════════════════
-# Mypy 
+# Mypy
 # ════════════════════════════════════════════════════════════
 [tool.mypy]
 python_version = "3.10"
@@ -162,7 +158,7 @@ module = ["open_clip.*", "chromadb.*", "sentence_transformers.*"]
 ignore_missing_imports = true
 
 # ════════════════════════════════════════════════════════════
-# Pytest 
+# Pytest
 # ════════════════════════════════════════════════════════════
 [tool.pytest.ini_options]
 minversion = "8.0"

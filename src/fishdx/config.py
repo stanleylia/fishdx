@@ -1,4 +1,4 @@
-"""fishdx configuration schema — architecture.md
+"""fishdx configuration schema.
 
 ``AppConfig`` is the frozen single source of truth loaded from
 ``configs/default.yaml``. Schema invariants (e.g. λ ∈ [0, 1], keyword set
@@ -12,7 +12,6 @@ Validation failures are wrapped into ``ConfigSchemaError`` by
 
 from __future__ import annotations
 
-import copy
 import hashlib
 import json
 import re
@@ -23,10 +22,8 @@ import yaml
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator, model_validator
 
 from fishdx.errors import (
-    ConfigCircularExtendsError,
     ConfigFileError,
     ConfigMissingFieldError,
-    ConfigNotFoundError,
     ConfigSchemaError,
     RevisionPinError,
 )
@@ -301,208 +298,28 @@ class AppConfig(BaseModel):
 
 
 # ─────────────────────────── Loader ───────────────────────────
-def deep_merge(parent: Any, child: Any) -> Any:
-    """Merge two raw config trees (dict / list / scalar).
-
-    Operates on raw dict / list / scalar only. ``AppConfig`` validation
-    MUST happen AFTER merge completion — never on intermediate partial
-    dicts (踩雷點 1: ``extra='forbid'`` would reject partial sub-configs).
-
-    Merge rules
-    -----------
-    - ``dict + dict``       : recursive merge (key union; child wins on conflict).
-    - ``list + list``       : ``child`` REPLACES ``parent`` (no append; prevents
-                              accidental ``zero_shot_templates`` accumulation).
-    - ``scalar + scalar``   : ``child`` wins.
-    - type mismatch         : ``child`` wins, EXCEPT when ``child is None`` →
-                              ``parent`` is preserved (E4 reversed).
-
-    Notes
-    -----
-    To explicitly clear a parent value, use an empty container (``[]``,
-    ``{}``) or the appropriate empty/zero scalar (``0``, ``""``,
-    ``false``), **not** ``None``. Future versions may introduce a
-    ``__null__`` sentinel string for explicit clearing — this is a
-    deliberate non-feature in Phase 2.
-
-    Properties
-    ----------
-    Associativity holds: ``deep_merge(deep_merge(A, B), C) ==
-    deep_merge(A, deep_merge(B, C))``. Proof by structural induction
-    over tree depth (per Phase 2 design brief §1.2).
-    """
-    if isinstance(parent, dict) and isinstance(child, dict):
-        return _merge_dicts(parent, child)
-    if isinstance(parent, list) and isinstance(child, list):
-        # Child fully replaces parent — no append, by design.
-        return copy.deepcopy(child)
-    # Scalar-on-scalar OR type mismatch.
-    if type(parent) is not type(child):  # noqa: E721 — exact-type check intentional
-        if child is None:
-            # E4 reversed: child=None means "unspecified", keep parent.
-            return copy.deepcopy(parent)
-        return copy.deepcopy(child)
-    return child
-
-
-def _merge_dicts(parent: dict[str, Any], child: dict[str, Any]) -> dict[str, Any]:
-    """dict-specific recursive merge — see ``deep_merge`` docstring."""
-    result: dict[str, Any] = {}
-    for key in set(parent) | set(child):
-        if key in parent and key in child:
-            result[key] = deep_merge(parent[key], child[key])
-        elif key in parent:
-            result[key] = copy.deepcopy(parent[key])
-        else:
-            result[key] = copy.deepcopy(child[key])
-    return result
-
-
-def _validate_root_mapping(raw: Any, p: Path) -> dict[str, Any]:
-    """Step 1.5 — coerce empty file to ``{}``; reject non-mapping roots."""
-    if raw is None:
-        return {}
-    if not isinstance(raw, dict):
-        raise ConfigFileError(
-            f"Config root must be a YAML mapping, got {type(raw).__name__}",
-            context={"path": str(p), "actual_type": type(raw).__name__},
-        )
-    return raw
-
-
-def _validate_extends_value(ext: Any, p: Path) -> str:
-    """Step 3.5 — extends must be a relative-path string (rejects list / dict / abs path)."""
-    if not isinstance(ext, str):
-        raise ConfigFileError(
-            f"'extends:' must be a string path, got {type(ext).__name__}",
-            context={"path": str(p), "extends_value": repr(ext)},
-        )
-    if Path(ext).is_absolute():
-        raise ConfigFileError(
-            "'extends:' must be a relative path",
-            context={
-                "path": str(p),
-                "extends_value": ext,
-                "rationale": "Absolute paths break portability across hosts.",
-            },
-        )
-    return ext
-
-
-def _read_yaml(p: Path, chain: list[Path]) -> Any:
-    """Step 1 — read YAML or raise ``ConfigNotFoundError`` / ``ConfigFileError``."""
-    try:
-        with p.open("r", encoding="utf-8") as f:
-            return yaml.safe_load(f)
-    except FileNotFoundError as e:
-        raise ConfigNotFoundError(
-            missing_path=p,
-            extends_chain=chain + [p],
-            context={"path": str(p)},
-        ) from e
-    except yaml.YAMLError as e:
-        raise ConfigFileError(
-            f"YAML parse error: {e}", context={"path": str(p)}
-        ) from e
-
-
-def _load_raw_with_extends(
-    p: Path, visited: set[Path], chain: list[Path]
-) -> dict[str, Any]:
-    """Recursively resolve ``extends:`` and return a fully-merged raw dict.
-
-    Does NOT call ``AppConfig.model_validate`` — validation is deferred to
-    the outer ``load_config`` so that partial child dicts cannot trigger
-    early ``extra='forbid'`` failures (踩雷點 1).
-    """
-    p_resolved = p.resolve()
-
-    # Step 2 — circular detection (visited entry on the way IN, not OUT).
-    if p_resolved in visited:
-        raise ConfigCircularExtendsError(
-            cycle_chain=chain + [p_resolved],
-            context={"path": str(p_resolved)},
-        )
-
-    # Step 1 — read YAML
-    raw_any = _read_yaml(p_resolved, chain)
-
-    # Step 1.5 — root mapping check
-    raw = _validate_root_mapping(raw_any, p_resolved)
-
-    # Mark visited AFTER successful read to keep the chain clean for errors.
-    visited.add(p_resolved)
-    new_chain = chain + [p_resolved]
-
-    # Step 3 — short-circuit if no extends.
-    if "extends" not in raw:
-        return raw
-
-    # Step 3.5 — validate extends value type + relativity.
-    ext = _validate_extends_value(raw["extends"], p_resolved)
-
-    # Step 4 — resolve parent path relative to child file's directory.
-    parent_path = (p_resolved.parent / ext).resolve()
-
-    # Step 5 — recursively load parent as raw dict (no validation yet).
-    parent_raw = _load_raw_with_extends(parent_path, visited, new_chain)
-
-    # Step 6 — strip 'extends' key from child before merge (avoid leaking
-    # into AppConfig.model_validate where extra='forbid' would reject it).
-    child_raw = {k: v for k, v in raw.items() if k != "extends"}
-
-    # Step 7 — deep_merge(parent, child).
-    return deep_merge(parent_raw, child_raw)
-
-
 def load_config(path: Path | str) -> AppConfig:
-    """Load + validate a YAML config into a frozen ``AppConfig``.
+    """Load + validate ``configs/default.yaml`` into a frozen ``AppConfig``.
 
-    Supports single-file configs (no ``extends:``, original behaviour) and
-    layered configs via the ``extends:`` directive (Phase 2). The ``extends:``
-    value must be a single relative path string; multiple inheritance
-    (``extends: [a.yaml, b.yaml]``) is intentionally not supported in this
-    implementation. If multi-inheritance is needed in the future, a
-    deterministic linearisation order (e.g. C3 MRO) must be defined first.
-
-    Flow
-    ----
-    Step 0 — Initialise visited-paths set; resolve input path.
-    Step 1 — Read YAML.
-    Step 1.5 — Coerce empty file to {}; reject non-mapping root.
-    Step 2 — Cycle detection via visited set.
-    Step 3 — Short-circuit if no ``extends:`` key.
-    Step 3.5 — Validate ``extends:`` value (string + relative).
-    Step 4 — Resolve parent path relative to child directory.
-    Step 5 — Recursively load parent as raw dict (no validation).
-    Step 6 — Pop ``extends`` key from child.
-    Step 7 — ``deep_merge(parent_raw, child_raw)``.
-    Step 8 — One-shot ``AppConfig.model_validate`` on merged dict.
-
-    Raises
-    ------
-    ConfigNotFoundError
-        Main config or any ``extends:`` parent does not exist.
-    ConfigCircularExtendsError
-        Cyclic ``extends:`` chain detected.
-    ConfigFileError
-        YAML parse error / non-mapping root / malformed ``extends:`` value.
-    ConfigMissingFieldError
-        Required field absent from the merged config.
-    ConfigSchemaError
-        Pydantic validation failure on the merged config.
-    RevisionPinError
-        Florence-2 revision is not a 40-char SHA (re-raised, never wrapped).
+    Wraps I/O failures into ``ConfigFileError`` and Pydantic failures into
+    ``ConfigSchemaError`` per architecture.md §2.3.
     """
     p = Path(path)
-    visited: set[Path] = set()
-    chain: list[Path] = []
-
-    merged = _load_raw_with_extends(p, visited, chain)
-
-    # Step 8 — one-shot validation on the fully-merged dict.
     try:
-        return AppConfig.model_validate(merged)
+        with p.open("r", encoding="utf-8") as f:
+            raw: Any = yaml.safe_load(f)
+    except FileNotFoundError as e:
+        raise ConfigFileError(f"config file not found: {p}", context={"path": str(p)}) from e
+    except yaml.YAMLError as e:
+        raise ConfigFileError(f"YAML parse error: {e}", context={"path": str(p)}) from e
+
+    if not isinstance(raw, dict):
+        raise ConfigFileError(
+            "config root must be a mapping", context={"path": str(p), "type": type(raw).__name__}
+        )
+
+    try:
+        return AppConfig.model_validate(raw)
     except RevisionPinError:
         raise
     except ValidationError as e:
@@ -511,8 +328,7 @@ def load_config(path: Path | str) -> AppConfig:
         ]
         if missing:
             raise ConfigMissingFieldError(
-                f"required fields missing: {missing}",
-                context={"path": str(p), "fields": missing},
+                f"required fields missing: {missing}", context={"path": str(p), "fields": missing}
             ) from e
         raise ConfigSchemaError(str(e), context={"path": str(p)}) from e
 
@@ -538,6 +354,5 @@ __all__ = [
     "ScoringConfig",
     "StatisticsConfig",
     "ReweightingConfig",
-    "deep_merge",
     "load_config",
 ]

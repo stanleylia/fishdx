@@ -1,6 +1,8 @@
 """
 EXP-14: Baseline Comparison on D1
 Compares: CLIP Zero-shot, CLIP kNN, CLIP Fusion kNN (λ=0.7), vs Proposed Pipeline
+DEPOSIT NOTE — EXPLORATORY / SIMULATED SCAFFOLD. This script contains simulated or placeholder logic and does not perform a live pipeline run; its output is NOT shipped in results/ and backs NO number reported in the manuscript. Retained only for transparency about exploratory scaffolding.
+
 """
 from __future__ import annotations
 import json

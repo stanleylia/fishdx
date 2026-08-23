@@ -1,0 +1,57 @@
+{
+  "experiment": "d2_clean_final",
+  "dedup": "CLIP visual cosine < 0.95 vs D1 gallery",
+  "n_clean": 2628,
+  "n_removed_dup": 845,
+  "n_eus_clean": 452,
+  "overlap_DA_7class": {
+    "caption_0.0": 0.4954,
+    "fusion_0.7": 0.8966,
+    "visual_1.0": 0.8925
+  },
+  "overall_DA_8class_lambda0.7": 0.7424,
+  "lambda_sweep_7class": {
+    "0.0": 0.4954,
+    "0.1": 0.5147,
+    "0.2": 0.5483,
+    "0.3": 0.6131,
+    "0.4": 0.6944,
+    "0.5": 0.7978,
+    "0.6": 0.8718,
+    "0.7": 0.8966,
+    "0.8": 0.9049,
+    "0.9": 0.9003,
+    "1.0": 0.8925
+  },
+  "decisive_sweep": {
+    "theta_0.00": {
+      "coverage": 1.0,
+      "decisive_DA": 0.7424,
+      "eus_intercepted": 0.0
+    },
+    "theta_0.01": {
+      "coverage": 0.7146,
+      "decisive_DA": 0.8237,
+      "eus_intercepted": 0.4779
+    },
+    "theta_0.02": {
+      "coverage": 0.5194,
+      "decisive_DA": 0.8879,
+      "eus_intercepted": 0.7257
+    },
+    "theta_0.05": {
+      "coverage": 0.2401,
+      "decisive_DA": 0.9588,
+      "eus_intercepted": 0.9425
+    }
+  },
+  "original_contaminated": {
+    "visual": 0.934,
+    "fusion": 0.943,
+    "caption": "0.536/0.569",
+    "overall": 0.811,
+    "decisive_DA": 0.924,
+    "decisive_cov": 0.643,
+    "eus_interception": 0.679
+  }
+}

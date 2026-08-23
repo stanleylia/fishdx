@@ -1,0 +1,34 @@
+{
+ "note": "D2->D1 dedup-threshold sensitivity of the cross-dataset modality DA (7 shared classes). Primary threshold 0.95 matches the D1<->D2 overlap-audit definition. Qualitative findings (caption<<visual; visual~=fusion; pipeline~=kNN) hold at every threshold; absolute numbers drop with stricter dedup as legitimate same-class images are also removed.",
+ "gallery_size": 1639,
+ "sensitivity": {
+  "0.99": {
+   "n_clean": 2894,
+   "n_7class": 2438,
+   "caption": 0.5299,
+   "visual": 0.9032,
+   "fusion": 0.9069
+  },
+  "0.95": {
+   "n_clean": 2628,
+   "n_7class": 2176,
+   "caption": 0.4954,
+   "visual": 0.8925,
+   "fusion": 0.8966
+  },
+  "0.90": {
+   "n_clean": 2148,
+   "n_7class": 1706,
+   "caption": 0.4625,
+   "visual": 0.8658,
+   "fusion": 0.871
+  },
+  "0.85": {
+   "n_clean": 1490,
+   "n_7class": 1082,
+   "caption": 0.414,
+   "visual": 0.7902,
+   "fusion": 0.8004
+  }
+ }
+}

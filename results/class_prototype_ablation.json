@@ -1,0 +1,27 @@
+{
+ "n_clean": 2628,
+ "n_overlap7": 2176,
+ "results": {
+  "caption_only_florence": [
+   0.4954,
+   2176
+  ],
+  "visual_only": [
+   0.8925,
+   2176
+  ],
+  "fusion_0.7": [
+   0.8966,
+   2176
+  ],
+  "class_prototype_visual": [
+   0.5827,
+   2176
+  ],
+  "class_prototype_caption": [
+   0.4485,
+   2176
+  ]
+ },
+ "note": "DA=top-1 NN label match, 7 shared classes, clean D1-disjoint D2; class_prototype = per-class mean embedding gallery"
+}

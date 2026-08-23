@@ -5,8 +5,8 @@
 # ║                                                                   ║
 # ║  Authored: 2026-04-18 under ADR-0005 (narrow C1 exception)        ║
 # ║  Source of truth: Skill S8 `config-governance` §3                 ║
-# ║  Schema authority: configs/default.yaml only║
-# ║  Paper reference: IEEE Access 2026, Liao et al.                   ║
+# ║  Schema authority: configuration specification                   ║
+# ║  Paper reference: Liao, Shih & Chang (2026)                       ║
 # ║                                                                   ║
 # ║  After this file stabilizes, configs/schema/frozen_config.lock    ║
 # ║  pins its SHA256. Any future modification requires ADR +          ║
@@ -17,7 +17,7 @@ meta:
   project: "fishdx"
   version: "0.1.0"
   seed: 42
-  paper_ref: "IEEE Access 2026, Liao et al., Zero-Shot Fish Disease Classification"
+  paper_ref: "Liao, Shih & Chang (2026)"
 
 # ═══════════════════════════════════════════════════════════════════
 # Stage 1: Visual Perception (§III.B)
@@ -31,7 +31,7 @@ florence2:
   parameters_billion: 0.23
   num_beams: 3                  # Paper §III.B "Beam Search"
   max_new_tokens: 1024          # Paper Table IX
-  do_sample: false              # DETERMINISTIC HARD RULE
+  do_sample: false              # DETERMINISTIC HARD RULE (no sampling)
   trust_remote_code: true       # Accepted per ADR-0004 Option E (M0-M4)
   precision: "fp16"
   device: "cuda:0"
@@ -95,18 +95,14 @@ retrieval:
   index_type: "hnsw"
   metric: "cosine"
   top_k: 5                      # Paper Table IX
-  # Paper-primary value is 0.5 (Methods Table 2). The reimplementation on
-  # consumer-grade hardware with the open-licence WOAH/Wikipedia KB uses
-  # cutoff = 0.25 (Methods §Independent reimplementation). Override via
-  # configs/reimplementation.yaml when running against the open-licence KB.
-  similarity_cutoff: 0.5        # paper-primary operating point (Methods Table 2)
+  similarity_cutoff: 0.25       # ADR-0011: reduced from paper 0.5 after 4-source empirical evidence showed top-1 sim < 0.5 on this stack; refined by REPAIR-6 sweep
   hnsw_ef_construction: 200
   hnsw_ef_search: 100
   hnsw_M: 16
   # Determinism requires single-threaded HNSW build per ADR-0002 M2
   hnsw_num_threads: 1
   # ADR-0012d: Stage 2 retrieval target ChromaCollection name.
-  # image_gallery = 1,747 D1 Train fusion embeddings (paper §III-E target).
+  # image_gallery = 1,639 encoded D1 Train fusion embeddings (paper §III-E target).
   # Paired with scoring.keyword_dict (text KB preserved for Eq. 8-9 only).
   collection: "image_gallery"
 
@@ -166,7 +162,10 @@ kb:
   root_path: "./data/kb/"
   chromadb_persist: "./data/kb/chromadb"
   collection_name: "fishdx_kb"
-  source_reference: "Fish Pathology 4th edition (Roberts 2012)"
+  # Shipped default = open-licence Configuration B; documents in src/fishdx/kb/documents/*.md.
+  source_reference: "Wikipedia, WOAH Aquatic Animal Health Code, and (where relevant) FAO fish-disease summaries (open-licence Config B)"
+  # root_path/chromadb_persist below are the runtime ChromaDB persistence dir,
+  # NOT the document source (docs live in src/fishdx/kb/documents/).
 
 # ═══════════════════════════════════════════════════════════════════
 # Data Protocol (§IV.A)

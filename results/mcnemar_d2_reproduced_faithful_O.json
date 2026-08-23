@@ -1,0 +1,88 @@
+{
+  "experiment": "mcnemar_d2_reproduced_faithful_O",
+  "reviewer_point": "R5.3 — actual 2x2 contingency tables from real paired D2 predictions",
+  "note": "FAITHFUL-𝒪 variant. Identical to mcnemar_d2_reproduced.json (full n=3,453, all 8 classes incl EUS, augmentations included, seed 42, cached captions) EXCEPT the Stage-3 evidence pool now follows ADR-0012e Option B: 𝒪 = caption ∪ top-1 retrieved KB doc text (evidence = caption + '\\n' + full text of the KB document for the retrieved top-1 class c1). By construction c1's own doc keywords then match, so S_d for c1 confirms the retrieval top-1 class (the deployed-pipeline mechanism). The original manuscript discordant counts are recorded under 'original_manuscript'.",
+  "metadata": {
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "device": "cuda:0",
+    "seed": 42,
+    "lambda_star": 0.7,
+    "retrieval_top_k": 5,
+    "retrieval_margin_theta": 0.02,
+    "scoring_disease_weights": {
+      "confirmed": 3,
+      "suspected": 2,
+      "mentioned": 1
+    },
+    "scoring_healthy_weights": {
+      "explicit": 2,
+      "negation": 1
+    },
+    "n_gallery": 1639,
+    "n_eval": 3453,
+    "n_d2_total": 3453,
+    "augmentations_included": true,
+    "eval_classes": [
+      "EUS",
+      "aeromoniasis",
+      "bacterial_gill",
+      "bacterial_red",
+      "fungal",
+      "healthy",
+      "parasitic",
+      "viral_white_tail"
+    ],
+    "n_eus_queries": 456,
+    "config_freeze_hash": "961d0a0934fa3c383cbf5e84d94c66ca3eb90da9634d2912109f6f61f9d82634",
+    "evidence_pool": "ADR-0012e Option B: caption ∪ top-1 KB doc text (caption + '\\n' + KB document body for retrieved class c1)",
+    "pipeline_forced_choice": "committed = 'healthy' if S_h > S_d else retrieval-top1 (lambda=0.7); no abstention",
+    "n_pipeline_healthy_overrides": 0
+  },
+  "forced_choice_DA": {
+    "knn_lambda_1.0": 0.8016,
+    "knn_lambda_0.7": 0.8048,
+    "pipeline": 0.8048
+  },
+  "table_a_pipeline_vs_knn_lambda0.7": {
+    "description": "McNemar: Pipeline (forced-choice) vs CLIP k-NN (k=1, lambda=0.7)",
+    "contingency_2x2": {
+      "both_correct": 2779,
+      "pipeline_correct_knn_wrong": 0,
+      "pipeline_wrong_knn_correct": 0,
+      "both_wrong": 674
+    },
+    "b_pipeline_correct_knn_wrong": 0,
+    "c_pipeline_wrong_knn_correct": 0,
+    "chi2_continuity_corrected": 0.0,
+    "p_value_two_tailed": 1.0,
+    "significant_at_0.05": false,
+    "n": 3453,
+    "original_manuscript": {
+      "b": 21,
+      "c": 40,
+      "chi2": 5.31,
+      "p": 0.021
+    }
+  },
+  "table_b_lambda0.7_vs_lambda1.0": {
+    "description": "McNemar: fused lambda=0.7 vs visual-only lambda=1.0 (both k-NN k=1)",
+    "contingency_2x2": {
+      "both_correct": 2709,
+      "lambda0.7_correct_lambda1.0_wrong": 70,
+      "lambda0.7_wrong_lambda1.0_correct": 59,
+      "both_wrong": 615
+    },
+    "b_lambda0.7_correct_lambda1.0_wrong": 70,
+    "c_lambda0.7_wrong_lambda1.0_correct": 59,
+    "chi2_continuity_corrected": 0.7752,
+    "p_value_two_tailed": 0.3786,
+    "significant_at_0.05": false,
+    "n": 3453,
+    "original_manuscript": {
+      "b": 20,
+      "c": 41,
+      "chi2": 6.56,
+      "p": 0.01
+    }
+  }
+}

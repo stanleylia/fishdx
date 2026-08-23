@@ -1,0 +1,22 @@
+{
+  "experiment": "d2_clean_mcnemar_k5",
+  "subset": "D1-disjoint clean D2 (cos<0.95)",
+  "n": 2628,
+  "test": "lambda0.7 k=5 vs lambda1.0 k=5 (majority vote), 8-class",
+  "DA_lambda0.7_k5": 0.7184,
+  "DA_lambda1.0_k5": 0.7074,
+  "contingency_2x2": {
+    "both_correct": 1784,
+    "l07_correct_l10_wrong": 104,
+    "l07_wrong_l10_correct": 75,
+    "both_wrong": 665
+  },
+  "b": 104,
+  "c": 75,
+  "chi2_cc": 4.3799,
+  "p_value": 0.0364,
+  "original_fullset": {
+    "p_full_n3453": 0.023,
+    "p_manuscript": 0.033
+  }
+}

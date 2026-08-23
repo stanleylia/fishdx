@@ -1,7 +1,7 @@
 """Image-gallery builder — ADR-0012d + Pattern G Layer 4.
 
 Constructs the ChromaDB ``image_gallery`` collection from a set of reference
-images per the paper §III-E architecture (1,747 D1 Train fused embeddings
+images per the paper §III-E architecture (1,639 encoded D1 Train fused embeddings
 at λ=0.7 fixed; embedding_source_type="fused"; seed=42 determinism).
 
 This module is **only** responsible for gallery construction; Layer 4
@@ -98,7 +98,7 @@ def build_image_gallery(
     Parameters
     ----------
     images : Iterable[GalleryImage]
-        Reference images (1,747 D1 Train per paper §IV-A Table 2). Each
+        Reference images (1,639 encoded D1 Train per paper §IV-A Table 2). Each
         must carry ``true_class`` (folder name) and ``doc_id`` (paper's
         7-class canonical label).
     florence, clip

@@ -1,0 +1,175 @@
+{
+  "experiment": "d2_clean_tables",
+  "dedup": "CLIP visual cosine < 0.95",
+  "seed": 42,
+  "n_clean": 2628,
+  "n_removed_dup": 845,
+  "n_eus_clean": 452,
+  "n_overlap_7class": 2176,
+  "table3": {
+    "Pipeline (\u03bb=0.7)": {
+      "overall_DA": 0.7424,
+      "overall_wilson": [
+        0.7253,
+        0.7587
+      ],
+      "overlap_DA": 0.8966,
+      "overlap_wilson": [
+        0.8831,
+        0.9087
+      ]
+    },
+    "kNN (\u03bb=0.7,k=1)": {
+      "overall_DA": 0.7424,
+      "overall_wilson": [
+        0.7253,
+        0.7587
+      ],
+      "overlap_DA": 0.8966,
+      "overlap_wilson": [
+        0.8831,
+        0.9087
+      ]
+    },
+    "kNN (\u03bb=1.0,k=1)": {
+      "overall_DA": 0.739,
+      "overall_wilson": [
+        0.7218,
+        0.7554
+      ],
+      "overlap_DA": 0.8925,
+      "overlap_wilson": [
+        0.8787,
+        0.9048
+      ]
+    },
+    "kNN (\u03bb=0.7,k=5)": {
+      "overall_DA": 0.7184,
+      "overall_wilson": [
+        0.7009,
+        0.7353
+      ],
+      "overlap_DA": 0.8676,
+      "overlap_wilson": [
+        0.8528,
+        0.8812
+      ]
+    },
+    "kNN (\u03bb=1.0,k=5)": {
+      "overall_DA": 0.7074,
+      "overall_wilson": [
+        0.6897,
+        0.7245
+      ],
+      "overlap_DA": 0.8543,
+      "overlap_wilson": [
+        0.8389,
+        0.8685
+      ]
+    },
+    "Caption-only (\u03bb=0.0,k=1)": {
+      "overall_DA": 0.4102,
+      "overall_wilson": [
+        0.3915,
+        0.4291
+      ],
+      "overlap_DA": 0.4954,
+      "overlap_wilson": [
+        0.4744,
+        0.5164
+      ]
+    }
+  },
+  "lambda_sweep_7class": {
+    "0.0": 0.4954,
+    "0.1": 0.5147,
+    "0.2": 0.5483,
+    "0.3": 0.6131,
+    "0.4": 0.6944,
+    "0.5": 0.7978,
+    "0.6": 0.8718,
+    "0.7": 0.8966,
+    "0.8": 0.9049,
+    "0.9": 0.9003,
+    "1.0": 0.8925
+  },
+  "table4_theta_sweep": {
+    "theta_0.00": {
+      "decisive_DA": 0.7424,
+      "decisive_boot_ci": [
+        0.726,
+        0.7588
+      ],
+      "coverage": 1.0,
+      "inconclusive_pct": 0.0,
+      "eus_interception": 0.0
+    },
+    "theta_0.01": {
+      "decisive_DA": 0.8237,
+      "decisive_boot_ci": [
+        0.8067,
+        0.8408
+      ],
+      "coverage": 0.7146,
+      "inconclusive_pct": 0.2854,
+      "eus_interception": 0.4779
+    },
+    "theta_0.02": {
+      "decisive_DA": 0.8879,
+      "decisive_boot_ci": [
+        0.8725,
+        0.9033
+      ],
+      "coverage": 0.5194,
+      "inconclusive_pct": 0.4806,
+      "eus_interception": 0.7257
+    },
+    "theta_0.05": {
+      "decisive_DA": 0.9588,
+      "decisive_boot_ci": [
+        0.9429,
+        0.9731
+      ],
+      "coverage": 0.2401,
+      "inconclusive_pct": 0.7599,
+      "eus_interception": 0.9425
+    }
+  },
+  "deferring_visual_knn_matched_coverage": {
+    "coverage": 0.5194,
+    "decisive_DA": 0.9026
+  },
+  "class_prototype_S9": {
+    "lambda_1.0": {
+      "class_prototype_DA": 0.5827,
+      "knn_DA": 0.8925
+    },
+    "lambda_0.7": {
+      "class_prototype_DA": 0.5901,
+      "knn_DA": 0.8966
+    },
+    "lambda_0.0": {
+      "class_prototype_DA": 0.4485,
+      "knn_DA": 0.4954
+    }
+  },
+  "modality": {
+    "caption_only": 0.4954,
+    "visual": 0.8925,
+    "fusion": 0.8966
+  },
+  "original_contaminated": {
+    "pipeline_overall": 0.811,
+    "knn07_overall": 0.817,
+    "knn10_overall": 0.819,
+    "visual_overlap": 0.934,
+    "fusion_overlap": 0.943,
+    "caption": 0.72,
+    "decisive_DA": 0.924,
+    "decisive_cov": 0.643,
+    "eus_interception": 0.679,
+    "lambda_opt": "0.8=0.947",
+    "deferring_knn": 0.934,
+    "prototype": "0.650 vs 0.943"
+  }
+}

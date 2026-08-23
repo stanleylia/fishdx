@@ -1,0 +1,44 @@
+{
+ "n": 1639,
+ "method": "leave-one-out, exclude gallery entries within visual cosine >= dedup of query",
+ "sensitivity": {
+  "0.99": {
+   "visual": 0.9262,
+   "fusion": 0.9274,
+   "caption": 0.5845,
+   "n_images_with_neardup": 12
+  },
+  "0.95": {
+   "visual": 0.9207,
+   "fusion": 0.9237,
+   "caption": 0.579,
+   "n_images_with_neardup": 112
+  },
+  "0.90": {
+   "visual": 0.9018,
+   "fusion": 0.9085,
+   "caption": 0.5546,
+   "n_images_with_neardup": 664
+  },
+  "0.85": {
+   "visual": 0.8035,
+   "fusion": 0.8371,
+   "caption": 0.5064,
+   "n_images_with_neardup": 1180
+  },
+  "0.80": {
+   "visual": 0.5894,
+   "fusion": 0.6547,
+   "caption": 0.4344,
+   "n_images_with_neardup": 1511
+  }
+ },
+ "headline_conservative": {
+  "dedup": 0.9,
+  "visual": 0.9018,
+  "fusion": 0.9085,
+  "caption": 0.5546,
+  "n_images_with_neardup": 664
+ },
+ "note": "byte-identical test=train leakage fully removed (D1 not used as test). Residual near-duplicate copies persist in the 0.90-0.95 band; below 0.90 the decline reflects removal of legitimate same-class images, not leakage. D1 is intrinsically redundant (40% within cos 0.90), hence development-only; D2 is the evaluation of record."
+}

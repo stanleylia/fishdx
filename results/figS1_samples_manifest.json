@@ -1,0 +1,37 @@
+{
+  "source": "manually verified raw D2 originals; all pass the border-replication screen (smear < 0.3)",
+  "selection": {
+    "Aeromoniasis": {
+      "file": "Bacterial diseases - Aeromoniasis_70.jpg",
+      "smear_score": -6.02
+    },
+    "Bacterial Gill Disease": {
+      "file": "Bacterial gill disease_45.jpg",
+      "smear_score": -5.61
+    },
+    "Bacterial Red Disease": {
+      "file": "Bacterial Red disease_143.jpg",
+      "smear_score": -0.34
+    },
+    "Fungal Saprolegniasis": {
+      "file": "Fungal diseases Saprolegniasis_33.jpg",
+      "smear_score": -2.52
+    },
+    "Healthy Fish": {
+      "file": "Healthy Fish_119.jpg",
+      "smear_score": -0.14
+    },
+    "Parasitic Diseases": {
+      "file": "Parasitic diseases_6.jpg",
+      "smear_score": -4.36
+    },
+    "Viral White Tail Disease": {
+      "file": "Viral diseases White tail disease_180.jpg",
+      "smear_score": -0.24
+    },
+    "EUS (D2-only, OOD)": {
+      "file": "EUS_1.jpg",
+      "smear_score": -0.45
+    }
+  }
+}

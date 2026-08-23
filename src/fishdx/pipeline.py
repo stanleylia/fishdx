@@ -7,7 +7,7 @@ ADR-0012d (P'-2):
                 → Pareidolia Eq. 1-4 correction on detected objects
     Stage 2  — CLIP text encode + image encode → λ-fusion (Eq. 5-7)
                 → ChromaStore Top-K query against ``image_gallery``
-                (1,747 D1 Train fused embeddings, paper §III-E target)
+                (1,639 encoded D1 Train fused embeddings, paper §III-E target)
                 → Algorithm 1 verification
     Stage 3  — top-1 retrieval's ``metadata['doc_id']`` resolves to the
                 in-memory KB doc (parsed from ADR-0007 Wikipedia files);
@@ -209,9 +209,10 @@ class Pipeline:
         # ONLY (ADR-0016): it flags low-confidence retrievals but does NOT alter
         # the Stage-3 decision, which uses the raw retrieval top-1 (matching
         # Fig. 1 and the reported analysis scripts).
-        retrieval_low_confidence = self._retrieval_confidence_indicator(candidates)
+        retrieval_score, retrieval_low_confidence = self._retrieval_confidence_indicator(candidates)
         _LOG.debug(
-            "retrieval-confidence indicator (auxiliary): low_confidence=%s",
+            "retrieval-confidence indicator (auxiliary): score=%.6f low_confidence=%s",
+            retrieval_score,
             retrieval_low_confidence,
         )
         stage2_ms = (time.perf_counter() - t_s2) * 1000
@@ -275,7 +276,7 @@ class Pipeline:
             corrected.append(obj.model_copy(update={"label": new_label}))
         return corrected, count
 
-    def _retrieval_confidence_indicator(self, candidates: list[RetrievedDoc]) -> bool:
+    def _retrieval_confidence_indicator(self, candidates: list[RetrievedDoc]) -> tuple[float, bool]:
         """Algorithm 1 — retrieval-confidence reweighting as an AUXILIARY indicator (ADR-0016).
 
         Runs the single-pass reweighting and reports whether it flags the retrieval
@@ -283,11 +284,26 @@ class Pipeline:
         which uses the raw retrieval top-1 (matching Fig. 1 and the reported scripts).
         """
         if not candidates:
-            return False
+            return 0.0, True
+        ranked = sorted(candidates, key=lambda c: c.similarity, reverse=True)
+        s1 = ranked[0].similarity
+        s2 = ranked[1].similarity if len(ranked) > 1 else s1
+        cfg = self._config.reweighting
+        low_confidence = s1 < cfg.similarity_threshold or (s1 - s2) < cfg.margin_threshold
         reweighted = reweight_candidates(candidates, self._config.reweighting)
-        return [c.doc_id for c in reweighted] != [c.doc_id for c in candidates]
+        score = reweighted[0].similarity_penalized if reweighted else 0.0
+        return float(score or 0.0), low_confidence
 
     def _score_and_decide(self, caption: str, candidates: list[RetrievedDoc]) -> DiagnosisResult:
+        if len(candidates) < 2:
+            return DiagnosisResult(
+                decision=DecisionEnum.INCONCLUSIVE,
+                disease_class=None,
+                score_healthy=0.0,
+                score_disease=0.0,
+                retrieval_margin=0.0,
+                inconclusive_reason="insufficient_candidates",
+            )
         top1 = candidates[0] if candidates else None
         top2 = candidates[1] if len(candidates) >= 2 else None
 

@@ -1,0 +1,610 @@
+{
+  "total_test_images": 350,
+  "near_dupes_detected": 350,
+  "near_dup_fraction": 1.0,
+  "assessment": "HIGH",
+  "assessment_message": "\u26a0\ufe0f  High duplication risk (>20%). D1 Test DA may be inflated.",
+  "near_dup_details": [
+    {
+      "test_file": "Bacterial Red disease (116).jpg",
+      "train_file": "Bacterial Red disease (116).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (117).jpg",
+      "train_file": "Bacterial Red disease (117).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (129).jpg",
+      "train_file": "Bacterial Red disease (129).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (130).jpg",
+      "train_file": "Bacterial Red disease (130).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial Red disease (143).jpg",
+      "train_file": "Bacterial Red disease (143).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (152).jpg",
+      "train_file": "Bacterial Red disease (152).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial Red disease (37).jpg",
+      "train_file": "Bacterial Red disease (37).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial Red disease (38).jpg",
+      "train_file": "Bacterial Red disease (38).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (39).jpg",
+      "train_file": "Bacterial Red disease (39).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.000000238418579
+    },
+    {
+      "test_file": "Bacterial Red disease (40).jpg",
+      "train_file": "Bacterial Red disease (40).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (41).jpg",
+      "train_file": "Bacterial Red disease (41).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (42).jpg",
+      "train_file": "Bacterial Red disease (42).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (43).jpg",
+      "train_file": "Bacterial Red disease (43).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (44).jpg",
+      "train_file": "Bacterial Red disease (44).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (45).jpg",
+      "train_file": "Bacterial Red disease (45).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998807907104
+    },
+    {
+      "test_file": "Bacterial Red disease (46).jpg",
+      "train_file": "Bacterial Red disease (46).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial Red disease (47).jpg",
+      "train_file": "Bacterial Red disease (47).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial Red disease (48).jpg",
+      "train_file": "Bacterial Red disease (48).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (49).jpg",
+      "train_file": "Bacterial Red disease (49).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998807907104
+    },
+    {
+      "test_file": "Bacterial Red disease (50).jpg",
+      "train_file": "Bacterial Red disease (50).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial Red disease (51).jpg",
+      "train_file": "Bacterial Red disease (51).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (52).jpg",
+      "train_file": "Bacterial Red disease (52).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (53).jpg",
+      "train_file": "Bacterial Red disease (53).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (54).jpg",
+      "train_file": "Bacterial Red disease (54).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (55).jpg",
+      "train_file": "Bacterial Red disease (55).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial Red disease (56).jpg",
+      "train_file": "Bacterial Red disease (56).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (57).jpg",
+      "train_file": "Bacterial Red disease (57).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (58).jpg",
+      "train_file": "Bacterial Red disease (58).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (59).jpg",
+      "train_file": "Bacterial Red disease (59).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998807907104
+    },
+    {
+      "test_file": "Bacterial Red disease (60).jpg",
+      "train_file": "Bacterial Red disease (60).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (61).jpg",
+      "train_file": "Bacterial Red disease (61).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial Red disease (62).jpg",
+      "train_file": "Bacterial Red disease (62).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (63).jpg",
+      "train_file": "Bacterial Red disease (63).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial Red disease (64).jpg",
+      "train_file": "Bacterial Red disease (64).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998807907104
+    },
+    {
+      "test_file": "Bacterial Red disease (65).jpg",
+      "train_file": "Bacterial Red disease (65).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (66).jpg",
+      "train_file": "Bacterial Red disease (66).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial Red disease (67).jpg",
+      "train_file": "Bacterial Red disease (67).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (68).jpg",
+      "train_file": "Bacterial Red disease (68).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (69).jpg",
+      "train_file": "Bacterial Red disease (69).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial Red disease (70).jpg",
+      "train_file": "Bacterial Red disease (70).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (71).jpg",
+      "train_file": "Bacterial Red disease (71).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial Red disease (72).jpg",
+      "train_file": "Bacterial Red disease (72).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (73).jpg",
+      "train_file": "Bacterial Red disease (73).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (74).jpg",
+      "train_file": "Bacterial Red disease (74).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (75).jpg",
+      "train_file": "Bacterial Red disease (75).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (76).jpg",
+      "train_file": "Bacterial Red disease (76).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998807907104
+    },
+    {
+      "test_file": "Bacterial Red disease (77).jpg",
+      "train_file": "Bacterial Red disease (15).jpg",
+      "hamming_distance": 2,
+      "cosine_similarity": 0.7767276167869568
+    },
+    {
+      "test_file": "Bacterial Red disease (83).jpg",
+      "train_file": "Bacterial Red disease (83).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial Red disease (87).jpg",
+      "train_file": "Bacterial Red disease (87).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial Red disease (95).jpg",
+      "train_file": "Bacterial Red disease (95).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (100).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (100).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (102).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (102).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998211860657
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (103).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (103).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (104).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (104).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998807907104
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (105).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (105).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (106).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (106).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (107).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (107).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (108).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (108).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (109).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (109).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.000000238418579
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (110).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (110).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (111).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (111).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (42).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (42).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998807907104
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (43).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (43).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (44).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (44).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (45).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (45).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (46).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (46).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (47).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (47).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (48).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (48).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (49).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (49).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (50).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (50).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998807907104
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (51).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (51).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998807907104
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (52).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (52).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (53).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (53).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (54).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (54).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (55).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (55).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (56).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (56).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (57).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (57).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (58).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (58).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (59).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (59).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998807907104
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (61).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (61).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (62).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (62).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (63).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (63).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (64).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (64).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998807907104
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (65).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (65).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (66).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (66).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (67).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (67).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (68).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (68).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (77).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (77).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (78).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (78).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999998211860657
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (79).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (79).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (89).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (89).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 0.9999999403953552
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (90).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (90).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (91).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (91).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (92).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (92).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (93).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (93).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0000001192092896
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (94).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (94).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (95).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (95).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (96).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (96).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (97).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (97).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    },
+    {
+      "test_file": "Bacterial diseases - Aeromoniasis (98).jpg",
+      "train_file": "Bacterial diseases - Aeromoniasis (98).jpg",
+      "hamming_distance": 0,
+      "cosine_similarity": 1.0
+    }
+  ],
+  "cleaned_test_file_paths": []
+}

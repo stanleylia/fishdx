@@ -2,8 +2,8 @@
 doc_id: COL
 disease_class: Bacterial Gill Disease
 title: Bacterial Gill Disease — Flavobacterium branchiophilum / columnare
-source_reference: Wikipedia "Columnaris" + Wikipedia "Bacterial gill disease" + WOAH (oldid pending curator capture)
-source_url: https://en.wikipedia.org/w/index.php?title=Columnaris&oldid=PENDING_CURATOR_CAPTURE
+source_reference: Wikipedia "Columnaris" + Wikipedia "Bacterial gill disease" + WOAH
+source_url: https://en.wikipedia.org/w/index.php?title=Columnaris
 substitution_date: 2026-04-18
 rewrite_date: 2026-04-19
 substituted_under_adr: [0007, 0012a]

@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite the paper below."
+title: "fishdx — Visual embedding retrieval for the perception–cognition gap in aquatic pathology (code deposit)"
+abstract: >-
+  Three-stage deterministic vision-language pipeline (Florence-2 perception with
+  two-tier pareidolia correction, lambda-weighted CLIP fusion retrieval over a
+  fused-embedding image gallery, and evidence-pool scoring with a margin-gated
+  three-way decision) for training-free, retrieval-augmented fine-grained fish
+  disease classification. This is the code deposit accompanying the manuscript.
+type: software
+authors:
+  - family-names: Liao
+    given-names: Yen-Hsiang
+  - family-names: Shih
+    given-names: Chao-Feng
+  - family-names: Chang
+    given-names: Chung-Cheng
+version: "0.1.0"
+license: AGPL-3.0-or-later
+repository-code: "https://github.com/stanleylia/fishdx"
+doi: 10.5281/zenodo.21415577
+keywords:
+  - CLIP
+  - Florence-2
+  - retrieval-augmented generation
+  - aquaculture
+  - zero-shot classification
+  - selective prediction
+preferred-citation:
+  type: article
+  title: "Visual embedding retrieval improves fish-disease classification when generated captions lack diagnostic vocabulary"
+  authors:
+    - family-names: Liao
+      given-names: Yen-Hsiang
+    - family-names: Shih
+      given-names: Chao-Feng
+    - family-names: Chang
+      given-names: Chung-Cheng
+  year: 2026

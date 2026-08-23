@@ -1,0 +1,268 @@
+{
+  "experiment": "EXP-18",
+  "name": "Verification Loop Adversarial Test",
+  "purpose": "Demonstrate that retrieval quality degrades for out-of-KB diseases, providing the signal that triggers the Verification Loop's penalty mechanism",
+  "lambda": 0.7,
+  "verification_config": {
+    "theta_retrieval": 0.85,
+    "theta_margin": 0.02,
+    "penalty_factor": 0.5,
+    "min_score": 0.3
+  },
+  "scenario_a": {
+    "description": "D1 test → D1 KB (in-distribution, matched)",
+    "total": 697,
+    "correct": 696,
+    "predictions": {
+      "Parasitic diseases": 101,
+      "Bacterial diseases - Aeromoniasis": 100,
+      "Bacterial gill disease": 100,
+      "Fungal diseases Saprolegniasis": 100,
+      "Healthy Fish": 100,
+      "Bacterial Red disease": 99,
+      "Viral diseases White tail disease": 97
+    },
+    "below_theta": 0,
+    "below_margin": 24,
+    "penalty_would_apply": 24,
+    "item_would_survive": 697,
+    "da": 0.9986,
+    "sim_mean": 1.0,
+    "sim_std": 0.0,
+    "sim_median": 1.0,
+    "sim_q25": 1.0,
+    "sim_q75": 1.0,
+    "margin_mean": 0.1116,
+    "margin_std": 0.0566,
+    "penalty_rate": 0.0344,
+    "survival_rate": 1.0,
+    "per_class": {
+      "Bacterial Red disease": {
+        "total": 100,
+        "correct": 99,
+        "da": 0.99,
+        "sim_mean": 1.0,
+        "sim_std": 0.0,
+        "margin_mean": 0.0914,
+        "penalty_count": 6,
+        "penalty_rate": 0.06
+      },
+      "Bacterial diseases - Aeromoniasis": {
+        "total": 100,
+        "correct": 100,
+        "da": 1.0,
+        "sim_mean": 1.0,
+        "sim_std": 0.0,
+        "margin_mean": 0.1249,
+        "penalty_count": 4,
+        "penalty_rate": 0.04
+      },
+      "Bacterial gill disease": {
+        "total": 100,
+        "correct": 100,
+        "da": 1.0,
+        "sim_mean": 1.0,
+        "sim_std": 0.0,
+        "margin_mean": 0.1069,
+        "penalty_count": 0,
+        "penalty_rate": 0.0
+      },
+      "Fungal diseases Saprolegniasis": {
+        "total": 100,
+        "correct": 100,
+        "da": 1.0,
+        "sim_mean": 1.0,
+        "sim_std": 0.0,
+        "margin_mean": 0.1319,
+        "penalty_count": 1,
+        "penalty_rate": 0.01
+      },
+      "Healthy Fish": {
+        "total": 100,
+        "correct": 100,
+        "da": 1.0,
+        "sim_mean": 1.0,
+        "sim_std": 0.0,
+        "margin_mean": 0.0919,
+        "penalty_count": 4,
+        "penalty_rate": 0.04
+      },
+      "Parasitic diseases": {
+        "total": 100,
+        "correct": 100,
+        "da": 1.0,
+        "sim_mean": 1.0,
+        "sim_std": 0.0,
+        "margin_mean": 0.1227,
+        "penalty_count": 4,
+        "penalty_rate": 0.04
+      },
+      "Viral diseases White tail disease": {
+        "total": 97,
+        "correct": 97,
+        "da": 1.0,
+        "sim_mean": 1.0,
+        "sim_std": 0.0,
+        "margin_mean": 0.1115,
+        "penalty_count": 5,
+        "penalty_rate": 0.0515
+      }
+    }
+  },
+  "scenario_b": {
+    "description": "EUS → D1 KB (adversarial, no EUS in KB)",
+    "total": 400,
+    "correct": 0,
+    "predictions": {
+      "Bacterial diseases - Aeromoniasis": 113,
+      "Bacterial gill disease": 83,
+      "Healthy Fish": 70,
+      "Viral diseases White tail disease": 54,
+      "Bacterial Red disease": 52,
+      "Fungal diseases Saprolegniasis": 23,
+      "Parasitic diseases": 5
+    },
+    "below_theta": 349,
+    "below_margin": 277,
+    "penalty_would_apply": 376,
+    "item_would_survive": 400,
+    "da": 0.0,
+    "sim_mean": 0.7877,
+    "sim_std": 0.062,
+    "sim_median": 0.7891,
+    "sim_q25": 0.7464,
+    "sim_q75": 0.8287,
+    "margin_mean": 0.0171,
+    "margin_std": 0.0175,
+    "penalty_rate": 0.94,
+    "survival_rate": 1.0,
+    "per_class": {
+      "EUS": {
+        "total": 400,
+        "correct": 0,
+        "da": 0.0,
+        "sim_mean": 0.7877,
+        "sim_std": 0.062,
+        "margin_mean": 0.0171,
+        "penalty_count": 376,
+        "penalty_rate": 0.94
+      }
+    }
+  },
+  "scenario_c": {
+    "description": "D2 overlap classes → D1 KB (cross-dataset, same classes)",
+    "total": 2800,
+    "correct": 2614,
+    "predictions": {
+      "Bacterial diseases - Aeromoniasis": 460,
+      "Viral diseases White tail disease": 426,
+      "Fungal diseases Saprolegniasis": 419,
+      "Bacterial Red disease": 405,
+      "Bacterial gill disease": 400,
+      "Parasitic diseases": 380,
+      "Healthy Fish": 310
+    },
+    "below_theta": 1025,
+    "below_margin": 866,
+    "penalty_would_apply": 1321,
+    "item_would_survive": 2800,
+    "da": 0.9336,
+    "sim_mean": 0.8804,
+    "sim_std": 0.0861,
+    "sim_median": 0.8793,
+    "sim_q25": 0.8171,
+    "sim_q75": 0.9543,
+    "margin_mean": 0.0576,
+    "margin_std": 0.0517,
+    "penalty_rate": 0.4718,
+    "survival_rate": 1.0,
+    "per_class": {
+      "Bacterial Red disease": {
+        "total": 400,
+        "correct": 384,
+        "da": 0.96,
+        "sim_mean": 0.8681,
+        "sim_std": 0.0778,
+        "margin_mean": 0.0397,
+        "penalty_count": 224,
+        "penalty_rate": 0.56
+      },
+      "Bacterial diseases - Aeromoniasis": {
+        "total": 400,
+        "correct": 386,
+        "da": 0.965,
+        "sim_mean": 0.872,
+        "sim_std": 0.0796,
+        "margin_mean": 0.0593,
+        "penalty_count": 183,
+        "penalty_rate": 0.4575
+      },
+      "Bacterial gill disease": {
+        "total": 400,
+        "correct": 387,
+        "da": 0.9675,
+        "sim_mean": 0.9387,
+        "sim_std": 0.0766,
+        "margin_mean": 0.0792,
+        "penalty_count": 91,
+        "penalty_rate": 0.2275
+      },
+      "Fungal diseases Saprolegniasis": {
+        "total": 400,
+        "correct": 391,
+        "da": 0.9775,
+        "sim_mean": 0.874,
+        "sim_std": 0.0875,
+        "margin_mean": 0.0651,
+        "penalty_count": 199,
+        "penalty_rate": 0.4975
+      },
+      "Healthy Fish": {
+        "total": 400,
+        "correct": 308,
+        "da": 0.77,
+        "sim_mean": 0.8528,
+        "sim_std": 0.0829,
+        "margin_mean": 0.0452,
+        "penalty_count": 239,
+        "penalty_rate": 0.5975
+      },
+      "Parasitic diseases": {
+        "total": 400,
+        "correct": 374,
+        "da": 0.935,
+        "sim_mean": 0.8704,
+        "sim_std": 0.0904,
+        "margin_mean": 0.0567,
+        "penalty_count": 200,
+        "penalty_rate": 0.5
+      },
+      "Viral diseases White tail disease": {
+        "total": 400,
+        "correct": 384,
+        "da": 0.96,
+        "sim_mean": 0.8868,
+        "sim_std": 0.0799,
+        "margin_mean": 0.0578,
+        "penalty_count": 185,
+        "penalty_rate": 0.4625
+      }
+    }
+  },
+  "statistical_test": {
+    "test": "Mann-Whitney U (one-sided: D1 > EUS)",
+    "U": 278800.0,
+    "p_value": 2.1246217490832062e-169,
+    "significant": true,
+    "effect_size_r": -1.0
+  },
+  "key_findings": [
+    "In-distribution (D1→D1) sim_mean=1.0 vs adversarial (EUS→D1) sim_mean=0.7877 (Δ=+0.2123)",
+    "Penalty activation rate: D1=3.4% vs EUS=94.0% (Δ=+90.6%)",
+    "Mann-Whitney U confirms significantly lower similarity for EUS (p=2.12e-169)",
+    "EUS images misclassified primarily as: ['Bacterial diseases - Aeromoniasis', 'Bacterial gill disease', 'Healthy Fish']",
+    "Verification Loop would detect KB mismatch via low similarity + narrow margin signals"
+  ],
+  "total_time_s": 0.7,
+  "timestamp": "2026-03-01 13:29:12"
+}

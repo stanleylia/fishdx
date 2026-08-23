@@ -1,0 +1,80 @@
+{
+  "caption_quality": {
+    "total_captions": 1537,
+    "successful_captions": 1537,
+    "failed_captions": 0,
+    "avg_caption_length": 84.23227065712427,
+    "captions_with_disease_keywords": 1459,
+    "keyword_coverage_percent": 94.92517891997397,
+    "sample_captions": [
+      {
+        "image": "Bacterial Red disease_100.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a person's hand holding a small fish. The fish appears to be a type of fish, possibly a mackerel, with a round body and a pointed snout. It has a white body with black spots and a yellow dorsal fin. The body of the fish is covered in small hairs, which are visible on the top and bottom of its head. The person's fingers are gently cradling the fish, and the background is blurred, making the fish the focal point of the image.",
+        "length": 89
+      },
+      {
+        "image": "Bacterial Red disease_101.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a person's hand holding a small bird. The bird appears to be a guinea pig, with white fur and a yellow beak. It is looking directly at the camera with its mouth slightly open, as if it is about to take a bite out of something. The background is blurred, but it seems like the person is standing in front of a white wall. The image is slightly out of focus, making it difficult to make out any details.",
+        "length": 85
+      },
+      {
+        "image": "Bacterial Red disease_102.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a person's hand holding a small object. The object appears to be a piece of paper or a notebook, with a grid-like pattern on the bottom. The person's fingers are visible, and they are holding the object with both hands. The background is blurred, but it seems like the person is in a room with a white wall and a window. The image is taken from a top-down perspective, looking down on the object.",
+        "length": 80
+      },
+      {
+        "image": "Bacterial Red disease_11.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image shows a close-up of a fish hanging from a window sill. The fish appears to be a catfish, with a long, slender body and a pointed head. It has a green body with a red stripe running down its back. The tail of the fish is visible, and it is hanging upside down from the window sill with its mouth open. The window sill is made of wood, and there is a white railing visible in the background. The image is taken from a low angle, looking up at the fish.",
+        "length": 93
+      },
+      {
+        "image": "Bacterial Red disease_112.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a green and yellow striped object. The object appears to be made of plastic or a similar material and has a rectangular shape with rounded edges. On the top left corner of the object, there is a small red dot, which could be a symbol or a logo. The red dot is slightly larger than the green one and is slightly smaller than the yellow one. The background is white, making the object stand out.",
+        "length": 81
+      },
+      {
+        "image": "Bacterial Red disease_114.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a plant with long, thin, green leaves. The leaves are arranged in a vertical line, with the topmost leaf being the largest and the bottommost being the smallest. The plant appears to be a type of fennel, with a round, bulbous shape and a pointed tip. The background is white, making the plant stand out. The image is slightly blurred, giving it a dreamy, ethereal quality.",
+        "length": 72
+      },
+      {
+        "image": "Bacterial Red disease_115.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a fish, specifically a triggerfish. The fish is facing towards the right side of the image, with its body slightly angled towards the left side. The body of the fish is predominantly white with black stripes running horizontally across its body. The stripes are evenly spaced and run horizontally across the body, creating a striped pattern. The fins are a lighter shade of green and the tail is a darker shade of orange. The background is white, making the fish stand out.",
+        "length": 88
+      },
+      {
+        "image": "Bacterial Red disease_116.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a fish's head. The fish appears to be a type of freshwater fish, with a round body and a pointed snout. The body of the fish is covered in small bumps and ridges, giving it a textured appearance. The fins are long and thin, and the tail is slightly curved. The background is white, making the fish stand out. The image is slightly blurred, making it difficult to make out any details.",
+        "length": 78
+      },
+      {
+        "image": "Bacterial Red disease_119.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of two airplanes flying in the sky. The airplanes are white in color and appear to be in motion. They are flying side by side, with their wings spread wide and their engines roaring. The background is blurred, but it appears to be an aerial view of a cityscape with tall buildings and trees. The image is taken from a low angle, looking up at the airplanes. There are two red circles on the airplanes, one on each side of the image, which could be blood stains or blood stains.",
+        "length": 95
+      },
+      {
+        "image": "Bacterial Red disease_122.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a person's hand holding a blue plastic container. The container appears to be filled with water and there is a small amount of dirt or debris scattered around it. The person is wearing a purple shirt and blue jeans. The background is blurred, but it seems to be a wooden surface. The image is taken from a low angle, looking up at the container.",
+        "length": 70
+      }
+    ]
+  },
+  "embedding_quality": {
+    "intra_class_distance_mean": 0.4516435154154897,
+    "inter_class_distance_mean": 0.4889852121472359,
+    "separability_ratio": 1.0826795812564556,
+    "separability_assessment": "POOR"
+  },
+  "verdict": "text_insufficient",
+  "timestamp": "2026-07-03 01:47:18 UTC"
+}

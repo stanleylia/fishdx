@@ -1,0 +1,19 @@
+{
+  "experiment": "florence2_only_baseline",
+  "reviewer_point": "R3.6 — Florence-2-only zero-shot (caption keyword classification, no CLIP)",
+  "method": "predicted class = argmax over 8 KB keyword sets of caption keyword occurrences",
+  "caption_source": "results/e3_noaug_captions_log.json (D2 noaug, real Florence-2)",
+  "n": 1537,
+  "DA_8_classes": 0.0423,
+  "DA_7_shared": 0.0357,
+  "prediction_distribution": {
+    "Parasitic Diseases": 383,
+    "UNMATCHED": 1060,
+    "Healthy Fish": 12,
+    "Bacterial Red Disease": 54,
+    "Epizootic Ulcerative Syndrome": 25,
+    "Fungal Saprolegniasis": 1,
+    "Viral White Tail Disease": 2
+  },
+  "reference": "consistent with the corrected 0.2% keyword SCA (originally reported as 3.7%); far below visual retrieval 0.893 and the full pipeline"
+}

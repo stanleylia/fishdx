@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """EXP-10: RAG Robustness Under Knowledge Base Scale.
 
+DEPOSIT NOTE — EXPLORATORY / SIMULATED SCAFFOLD. This script contains simulated or placeholder logic and does not perform a live pipeline run; its output is NOT shipped in results/ and backs NO number reported in the manuscript. Retained only for transparency about exploratory scaffolding.
+
 Tests whether λ-Weighted Fusion Embedding maintains retrieval quality
 when the knowledge base is expanded from 8 to 50/100 documents with
 distractor entries.

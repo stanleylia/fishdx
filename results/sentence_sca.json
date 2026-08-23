@@ -1,0 +1,7 @@
+{
+  "experiment": "sentence_sca",
+  "n": 1747,
+  "n_phrases": 76,
+  "mean_max_cos": 0.445,
+  "scorer": "MiniLM caption vs 76 Confirmed phrases, mean of per-caption max cosine"
+}

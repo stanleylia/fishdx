@@ -1,0 +1,73 @@
+{
+ "superseded_by": "d2_clean_tables.json -> lambda_sweep_7class (source of record for Supplementary Note S9 / Fig. S2); this file is a pre-deduplication scaffold with a different sample (n_query=1242) and DOES NOT match the manuscript values (caption-only 0.495, lambda*=0.7 -> 0.897). Not used in the manuscript.",
+ "experiment": "lambda_d2_ablation (leak-free D2 query -> D1 gallery)",
+ "retrieval": "top-1 cosine, 7 shared classes (EUS excluded)",
+ "n_gallery": 1639,
+ "n_query_7class": 1242,
+ "lambda_curve": [
+  {
+   "lambda": 0.0,
+   "forced_choice_DA": 0.7198
+  },
+  {
+   "lambda": 0.1,
+   "forced_choice_DA": 0.7343
+  },
+  {
+   "lambda": 0.2,
+   "forced_choice_DA": 0.7633
+  },
+  {
+   "lambda": 0.3,
+   "forced_choice_DA": 0.7947
+  },
+  {
+   "lambda": 0.4,
+   "forced_choice_DA": 0.843
+  },
+  {
+   "lambda": 0.5,
+   "forced_choice_DA": 0.9114
+  },
+  {
+   "lambda": 0.6,
+   "forced_choice_DA": 0.9404
+  },
+  {
+   "lambda": 0.7,
+   "forced_choice_DA": 0.9428
+  },
+  {
+   "lambda": 0.8,
+   "forced_choice_DA": 0.9469
+  },
+  {
+   "lambda": 0.9,
+   "forced_choice_DA": 0.9428
+  },
+  {
+   "lambda": 1.0,
+   "forced_choice_DA": 0.9396
+  }
+ ],
+ "best_lambda_on_D2": 0.8,
+ "best_DA_on_D2": 0.9469,
+ "paper_lambda": 0.7,
+ "DA_at_paper_lambda": 0.9428,
+ "visual_only_DA": 0.9396,
+ "caption_only_DA": 0.7198,
+ "class_prototype_baseline": {
+  "lambda_1.0": {
+   "knn_k1_DA": 0.9396,
+   "class_prototype_DA": 0.6425
+  },
+  "lambda_0.7": {
+   "knn_k1_DA": 0.9428,
+   "class_prototype_DA": 0.6498
+  },
+  "lambda_0.0": {
+   "knn_k1_DA": 0.7198,
+   "class_prototype_DA": 0.537
+  }
+ }
+}

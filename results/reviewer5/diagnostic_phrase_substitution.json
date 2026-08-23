@@ -1,0 +1,390 @@
+{
+  "experiment": "r5_diagnostic_phrase_substitution",
+  "reviewer_comment": "5-1(3): controlled diagnostic-phrase substitution as an SCA proxy",
+  "oracle_warning": "condition B selects the inserted phrase using the reference label; it probes pathway sensitivity and is NOT deployable classification performance",
+  "corpus": "results/e3_noaug_captions_log.json (the set used for the published caption-to-KB DA = 0.167 baseline)",
+  "n_captions": 1537,
+  "seed": 42,
+  "encoder": "ViT-B-32/laion2b_s34b_b79k",
+  "insertion": "Primary BP/CP/DP conditions prepend one length-matched phrase; secondary B/C/D conditions append it. BP versus CP/DP controls insertion position and approximate length. BP versus A also changes which caption-tail tokens survive the 77-token CLIP limit.",
+  "conditions": {
+    "A": {
+      "kb_top1_accuracy": 0.1672,
+      "kb_mrr": 0.3721,
+      "kb_mean_rank": 4.316,
+      "caption_gallery_top1_accuracy_7shared": 0.7147,
+      "keyword_sca_pct": 0.244,
+      "mean_caption_words": 84.23
+    },
+    "B": {
+      "kb_top1_accuracy": 0.1685,
+      "kb_mrr": 0.3737,
+      "kb_mean_rank": 4.306,
+      "caption_gallery_top1_accuracy_7shared": 0.7139,
+      "keyword_sca_pct": 4.992,
+      "mean_caption_words": 89.26
+    },
+    "C": {
+      "kb_top1_accuracy": 0.1666,
+      "kb_mrr": 0.3721,
+      "kb_mean_rank": 4.317,
+      "caption_gallery_top1_accuracy_7shared": 0.7147,
+      "keyword_sca_pct": 5.037,
+      "mean_caption_words": 89.24
+    },
+    "D": {
+      "kb_top1_accuracy": 0.1672,
+      "kb_mrr": 0.3728,
+      "kb_mean_rank": 4.312,
+      "caption_gallery_top1_accuracy_7shared": 0.7155,
+      "keyword_sca_pct": 0.234,
+      "mean_caption_words": 89.26
+    },
+    "BP": {
+      "kb_top1_accuracy": 0.2785,
+      "kb_mrr": 0.4665,
+      "kb_mean_rank": 3.625,
+      "caption_gallery_top1_accuracy_7shared": 0.6949,
+      "keyword_sca_pct": 4.992,
+      "mean_caption_words": 89.26
+    },
+    "CP": {
+      "kb_top1_accuracy": 0.1444,
+      "kb_mrr": 0.3619,
+      "kb_mean_rank": 4.335,
+      "caption_gallery_top1_accuracy_7shared": 0.6902,
+      "keyword_sca_pct": 5.037,
+      "mean_caption_words": 89.24
+    },
+    "DP": {
+      "kb_top1_accuracy": 0.162,
+      "kb_mrr": 0.3725,
+      "kb_mean_rank": 4.262,
+      "caption_gallery_top1_accuracy_7shared": 0.7147,
+      "keyword_sca_pct": 0.234,
+      "mean_caption_words": 89.26
+    },
+    "K1": {
+      "kb_top1_accuracy": 0.1705,
+      "kb_mrr": 0.3747,
+      "kb_mean_rank": 4.304,
+      "caption_gallery_top1_accuracy_7shared": 0.7155,
+      "keyword_sca_pct": 5.029,
+      "mean_caption_words": 89.28
+    },
+    "K2": {
+      "kb_top1_accuracy": 0.1705,
+      "kb_mrr": 0.3747,
+      "kb_mean_rank": 4.303,
+      "caption_gallery_top1_accuracy_7shared": 0.7155,
+      "keyword_sca_pct": 9.365,
+      "mean_caption_words": 91.3
+    },
+    "K3": {
+      "kb_top1_accuracy": 0.1705,
+      "kb_mrr": 0.3747,
+      "kb_mean_rank": 4.303,
+      "caption_gallery_top1_accuracy_7shared": 0.7155,
+      "keyword_sca_pct": 13.297,
+      "mean_caption_words": 93.33
+    },
+    "K5": {
+      "kb_top1_accuracy": 0.1705,
+      "kb_mrr": 0.3747,
+      "kb_mean_rank": 4.303,
+      "caption_gallery_top1_accuracy_7shared": 0.7155,
+      "keyword_sca_pct": 20.16,
+      "mean_caption_words": 97.38
+    },
+    "Kall": {
+      "kb_top1_accuracy": 0.1705,
+      "kb_mrr": 0.3747,
+      "kb_mean_rank": 4.303,
+      "caption_gallery_top1_accuracy_7shared": 0.7155,
+      "keyword_sca_pct": 31.617,
+      "mean_caption_words": 105.95
+    },
+    "KP1": {
+      "kb_top1_accuracy": 0.2889,
+      "kb_mrr": 0.4716,
+      "kb_mean_rank": 3.627,
+      "caption_gallery_top1_accuracy_7shared": 0.7029,
+      "keyword_sca_pct": 5.029,
+      "mean_caption_words": 89.28
+    },
+    "KP2": {
+      "kb_top1_accuracy": 0.3455,
+      "kb_mrr": 0.5202,
+      "kb_mean_rank": 3.275,
+      "caption_gallery_top1_accuracy_7shared": 0.6664,
+      "keyword_sca_pct": 9.365,
+      "mean_caption_words": 91.3
+    },
+    "KP3": {
+      "kb_top1_accuracy": 0.404,
+      "kb_mrr": 0.5702,
+      "kb_mean_rank": 2.953,
+      "caption_gallery_top1_accuracy_7shared": 0.6315,
+      "keyword_sca_pct": 13.297,
+      "mean_caption_words": 93.33
+    },
+    "KP5": {
+      "kb_top1_accuracy": 0.501,
+      "kb_mrr": 0.6478,
+      "kb_mean_rank": 2.537,
+      "caption_gallery_top1_accuracy_7shared": 0.561,
+      "keyword_sca_pct": 20.16,
+      "mean_caption_words": 97.38
+    },
+    "KPall": {
+      "kb_top1_accuracy": 0.6897,
+      "kb_mrr": 0.7754,
+      "kb_mean_rank": 2.052,
+      "caption_gallery_top1_accuracy_7shared": 0.4509,
+      "keyword_sca_pct": 31.617,
+      "mean_caption_words": 105.95
+    }
+  },
+  "dose_response_appended": {
+    "K1": {
+      "kb_top1_accuracy": 0.1705,
+      "kb_mrr": 0.3747,
+      "kb_mean_rank": 4.304,
+      "caption_gallery_top1_accuracy_7shared": 0.7155,
+      "keyword_sca_pct": 5.029,
+      "mean_caption_words": 89.28
+    },
+    "K2": {
+      "kb_top1_accuracy": 0.1705,
+      "kb_mrr": 0.3747,
+      "kb_mean_rank": 4.303,
+      "caption_gallery_top1_accuracy_7shared": 0.7155,
+      "keyword_sca_pct": 9.365,
+      "mean_caption_words": 91.3
+    },
+    "K3": {
+      "kb_top1_accuracy": 0.1705,
+      "kb_mrr": 0.3747,
+      "kb_mean_rank": 4.303,
+      "caption_gallery_top1_accuracy_7shared": 0.7155,
+      "keyword_sca_pct": 13.297,
+      "mean_caption_words": 93.33
+    },
+    "K5": {
+      "kb_top1_accuracy": 0.1705,
+      "kb_mrr": 0.3747,
+      "kb_mean_rank": 4.303,
+      "caption_gallery_top1_accuracy_7shared": 0.7155,
+      "keyword_sca_pct": 20.16,
+      "mean_caption_words": 97.38
+    },
+    "Kall": {
+      "kb_top1_accuracy": 0.1705,
+      "kb_mrr": 0.3747,
+      "kb_mean_rank": 4.303,
+      "caption_gallery_top1_accuracy_7shared": 0.7155,
+      "keyword_sca_pct": 31.617,
+      "mean_caption_words": 105.95
+    }
+  },
+  "dose_response_prepended": {
+    "KP1": {
+      "kb_top1_accuracy": 0.2889,
+      "kb_mrr": 0.4716,
+      "kb_mean_rank": 3.627,
+      "caption_gallery_top1_accuracy_7shared": 0.7029,
+      "keyword_sca_pct": 5.029,
+      "mean_caption_words": 89.28
+    },
+    "KP2": {
+      "kb_top1_accuracy": 0.3455,
+      "kb_mrr": 0.5202,
+      "kb_mean_rank": 3.275,
+      "caption_gallery_top1_accuracy_7shared": 0.6664,
+      "keyword_sca_pct": 9.365,
+      "mean_caption_words": 91.3
+    },
+    "KP3": {
+      "kb_top1_accuracy": 0.404,
+      "kb_mrr": 0.5702,
+      "kb_mean_rank": 2.953,
+      "caption_gallery_top1_accuracy_7shared": 0.6315,
+      "keyword_sca_pct": 13.297,
+      "mean_caption_words": 93.33
+    },
+    "KP5": {
+      "kb_top1_accuracy": 0.501,
+      "kb_mrr": 0.6478,
+      "kb_mean_rank": 2.537,
+      "caption_gallery_top1_accuracy_7shared": 0.561,
+      "keyword_sca_pct": 20.16,
+      "mean_caption_words": 97.38
+    },
+    "KPall": {
+      "kb_top1_accuracy": 0.6897,
+      "kb_mrr": 0.7754,
+      "kb_mean_rank": 2.052,
+      "caption_gallery_top1_accuracy_7shared": 0.4509,
+      "keyword_sca_pct": 31.617,
+      "mean_caption_words": 105.95
+    }
+  },
+  "truncation_note": "96.7% of the Florence-2 captions already reach the CLIP 77-token limit, so appended text never reaches the encoder. The prepended arm is therefore the primary analysis; the appended arm is retained because its null result documents the truncation mechanism.",
+  "dose_note": "K1..Kall insert k Confirmed phrases of the TRUE class; all are oracle interventions. Kall is the per-caption analogue of the diagnostic-rich oracle query control, which reaches 8/8 when the caption is replaced entirely by diagnostic text.",
+  "paired_contrasts": {
+    "B_vs_A": {
+      "contrast": "B vs A",
+      "kb_top1_delta": 0.0013,
+      "mcnemar_b": 2,
+      "mcnemar_c": 0,
+      "mcnemar_exact_p": 0.5,
+      "mrr_delta": 0.0016,
+      "mrr_delta_ci95": [
+        0.0004,
+        0.003
+      ]
+    },
+    "B_vs_C": {
+      "contrast": "B vs C",
+      "kb_top1_delta": 0.002,
+      "mcnemar_b": 3,
+      "mcnemar_c": 0,
+      "mcnemar_exact_p": 0.25,
+      "mrr_delta": 0.0016,
+      "mrr_delta_ci95": [
+        0.0003,
+        0.0031
+      ]
+    },
+    "B_vs_D": {
+      "contrast": "B vs D",
+      "kb_top1_delta": 0.0013,
+      "mcnemar_b": 2,
+      "mcnemar_c": 0,
+      "mcnemar_exact_p": 0.5,
+      "mrr_delta": 0.0009,
+      "mrr_delta_ci95": [
+        -0.0,
+        0.0022
+      ]
+    },
+    "BP_vs_A": {
+      "contrast": "BP vs A",
+      "kb_top1_delta": 0.1113,
+      "mcnemar_b": 195,
+      "mcnemar_c": 24,
+      "mcnemar_exact_p": 1.74e-34,
+      "mrr_delta": 0.0944,
+      "mrr_delta_ci95": [
+        0.083,
+        0.1056
+      ]
+    },
+    "BP_vs_CP": {
+      "contrast": "BP vs CP",
+      "kb_top1_delta": 0.134,
+      "mcnemar_b": 225,
+      "mcnemar_c": 19,
+      "mcnemar_exact_p": 7.09e-46,
+      "mrr_delta": 0.1047,
+      "mrr_delta_ci95": [
+        0.0938,
+        0.1159
+      ]
+    },
+    "BP_vs_DP": {
+      "contrast": "BP vs DP",
+      "kb_top1_delta": 0.1165,
+      "mcnemar_b": 189,
+      "mcnemar_c": 10,
+      "mcnemar_exact_p": 5.6e-44,
+      "mrr_delta": 0.0941,
+      "mrr_delta_ci95": [
+        0.0832,
+        0.1047
+      ]
+    },
+    "CP_vs_DP": {
+      "contrast": "CP vs DP",
+      "kb_top1_delta": -0.0176,
+      "mcnemar_b": 55,
+      "mcnemar_c": 82,
+      "mcnemar_exact_p": 0.026,
+      "mrr_delta": -0.0106,
+      "mrr_delta_ci95": [
+        -0.0193,
+        -0.0027
+      ]
+    },
+    "DP_vs_A": {
+      "contrast": "DP vs A",
+      "kb_top1_delta": -0.0052,
+      "mcnemar_b": 58,
+      "mcnemar_c": 66,
+      "mcnemar_exact_p": 0.53,
+      "mrr_delta": 0.0003,
+      "mrr_delta_ci95": [
+        -0.0089,
+        0.0088
+      ]
+    }
+  },
+  "per_class_kb_top1": {
+    "Aeromoniasis": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "n": 220
+    },
+    "Bacterial Gill Disease": {
+      "A": 0.0553,
+      "B": 0.0596,
+      "C": 0.0553,
+      "D": 0.0553,
+      "n": 235
+    },
+    "Bacterial Red Disease": {
+      "A": 0.0933,
+      "B": 0.0933,
+      "C": 0.0933,
+      "D": 0.0933,
+      "n": 150
+    },
+    "Epizootic Ulcerative Syndrome": {
+      "A": 0.0109,
+      "B": 0.0109,
+      "C": 0.0109,
+      "D": 0.0109,
+      "n": 275
+    },
+    "Fungal Saprolegniasis": {
+      "A": 0.181,
+      "B": 0.181,
+      "C": 0.181,
+      "D": 0.181,
+      "n": 105
+    },
+    "Healthy Fish": {
+      "A": 0.635,
+      "B": 0.635,
+      "C": 0.6274,
+      "D": 0.6312,
+      "n": 263
+    },
+    "Parasitic Diseases": {
+      "A": 0.25,
+      "B": 0.2561,
+      "C": 0.2561,
+      "D": 0.2561,
+      "n": 164
+    },
+    "Viral White Tail Disease": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "n": 125
+    }
+  }
+}

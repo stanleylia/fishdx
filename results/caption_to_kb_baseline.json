@@ -1,0 +1,51 @@
+{
+  "experiment": "caption_to_kb_baseline",
+  "reviewer_point": "R5.1 — caption->KB-document text-only retrieval (both CLIP-text encoded)",
+  "encoder": "ViT-B-32 / laion2b_s34b_b79k",
+  "n_captions": 1537,
+  "caption_source": "results/e3_noaug_captions_log.json (D2 noaug, real Florence-2)",
+  "note": "CLIP text encoder truncates targets to 77 tokens; query=caption, target=KB doc.",
+  "seed": 42,
+  "random_baseline_DA_8class": 0.125,
+  "majority_class_DA": 0.1789,
+  "majority_class": "Epizootic Ulcerative Syndrome",
+  "variants": {
+    "full_document": {
+      "target": "KB doc full_document",
+      "DA_all_8_classes": 0.1672,
+      "n_all": 1537,
+      "DA_7_shared_classes": 0.2013,
+      "n_shared": 1262,
+      "prediction_distribution": {
+        "Parasitic Diseases": 327,
+        "Fungal Saprolegniasis": 185,
+        "Bacterial Gill Disease": 124,
+        "Bacterial Red Disease": 110,
+        "Healthy Fish": 731,
+        "Epizootic Ulcerative Syndrome": 60
+      }
+    },
+    "lay_appearance_paragraph": {
+      "target": "KB doc lay_appearance_paragraph",
+      "DA_all_8_classes": 0.1483,
+      "n_all": 1537,
+      "DA_7_shared_classes": 0.1632,
+      "n_shared": 1262,
+      "prediction_distribution": {
+        "Aeromoniasis": 920,
+        "Epizootic Ulcerative Syndrome": 177,
+        "Parasitic Diseases": 111,
+        "Bacterial Red Disease": 217,
+        "Bacterial Gill Disease": 24,
+        "Fungal Saprolegniasis": 9,
+        "Healthy Fish": 50,
+        "Viral White Tail Disease": 29
+      }
+    }
+  },
+  "reference_numbers": {
+    "caption_to_caption_gallery_DA": 0.495,
+    "visual_embedding_DA": 0.893,
+    "note": "reference values from the manuscript modality comparison (7 shared classes)"
+  }
+}

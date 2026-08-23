@@ -1,0 +1,180 @@
+{
+  "experiment": "mcnemar_d2_margin_scale_diagnostic",
+  "reviewer_point": "R5.3 — is manuscript Panel A correct-on-a-different-margin-scale, or wrong?",
+  "note": "Full n=3,453, all 8 classes incl EUS, faithful 𝒪 (caption ∪ top-1 KB doc text), seed 42. Only the Eq. 11 retrieval-margin valve DEFINITION varies; committed class = faithful-𝒪 decisive class without the valve. Inconclusive = non-correct. Manuscript Panel A target under 'original_manuscript'.",
+  "metadata": {
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "seed": 42,
+    "lambda_star": 0.7,
+    "theta_margin_config": 0.02,
+    "T_h": 2,
+    "m": 1,
+    "n_eval": 3453,
+    "n_gallery": 1639,
+    "knn_lambda0.7_k1_DA": 0.8048,
+    "evidence_pool": "faithful 𝒪 = caption ∪ top-1 KB doc text (ADR-0012e)",
+    "config_freeze_hash": "961d0a0934fa3c383cbf5e84d94c66ca3eb90da9634d2912109f6f61f9d82634"
+  },
+  "original_manuscript": {
+    "b": 21,
+    "c": 40,
+    "chi2": 5.31,
+    "p": 0.021,
+    "pipeline_DA": 0.811,
+    "abstention": "~1%"
+  },
+  "margin_definitions": [
+    {
+      "definition": "1_raw_cosine",
+      "theta": 0.02,
+      "abstention_count": 1278,
+      "abstention_rate": 0.3701,
+      "pipeline_decisive_DA": 0.5844,
+      "contingency_2x2": {
+        "both_correct": 2018,
+        "pipeline_correct_knn_wrong": 0,
+        "pipeline_wrong_knn_correct": 761,
+        "both_wrong": 674
+      },
+      "b_pipeline_correct_knn_wrong": 0,
+      "c_pipeline_wrong_knn_correct": 761,
+      "chi2_continuity_corrected": 759.0013,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "definition": "2_squared_L2_chromadb",
+      "theta": 0.02,
+      "abstention_count": 755,
+      "abstention_rate": 0.2187,
+      "pipeline_decisive_DA": 0.6858,
+      "contingency_2x2": {
+        "both_correct": 2368,
+        "pipeline_correct_knn_wrong": 0,
+        "pipeline_wrong_knn_correct": 411,
+        "both_wrong": 674
+      },
+      "b_pipeline_correct_knn_wrong": 0,
+      "c_pipeline_wrong_knn_correct": 411,
+      "chi2_continuity_corrected": 409.0024,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "definition": "3_relative_rank",
+      "theta": 0.02,
+      "abstention_count": 1122,
+      "abstention_rate": 0.3249,
+      "pipeline_decisive_DA": 0.6169,
+      "contingency_2x2": {
+        "both_correct": 2130,
+        "pipeline_correct_knn_wrong": 0,
+        "pipeline_wrong_knn_correct": 649,
+        "both_wrong": 674
+      },
+      "b_pipeline_correct_knn_wrong": 0,
+      "c_pipeline_wrong_knn_correct": 649,
+      "chi2_continuity_corrected": 647.0015,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "definition": "4_class_prototype",
+      "theta": 0.02,
+      "abstention_count": 2033,
+      "abstention_rate": 0.5888,
+      "pipeline_decisive_DA": 0.3131,
+      "contingency_2x2": {
+        "both_correct": 1081,
+        "pipeline_correct_knn_wrong": 0,
+        "pipeline_wrong_knn_correct": 1698,
+        "both_wrong": 674
+      },
+      "b_pipeline_correct_knn_wrong": 0,
+      "c_pipeline_wrong_knn_correct": 1698,
+      "chi2_continuity_corrected": 1696.0006,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true
+    }
+  ],
+  "raw_cosine_theta_sweep": [
+    {
+      "definition": "5_raw_cosine_theta_0.02",
+      "theta": 0.02,
+      "abstention_count": 1278,
+      "abstention_rate": 0.3701,
+      "pipeline_decisive_DA": 0.5844,
+      "contingency_2x2": {
+        "both_correct": 2018,
+        "pipeline_correct_knn_wrong": 0,
+        "pipeline_wrong_knn_correct": 761,
+        "both_wrong": 674
+      },
+      "b_pipeline_correct_knn_wrong": 0,
+      "c_pipeline_wrong_knn_correct": 761,
+      "chi2_continuity_corrected": 759.0013,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "definition": "5_raw_cosine_theta_0.01",
+      "theta": 0.01,
+      "abstention_count": 755,
+      "abstention_rate": 0.2187,
+      "pipeline_decisive_DA": 0.6858,
+      "contingency_2x2": {
+        "both_correct": 2368,
+        "pipeline_correct_knn_wrong": 0,
+        "pipeline_wrong_knn_correct": 411,
+        "both_wrong": 674
+      },
+      "b_pipeline_correct_knn_wrong": 0,
+      "c_pipeline_wrong_knn_correct": 411,
+      "chi2_continuity_corrected": 409.0024,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "definition": "5_raw_cosine_theta_0.005",
+      "theta": 0.005,
+      "abstention_count": 417,
+      "abstention_rate": 0.1208,
+      "pipeline_decisive_DA": 0.7405,
+      "contingency_2x2": {
+        "both_correct": 2557,
+        "pipeline_correct_knn_wrong": 0,
+        "pipeline_wrong_knn_correct": 222,
+        "both_wrong": 674
+      },
+      "b_pipeline_correct_knn_wrong": 0,
+      "c_pipeline_wrong_knn_correct": 222,
+      "chi2_continuity_corrected": 220.0045,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "definition": "5_raw_cosine_theta_0.002",
+      "theta": 0.002,
+      "abstention_count": 177,
+      "abstention_rate": 0.0513,
+      "pipeline_decisive_DA": 0.7764,
+      "contingency_2x2": {
+        "both_correct": 2681,
+        "pipeline_correct_knn_wrong": 0,
+        "pipeline_wrong_knn_correct": 98,
+        "both_wrong": 674
+      },
+      "b_pipeline_correct_knn_wrong": 0,
+      "c_pipeline_wrong_knn_correct": 98,
+      "chi2_continuity_corrected": 96.0102,
+      "p_value_two_tailed": 0.0,
+      "significant_at_0.05": true
+    }
+  ],
+  "verdict": {
+    "any_definition_reproduces_manuscript_panel_A": false,
+    "matching_definitions": [],
+    "b_is_zero_for_all_definitions": true,
+    "structural_finding": "Under faithful 𝒪 the decisive pipeline's committed class is always the kNN lambda=0.7 top-1 class (scoring confirms c1; the only class-changing path — healthy rescue of a mis-retrieved disease — is suppressed because c1's own KB doc text saturates S_d). Therefore 'pipeline correct & kNN wrong' (cell b) is structurally 0 for EVERY margin definition: the retrieval-margin valve can only turn kNN-correct predictions into misses (inflating c) or abstain on kNN-wrong ones (no effect on b). The manuscript's b=21 (pipeline right where kNN wrong) cannot arise from any margin scale under faithful 𝒪 — it requires a class-changing mechanism (caption-driven healthy rescue), which is the lighter caption-only 𝒪."
+  }
+}

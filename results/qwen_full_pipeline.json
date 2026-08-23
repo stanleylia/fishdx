@@ -1,0 +1,14 @@
+{
+  "design": "matched stratified subset (100/class D1 gallery + 100/class clean D2 query, seed 42, 7 shared classes); only the VLM captioner differs; CLIP visual shared",
+  "n_gallery": 700,
+  "n_query": 700,
+  "visual_only_DA_lambda1.0": 0.7943,
+  "florence": {
+    "caption_only_DA_lambda0": 0.4257,
+    "fused_DA_lambda0.7": 0.8143
+  },
+  "qwen2vl": {
+    "caption_only_DA_lambda0": 0.3814,
+    "fused_DA_lambda0.7": 0.7957
+  }
+}

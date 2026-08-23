@@ -1,0 +1,58 @@
+{
+  "experiment": "d2_embedding_dedup",
+  "purpose": "Dedup D2 vs D1 in CLIP retrieval space; find the defensible clean number.",
+  "max_cos_percentiles": {
+    "50": 0.8717,
+    "75": 0.9475,
+    "90": 1.0,
+    "95": 1.0,
+    "99": 1.0
+  },
+  "n_d2": 3473,
+  "n_with_cos_ge_0.95": 845,
+  "n_with_cos_ge_0.98": 629,
+  "retrieval_by_dedup_level_7class": {
+    "raw_all": {
+      "n_7class": 3017,
+      "caption_0.0": 0.6188,
+      "fusion_0.7": 0.9248,
+      "visual_1.0": 0.9218
+    },
+    "phash_clean_proxy(cos<0.99)": {
+      "n_7class": 2438,
+      "caption_0.0": 0.5299,
+      "fusion_0.7": 0.9069,
+      "visual_1.0": 0.9032
+    },
+    "cos<0.98": {
+      "n_7class": 2388,
+      "caption_0.0": 0.5247,
+      "fusion_0.7": 0.9049,
+      "visual_1.0": 0.9012
+    },
+    "cos<0.95": {
+      "n_7class": 2176,
+      "caption_0.0": 0.4954,
+      "fusion_0.7": 0.8966,
+      "visual_1.0": 0.8925
+    },
+    "cos<0.90": {
+      "n_7class": 1706,
+      "caption_0.0": 0.4625,
+      "fusion_0.7": 0.871,
+      "visual_1.0": 0.8658
+    },
+    "noaug_only": {
+      "n_7class": 1262,
+      "caption_0.0": 0.7147,
+      "fusion_0.7": 0.9374,
+      "visual_1.0": 0.935
+    },
+    "noaug_AND_cos<0.95": {
+      "n_7class": 710,
+      "caption_0.0": 0.4986,
+      "fusion_0.7": 0.8887,
+      "visual_1.0": 0.8845
+    }
+  }
+}

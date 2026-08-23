@@ -2,8 +2,8 @@
 doc_id: PAR
 disease_class: Parasitic Diseases
 title: Parasitic Diseases — Ichthyophthirius, Trichodina, Dactylogyrus, Argulus
-source_reference: Wikipedia "Ichthyophthirius multifiliis" + Wikipedia "Trichodina" + Wikipedia "Fish parasites" (oldid pending curator capture)
-source_url: https://en.wikipedia.org/w/index.php?title=Ichthyophthirius_multifiliis&oldid=PENDING_CURATOR_CAPTURE
+source_reference: Wikipedia "Ichthyophthirius multifiliis" + Wikipedia "Trichodina" + Wikipedia "Fish parasites"
+source_url: https://en.wikipedia.org/w/index.php?title=Ichthyophthirius_multifiliis
 substitution_date: 2026-04-18
 rewrite_date: 2026-04-19
 substituted_under_adr: [0007, 0012a]

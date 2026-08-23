@@ -12,22 +12,12 @@ The visual component in the fusion embedding breaks these ties.
 from __future__ import annotations
 
 import json
-import os
 from collections import Counter
 from pathlib import Path
 
 import numpy as np
 
-# Override via environment variable FISHDX_CACHE_DIR; defaults to the
-# repository's lab_dateset/organized/experiment_results/large_scale_cache
-# directory (resolved relative to this file, two levels up to the repo root).
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-CACHE_DIR = Path(
-    os.environ.get(
-        "FISHDX_CACHE_DIR",
-        PROJECT_ROOT / "lab_dateset" / "organized" / "experiment_results" / "large_scale_cache",
-    )
-)
+CACHE_DIR = (Path(__file__).resolve().parents[2] / "lab_dateset/organized/experiment_results/large_scale_cache")
 
 TOP_K = 3  # Show top-K nearest neighbors for each lambda
 

@@ -2,8 +2,8 @@
 doc_id: VWT
 disease_class: Viral White Tail Disease
 title: Viral White Tail Disease — Nodavirus / Rhabdovirus complex
-source_reference: Wikipedia "Viral nervous necrosis" + Wikipedia "Infectious pancreatic necrosis" + FAO fish-disease summaries (oldid pending curator capture)
-source_url: https://en.wikipedia.org/w/index.php?title=Viral_nervous_necrosis&oldid=PENDING_CURATOR_CAPTURE
+source_reference: Wikipedia "Viral nervous necrosis" + Wikipedia "Infectious pancreatic necrosis" + FAO fish-disease summaries
+source_url: https://en.wikipedia.org/w/index.php?title=Viral_nervous_necrosis
 substitution_date: 2026-04-18
 rewrite_date: 2026-04-19
 substituted_under_adr: [0007, 0012a]

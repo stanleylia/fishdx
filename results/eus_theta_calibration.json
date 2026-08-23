@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "n_eus_clean": 452,
+  "full_set_interception": {
+    "theta_0.01": 0.4779,
+    "theta_0.02": 0.7257,
+    "theta_0.05": 0.9425
+  },
+  "calibration": {
+    "n": 226,
+    "interception": {
+      "theta_0.01": 0.469,
+      "theta_0.02": 0.7389,
+      "theta_0.05": 0.9381
+    },
+    "criterion": "smallest theta with interception >= 0.65",
+    "theta_star": 0.02
+  },
+  "test": {
+    "n": 226,
+    "theta_star": 0.02,
+    "interception": 0.7124,
+    "intercepted": 161,
+    "wilson_ci95": [
+      0.6502,
+      0.7675
+    ]
+  }
+}

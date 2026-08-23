@@ -2,8 +2,8 @@
 doc_id: BRD
 disease_class: Bacterial Red Disease
 title: Bacterial Red Disease — Enteric Redmouth / Vibriosis complex
-source_reference: Wikipedia "Enteric redmouth disease" + Wikipedia "Vibriosis (fish disease)" (oldid pending curator capture)
-source_url: https://en.wikipedia.org/w/index.php?title=Enteric_redmouth_disease&oldid=PENDING_CURATOR_CAPTURE
+source_reference: Wikipedia "Enteric redmouth disease" + Wikipedia "Vibriosis (fish disease)"
+source_url: https://en.wikipedia.org/w/index.php?title=Enteric_redmouth_disease
 substitution_date: 2026-04-18
 rewrite_date: 2026-04-19
 substituted_under_adr: [0007, 0012a]

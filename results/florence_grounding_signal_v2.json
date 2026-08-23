@@ -1,0 +1,155 @@
+{
+  "experiment": "florence_grounding_signal_v2 (exhaustive discriminative test)",
+  "model": "microsoft/Florence-2-base (fp16, beam=3, deterministic)",
+  "note": "Florence-2 grounding returns boxes+labels only (no scalar confidence). This probes whether box presence/count/area discriminates a class's TRUE disease phrase from a wrong-class DISTRACTOR, under both grounding tasks, on real D2 images.",
+  "tasks": {
+    "<OPEN_VOCABULARY_DETECTION>": {
+      "n_total": 105,
+      "true_presence_rate": 1.0,
+      "distractor_presence_rate": 1.0,
+      "discrimination_true>dist": 32,
+      "discrimination_dist>true": 38,
+      "discrimination_tie": 35,
+      "signal_discriminates": -0.05714285714285714,
+      "per_class": {
+        "Bacterial diseases - Aeromoniasis": {
+          "n": 15,
+          "true_phrase": "red skin ulcer",
+          "distractor_phrase": "swollen gill",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.0,
+          "mean_distractor_boxes": 1.0
+        },
+        "Bacterial gill disease": {
+          "n": 15,
+          "true_phrase": "swollen gill",
+          "distractor_phrase": "red haemorrhage on body",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.0,
+          "mean_distractor_boxes": 1.0
+        },
+        "Bacterial Red disease": {
+          "n": 15,
+          "true_phrase": "red haemorrhage on body",
+          "distractor_phrase": "white cotton fungus",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.0,
+          "mean_distractor_boxes": 1.0
+        },
+        "Fungal diseases Saprolegniasis": {
+          "n": 15,
+          "true_phrase": "white cotton fungus",
+          "distractor_phrase": "parasite on skin",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.0,
+          "mean_distractor_boxes": 1.0
+        },
+        "Parasitic diseases": {
+          "n": 15,
+          "true_phrase": "parasite on skin",
+          "distractor_phrase": "white tail",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.0,
+          "mean_distractor_boxes": 1.0
+        },
+        "Viral diseases White tail disease": {
+          "n": 15,
+          "true_phrase": "white tail",
+          "distractor_phrase": "healthy intact fish",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.0,
+          "mean_distractor_boxes": 1.07
+        },
+        "Healthy Fish": {
+          "n": 15,
+          "true_phrase": "healthy intact fish",
+          "distractor_phrase": "red skin ulcer",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.0,
+          "mean_distractor_boxes": 1.0
+        }
+      }
+    },
+    "<CAPTION_TO_PHRASE_GROUNDING>": {
+      "n_total": 105,
+      "true_presence_rate": 1.0,
+      "distractor_presence_rate": 1.0,
+      "discrimination_true>dist": 47,
+      "discrimination_dist>true": 43,
+      "discrimination_tie": 15,
+      "signal_discriminates": 0.0380952380952381,
+      "per_class": {
+        "Bacterial diseases - Aeromoniasis": {
+          "n": 15,
+          "true_phrase": "red skin ulcer",
+          "distractor_phrase": "swollen gill",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.4,
+          "mean_distractor_boxes": 1.4
+        },
+        "Bacterial gill disease": {
+          "n": 15,
+          "true_phrase": "swollen gill",
+          "distractor_phrase": "red haemorrhage on body",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.2,
+          "mean_distractor_boxes": 2.27
+        },
+        "Bacterial Red disease": {
+          "n": 15,
+          "true_phrase": "red haemorrhage on body",
+          "distractor_phrase": "white cotton fungus",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 2.0,
+          "mean_distractor_boxes": 1.33
+        },
+        "Fungal diseases Saprolegniasis": {
+          "n": 15,
+          "true_phrase": "white cotton fungus",
+          "distractor_phrase": "parasite on skin",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.47,
+          "mean_distractor_boxes": 2.0
+        },
+        "Parasitic diseases": {
+          "n": 15,
+          "true_phrase": "parasite on skin",
+          "distractor_phrase": "white tail",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 2.13,
+          "mean_distractor_boxes": 1.0
+        },
+        "Viral diseases White tail disease": {
+          "n": 15,
+          "true_phrase": "white tail",
+          "distractor_phrase": "healthy intact fish",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.0,
+          "mean_distractor_boxes": 1.13
+        },
+        "Healthy Fish": {
+          "n": 15,
+          "true_phrase": "healthy intact fish",
+          "distractor_phrase": "red skin ulcer",
+          "true_grounded": 15,
+          "distractor_grounded": 15,
+          "mean_true_boxes": 1.13,
+          "mean_distractor_boxes": 1.07
+        }
+      }
+    }
+  }
+}

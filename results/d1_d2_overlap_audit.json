@@ -1,0 +1,312 @@
+{
+  "experiment": "d1_d2_cross_overlap_audit",
+  "purpose": "Verify D1 and D2 are disjoint (the leakage-defence assumption).",
+  "n_d1": 2018,
+  "n_d2": 3473,
+  "byte_level_md5": {
+    "n_shared_md5": 524,
+    "clean": false,
+    "examples": [
+      {
+        "md5": "00eb00d7578d881d826c3657af7a2b84",
+        "d1_files": [
+          "Fungal diseases Saprolegniasis (7).jpg"
+        ],
+        "d2_files": [
+          "Fungal diseases Saprolegniasis_83.jpg"
+        ]
+      },
+      {
+        "md5": "00fff73ba742a58f5fc4887389acacee",
+        "d1_files": [
+          "Bacterial diseases - Aeromoniasis (81).jpg"
+        ],
+        "d2_files": [
+          "Bacterial diseases - Aeromoniasis_223.jpg"
+        ]
+      },
+      {
+        "md5": "0105f6721bdd2ad448a59b7740ef2388",
+        "d1_files": [
+          "Bacterial diseases - Aeromoniasis (174).jpg"
+        ],
+        "d2_files": [
+          "Bacterial diseases - Aeromoniasis_86.jpg"
+        ]
+      },
+      {
+        "md5": "0304b66c5366d8a82f2e24ef863c4534",
+        "d1_files": [
+          "Bacterial diseases - Aeromoniasis (13).jpg"
+        ],
+        "d2_files": [
+          "Bacterial diseases - Aeromoniasis_37.jpg"
+        ]
+      },
+      {
+        "md5": "0392aa31b3eb9db5d4cc3804647108b0",
+        "d1_files": [
+          "Fungal diseases Saprolegniasis (76).jpg",
+          "Fungal diseases Saprolegniasis (76).jpg"
+        ],
+        "d2_files": [
+          "Fungal diseases Saprolegniasis_88.jpg"
+        ]
+      },
+      {
+        "md5": "049b7b8113993df2e2ccd6880106b6d9",
+        "d1_files": [
+          "Parasitic diseases (77).jpg",
+          "Parasitic diseases (77).jpg"
+        ],
+        "d2_files": [
+          "Parasitic diseases_87.jpg"
+        ]
+      },
+      {
+        "md5": "05723e971ff1e2ea17216040dfbee941",
+        "d1_files": [
+          "Bacterial diseases - Aeromoniasis (32).jpg"
+        ],
+        "d2_files": [
+          "Bacterial diseases - Aeromoniasis_Bacterial diseases - Aeromoniasis_171.jpg"
+        ]
+      },
+      {
+        "md5": "057e6430799587eab100f8dcb0e81a42",
+        "d1_files": [
+          "Fungal diseases Saprolegniasis (39).jpg",
+          "Fungal diseases Saprolegniasis (39).jpg"
+        ],
+        "d2_files": [
+          "Fungal diseases Saprolegniasis_Fungal diseases Saprolegniasis_53.jpg"
+        ]
+      },
+      {
+        "md5": "05f4424c44677a5829ef2108df7c6015",
+        "d1_files": [
+          "Viral diseases White tail disease (10).jpg"
+        ],
+        "d2_files": [
+          "Viral diseases White tail disease_5.jpg"
+        ]
+      },
+      {
+        "md5": "06fb4414f3bce31a81aa19604d5407f0",
+        "d1_files": [
+          "Viral diseases White tail disease (14).jpg"
+        ],
+        "d2_files": [
+          "Viral diseases White tail disease_14.jpg"
+        ]
+      },
+      {
+        "md5": "07409c08b126a9353fc5719028bf2b46",
+        "d1_files": [
+          "Viral diseases White tail disease (22).jpg"
+        ],
+        "d2_files": [
+          "Viral diseases White tail disease_Viral diseases White tail disease_25.jpg"
+        ]
+      },
+      {
+        "md5": "07ce4f2269dfd1ca1da9e247623bf5ad",
+        "d1_files": [
+          "Bacterial diseases - Aeromoniasis (177).jpg"
+        ],
+        "d2_files": [
+          "Bacterial diseases - Aeromoniasis_89.jpg"
+        ]
+      },
+      {
+        "md5": "08d668ab66cbad1c849c1e9e7eeb0ded",
+        "d1_files": [
+          "Parasitic diseases (49).jpg",
+          "Parasitic diseases (49).jpg"
+        ],
+        "d2_files": [
+          "Parasitic diseases_53.jpg"
+        ]
+      },
+      {
+        "md5": "0918c5435fd3ba531266589ffb7d4b0a",
+        "d1_files": [
+          "Bacterial diseases - Aeromoniasis (30).jpg"
+        ],
+        "d2_files": [
+          "Bacterial diseases - Aeromoniasis_169.jpg"
+        ]
+      },
+      {
+        "md5": "097a4d1af747632dda705a393cd11506",
+        "d1_files": [
+          "Bacterial diseases - Aeromoniasis (102).jpg",
+          "Bacterial diseases - Aeromoniasis (102).jpg"
+        ],
+        "d2_files": [
+          "Bacterial diseases - Aeromoniasis_Bacterial diseases - Aeromoniasis_7.jpg"
+        ]
+      },
+      {
+        "md5": "0a9dbebe3ae13ddf5a236d3f1bca7d63",
+        "d1_files": [
+          "Viral diseases White tail disease (38).jpg",
+          "Viral diseases White tail disease (38).jpg"
+        ],
+        "d2_files": [
+          "Viral diseases White tail disease_Viral diseases White tail disease_40.jpg"
+        ]
+      },
+      {
+        "md5": "0b12e84fcefac5136f9e65cf202d1dea",
+        "d1_files": [
+          "Bacterial diseases - Aeromoniasis (52).jpg",
+          "Bacterial diseases - Aeromoniasis (52).jpg"
+        ],
+        "d2_files": [
+          "Bacterial diseases - Aeromoniasis_192.jpg"
+        ]
+      },
+      {
+        "md5": "0bbdc85b2d42815406d006c0fe48b83d",
+        "d1_files": [
+          "Viral diseases White tail disease (74).jpg",
+          "Viral diseases White tail disease (74).jpg"
+        ],
+        "d2_files": [
+          "Viral diseases White tail disease_76.jpg"
+        ]
+      },
+      {
+        "md5": "0bdb976318f6d55c65429733c6f230c3",
+        "d1_files": [
+          "Bacterial diseases - Aeromoniasis (111).jpg",
+          "Bacterial diseases - Aeromoniasis (111).jpg"
+        ],
+        "d2_files": [
+          "Bacterial diseases - Aeromoniasis_17.jpg"
+        ]
+      },
+      {
+        "md5": "0c12a492deca35e064e07246792e833b",
+        "d1_files": [
+          "Bacterial Red disease (117).jpg",
+          "Bacterial Red disease (117).jpg"
+        ],
+        "d2_files": [
+          "Bacterial Red disease_7.jpg"
+        ]
+      }
+    ]
+  },
+  "perceptual_phash": {
+    "near_threshold_bits": 5,
+    "n_d1_with_d2_near_duplicate": 1382,
+    "clean": false,
+    "min_hamming_observed": 0,
+    "median_min_hamming": 0.0,
+    "closest_pairs": [
+      {
+        "d1_file": "Bacterial gill disease (45).jpg",
+        "nearest_d2_file": "Bacterial gill disease_57.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (26).jpg",
+        "nearest_d2_file": "Bacterial gill disease_34.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (25).jpg",
+        "nearest_d2_file": "Bacterial gill disease_41.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (24).jpg",
+        "nearest_d2_file": "Bacterial gill disease_208.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (23).jpg",
+        "nearest_d2_file": "Bacterial gill disease_39.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Parasitic diseases (90).jpg",
+        "nearest_d2_file": "Parasitic diseases_238.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Parasitic diseases (91).jpg",
+        "nearest_d2_file": "Parasitic diseases_239.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Parasitic diseases (92).jpg",
+        "nearest_d2_file": "Parasitic diseases_240.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Parasitic diseases (93).jpg",
+        "nearest_d2_file": "Parasitic diseases_Parasitic diseases_241.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Parasitic diseases (9).jpg",
+        "nearest_d2_file": "Parasitic diseases_95.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (224).jpg",
+        "nearest_d2_file": "Bacterial gill disease_202.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (222).jpg",
+        "nearest_d2_file": "Bacterial gill disease_200.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (221).jpg",
+        "nearest_d2_file": "Bacterial gill disease_199.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (220).jpg",
+        "nearest_d2_file": "Bacterial gill disease_198.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (22).jpg",
+        "nearest_d2_file": "Bacterial gill disease_38.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Parasitic diseases (94).jpg",
+        "nearest_d2_file": "Parasitic diseases_242.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (218).jpg",
+        "nearest_d2_file": "Bacterial gill disease_196.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (217).jpg",
+        "nearest_d2_file": "Bacterial gill disease_195.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (216).jpg",
+        "nearest_d2_file": "Bacterial gill disease_194.jpg",
+        "phash_hamming": 0
+      },
+      {
+        "d1_file": "Bacterial gill disease (223).jpg",
+        "nearest_d2_file": "Bacterial gill disease_201.jpg",
+        "phash_hamming": 0
+      }
+    ]
+  },
+  "overall_disjoint": false
+}

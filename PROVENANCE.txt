@@ -1,0 +1,24 @@
+fishdx code deposit — provenance
+================================
+
+Deposit version : 0.1.0
+Provenance anchor: Git commit and signed history of the GitHub release
+Release date    : 2026-07-14
+Repository      : https://github.com/stanleylia/fishdx
+Archive DOI     : 10.5281/zenodo.21415577
+
+Result artefacts
+----------------
+The files in results/*.json are archival artefacts. They do not each embed a
+per-run git_commit field. Each headline artefact is regenerable by the script named
+in REPRODUCIBILITY_MAP.md sections 3 and 9, operating on the cached embeddings
+in results/_cache_*.npz.
+
+Evaluation of record vs intermediate artefacts: see results/README.md.
+
+Implementation and producing code
+---------------------------------
+The paper's headline numbers are produced by the named analysis scripts in
+scripts/experiments/ over the cached Florence-2/CLIP embeddings. The src/fishdx
+package provides the aligned end-to-end implementation; see
+REPRODUCIBILITY_MAP.md section 1 for the equation-to-code mapping.

@@ -1,0 +1,16 @@
+{
+  "experiment": "sca_lemmatisation_synonym_sensitivity",
+  "reviewer_point": "R1.6 — SCA sensitivity to lemmatisation/synonym expansion",
+  "caption_source": "results/e3_noaug_captions_log.json (D2 no-aug, real Florence-2)",
+  "n_captions": 1537,
+  "keyword_sca": {
+    "0_exact_token_match": 0.0552,
+    "1_plus_lemmatisation": 0.0651,
+    "2_plus_lemmatisation_and_synonyms": 0.1418
+  },
+  "delta_pp": {
+    "lemmatisation": 1.0,
+    "lemmatisation_plus_synonyms": 8.67
+  },
+  "note": "Token-level keyword-SCA (Eq. 12) on the same real captions; deltas quantify Note S3."
+}

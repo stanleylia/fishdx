@@ -1,0 +1,108 @@
+{
+ "n_captions": 3473,
+ "base_fires": 21,
+ "base_fp_rate": 0.006,
+ "ks_hits_no_guard": 103,
+ "total_blocked_by_guard": 82,
+ "structural_leave_one_out": [
+  {
+   "keyword": "net",
+   "captions_with": 16,
+   "fires_without": 21,
+   "delta_fires": 0
+  },
+  {
+   "keyword": "fence",
+   "captions_with": 11,
+   "fires_without": 16,
+   "delta_fires": -5
+  },
+  {
+   "keyword": "mesh",
+   "captions_with": 21,
+   "fires_without": 19,
+   "delta_fires": -2
+  },
+  {
+   "keyword": "cage",
+   "captions_with": 3,
+   "fires_without": 21,
+   "delta_fires": 0
+  },
+  {
+   "keyword": "grid",
+   "captions_with": 47,
+   "fires_without": 9,
+   "delta_fires": -12
+  },
+  {
+   "keyword": "wire",
+   "captions_with": 5,
+   "fires_without": 21,
+   "delta_fires": 0
+  },
+  {
+   "keyword": "pen",
+   "captions_with": 5,
+   "fires_without": 19,
+   "delta_fires": -2
+  },
+  {
+   "keyword": "enclosure",
+   "captions_with": 0,
+   "fires_without": 21,
+   "delta_fires": 0
+  },
+  {
+   "keyword": "lattice",
+   "captions_with": 0,
+   "fires_without": 21,
+   "delta_fires": 0
+  },
+  {
+   "keyword": "netting",
+   "captions_with": 8,
+   "fires_without": 21,
+   "delta_fires": 0
+  }
+ ],
+ "guard_leave_one_out": [
+  {
+   "keyword": "face",
+   "fires_without_this_guard": 22,
+   "misfires_blocked": 1
+  },
+  {
+   "keyword": "person",
+   "fires_without_this_guard": 31,
+   "misfires_blocked": 10
+  },
+  {
+   "keyword": "animal",
+   "fires_without_this_guard": 22,
+   "misfires_blocked": 1
+  },
+  {
+   "keyword": "human",
+   "fires_without_this_guard": 21,
+   "misfires_blocked": 0
+  },
+  {
+   "keyword": "head",
+   "fires_without_this_guard": 21,
+   "misfires_blocked": 0
+  },
+  {
+   "keyword": "eye",
+   "fires_without_this_guard": 21,
+   "misfires_blocked": 0
+  },
+  {
+   "keyword": "body",
+   "fires_without_this_guard": 41,
+   "misfires_blocked": 20
+  }
+ ],
+ "source": "results/e3_captions_log.json (real Florence-2 D2 captions)",
+ "note": "D2 has no net_damage class, so every hard-path firing is a false positive; leave-one-out measures each keyword contribution"
+}

@@ -1,17 +1,15 @@
-"""Pareidolia correction — paper §III.B, Eq. 1–4.
+"""Pareidolia correction — paper §III.B, Eq. 1–4 (ADR-0003 dual-path).
 
-This module implements the paper's Eq. 1–4 verbatim:
+Design notes (Stage 1 implementation)
+-------------------------------------
+The paper's Eq. 2 is implemented verbatim, including the negated second
+sigmoid::
 
-    Eq. 1  P_hard(l_i) = 𝟙[G ∩ K_s ≠ ∅] · 𝟙[G ∩ K_b = ∅]
-    Eq. 2  P_soft(l_i) = σ(cos(CLIP_T(G), C_s) − τ) · σ(−(cos(CLIP_T(l_i), C_b) − τ))
-    Eq. 3  P(l_i) = max(P_hard(l_i), P_soft(l_i))
-    Eq. 4  l_i' = Remap(l_i, "net_damage")  if  P(l_i) > 0.5
+    P_soft = σ(cos(G, C_s) − τ) · σ(−(cos(l, C_b) − τ))
 
-Under the paper-stated cosine range cos ∈ [0.20, 0.35] with τ = 0.75, the
-σ-product output sits in ``[0.22, 0.25]`` (closed-form upper bound 0.25 at
-cos = τ). The soft path alone therefore never crosses Eq. 4's strict
-``> 0.5`` remap trigger; it acts as an informational signal that contributes
-through Eq. 3's max-merge when the hard path fires.
+For the archived caption/label similarities the soft score remained below
+Eq. 4's strict ``> 0.5`` remap threshold.  No universal 0.25 upper bound is
+claimed: the value depends on both cosine inputs.
 """
 
 from __future__ import annotations
@@ -39,26 +37,20 @@ def compute_p_hard(
 
     Returns ``1`` iff ``G ∩ K_s ≠ ∅ ∧ G ∩ K_b = ∅``, else ``0``.
 
-    Both indicator functions test the caption G — the trigger fires when
-    the caption mentions a structural keyword (K_s) AND mentions no
-    biological keyword (K_b). The label parameter is accepted for
-    interface compatibility with downstream Eq. 4 remapping but is not
-    used in the Eq. 1 indicator computation.
-
-    Token-level intersection (case-insensitive, whitespace-split) so
-    "cage-enclosure" does not falsely match "cage".
+    Token-level intersection per Skill S2 §5.2 (case-insensitive); both the
+    caption is tokenised on whitespace before set intersection.  ``label`` is
+    retained in the signature for API compatibility but is not part of Eq. 1.
 
     References
     ----------
     Paper Eq. 1.
     """
-    del label  # Eq. 1 indicator is caption-only; label used only by Eq. 4 remap
     caption_tokens = _tokens(caption)
     ks = {k.lower() for k in structural_keywords}
     kb = {k.lower() for k in biological_keywords}
-    has_structural = bool(caption_tokens & ks)
-    has_biological = bool(caption_tokens & kb)
-    return 1 if (has_structural and not has_biological) else 0
+    g_hits = bool(caption_tokens & ks)
+    g_biological_hits = bool(caption_tokens & kb)
+    return 1 if (g_hits and not g_biological_hits) else 0
 
 
 def compute_p_soft(
@@ -68,11 +60,8 @@ def compute_p_soft(
 ) -> float:
     """Eq. 2 — Soft CLIP-similarity path.
 
-    ``P_soft = σ(cos(G, C_s) − τ) · σ(−(cos(l, C_b) − τ))`` with vanilla sigmoid.
-
-    The first sigmoid is high when the caption is structural-looking;
-    the second sigmoid is high when the label is NOT biological-looking.
-    Note the negation in the second sigmoid argument: ``σ(τ − cos)``.
+    ``P_soft = σ(cos(G, C_s) − τ) · σ(−(cos(l, C_b) − τ))`` with vanilla
+    sigmoid (the second sigmoid's argument is negated, per paper Eq. 2).
 
     Parameters
     ----------
@@ -83,16 +72,17 @@ def compute_p_soft(
         Cosine similarity between label CLIP-text embedding and the
         biological concept centroid C_b (mean of CLIP_T(K_b)).
     tau : float
-        Pareidolia threshold (Paper Table 2, τ = 0.75).
+        Pareidolia threshold (Paper Table IX τ = 0.75).
 
     References
     ----------
     Paper Eq. 2.
     """
     gap_g = cos_caption_to_structural - tau
-    gap_l_negated = -(cos_label_to_biological - tau)  # paper Eq. 2: σ(−(cos − τ))
+    gap_l = cos_label_to_biological - tau
     sig_g = 1.0 / (1.0 + math.exp(-gap_g))
-    sig_l = 1.0 / (1.0 + math.exp(-gap_l_negated))
+    # Second sigmoid takes the NEGATED gap, i.e. σ(−(cos−τ)), per Eq. 2.
+    sig_l = 1.0 / (1.0 + math.exp(gap_l))
     return sig_g * sig_l
 
 

@@ -1,0 +1,683 @@
+{
+  "experiment": "r5_stage3_document_ablation",
+  "reviewer_comment": "5-3(3): remove / substitute / random document ablations",
+  "design": "retrieval held fixed from the comment-2(1) archive; only the evidence pool varies; substituted documents supply both text and keyword tiers",
+  "commitment_rule": "healthy if S_h > S_d else c1",
+  "n_d2final": 2402,
+  "theta_margin": 0.02,
+  "models_rerun": false,
+  "conditions": {
+    "A_remove_top1_document": {
+      "condition": "A — caption only (document removed)",
+      "agreement_with_retrieval_top1": 0.9967,
+      "n_overridden_to_healthy": 8,
+      "overall_DA": 0.8131,
+      "overall_wilson95": [
+        0.797,
+        0.8282
+      ],
+      "decisive_DA": 0.9257,
+      "decisive_wilson95": [
+        0.9102,
+        0.9387
+      ],
+      "coverage": 0.5437,
+      "S_h": {
+        "mean": 0.012,
+        "median": 0.0,
+        "max": 2
+      },
+      "S_d": {
+        "mean": 0.032,
+        "median": 0.0,
+        "max": 3
+      },
+      "frac_S_h_gt_S_d": 0.0033,
+      "committed_distribution": {
+        "bacterial_red": 457,
+        "bacterial_gill": 383,
+        "viral_white_tail": 362,
+        "healthy": 343,
+        "fungal": 324,
+        "parasitic": 322,
+        "aeromoniasis": 211
+      }
+    },
+    "B_deployed_top1_document": {
+      "condition": "B — caption + top-1 document (deployed)",
+      "agreement_with_retrieval_top1": 1.0,
+      "n_overridden_to_healthy": 0,
+      "overall_DA": 0.8122,
+      "overall_wilson95": [
+        0.7961,
+        0.8274
+      ],
+      "decisive_DA": 0.928,
+      "decisive_wilson95": [
+        0.9127,
+        0.9408
+      ],
+      "coverage": 0.5437,
+      "S_h": {
+        "mean": 29.351,
+        "median": 12.0,
+        "max": 134
+      },
+      "S_d": {
+        "mean": 99.595,
+        "median": 97.0,
+        "max": 124
+      },
+      "frac_S_h_gt_S_d": 0.1395,
+      "committed_distribution": {
+        "bacterial_red": 464,
+        "bacterial_gill": 384,
+        "viral_white_tail": 362,
+        "healthy": 335,
+        "fungal": 324,
+        "parasitic": 322,
+        "aeromoniasis": 211
+      }
+    },
+    "C_substitute_wrong_class_any": {
+      "condition": "C — caption + fixed wrong-class document (any KB class)",
+      "agreement_with_retrieval_top1": 0.8651,
+      "n_overridden_to_healthy": 324,
+      "overall_DA": 0.694,
+      "overall_wilson95": [
+        0.6753,
+        0.7121
+      ],
+      "decisive_DA": 0.7764,
+      "decisive_wilson95": [
+        0.753,
+        0.7982
+      ],
+      "coverage": 0.5437,
+      "S_h": {
+        "mean": 28.734,
+        "median": 12.0,
+        "max": 132
+      },
+      "S_d": {
+        "mean": 99.746,
+        "median": 100.0,
+        "max": 124
+      },
+      "frac_S_h_gt_S_d": 0.1349,
+      "committed_distribution": {
+        "healthy": 659,
+        "bacterial_red": 464,
+        "bacterial_gill": 384,
+        "viral_white_tail": 362,
+        "parasitic": 322,
+        "aeromoniasis": 211
+      }
+    },
+    "C2_substitute_wrong_disease": {
+      "condition": "C2 — caption + fixed wrong-DISEASE document",
+      "agreement_with_retrieval_top1": 1.0,
+      "n_overridden_to_healthy": 0,
+      "overall_DA": 0.8122,
+      "overall_wilson95": [
+        0.7961,
+        0.8274
+      ],
+      "decisive_DA": 0.928,
+      "decisive_wilson95": [
+        0.9127,
+        0.9408
+      ],
+      "coverage": 0.5437,
+      "S_h": {
+        "mean": 12.548,
+        "median": 12.0,
+        "max": 16
+      },
+      "S_d": {
+        "mean": 98.354,
+        "median": 96.0,
+        "max": 124
+      },
+      "frac_S_h_gt_S_d": 0.0,
+      "committed_distribution": {
+        "bacterial_red": 464,
+        "bacterial_gill": 384,
+        "viral_white_tail": 362,
+        "healthy": 335,
+        "fungal": 324,
+        "parasitic": 322,
+        "aeromoniasis": 211
+      }
+    },
+    "F_oracle_true_class": {
+      "condition": "F — caption + true-class document (oracle)",
+      "agreement_with_retrieval_top1": 0.9559,
+      "n_overridden_to_healthy": 106,
+      "overall_DA": 0.8564,
+      "overall_wilson95": [
+        0.8418,
+        0.8698
+      ],
+      "decisive_DA": 0.9342,
+      "decisive_wilson95": [
+        0.9194,
+        0.9464
+      ],
+      "coverage": 0.5437,
+      "S_h": {
+        "mean": 32.075,
+        "median": 12.0,
+        "max": 134
+      },
+      "S_d": {
+        "mean": 100.594,
+        "median": 100.0,
+        "max": 124
+      },
+      "frac_S_h_gt_S_d": 0.1628,
+      "committed_distribution": {
+        "healthy": 441,
+        "bacterial_red": 392,
+        "bacterial_gill": 383,
+        "viral_white_tail": 346,
+        "parasitic": 322,
+        "fungal": 318,
+        "aeromoniasis": 200
+      }
+    },
+    "D_random_non_top1": {
+      "condition": "D — caption + random non-top-1 document",
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "agreement_with_retrieval_top1": {
+        "mean": 0.881,
+        "min": 0.8751,
+        "max": 0.888,
+        "per_seed": [
+          0.8801,
+          0.8818,
+          0.888,
+          0.8751,
+          0.8801
+        ]
+      },
+      "overall_DA": {
+        "mean": 0.7208,
+        "min": 0.7169,
+        "max": 0.7248,
+        "per_seed": [
+          0.7215,
+          0.719,
+          0.7248,
+          0.7169,
+          0.7219
+        ]
+      },
+      "decisive_DA": {
+        "mean": 0.8185,
+        "min": 0.8109,
+        "max": 0.8331,
+        "per_seed": [
+          0.8216,
+          0.8132,
+          0.8331,
+          0.8139,
+          0.8109
+        ]
+      },
+      "frac_S_h_gt_S_d": {
+        "mean": 0.119,
+        "min": 0.112,
+        "max": 0.1249,
+        "per_seed": [
+          0.1199,
+          0.1182,
+          0.112,
+          0.1249,
+          0.1199
+        ]
+      },
+      "per_seed_detail": [
+        {
+          "condition": "D — random non-top-1 document (any KB class) (seed 42)",
+          "agreement_with_retrieval_top1": 0.8801,
+          "n_overridden_to_healthy": 288,
+          "overall_DA": 0.7215,
+          "overall_wilson95": [
+            0.7032,
+            0.739
+          ],
+          "decisive_DA": 0.8216,
+          "decisive_wilson95": [
+            0.7999,
+            0.8414
+          ],
+          "coverage": 0.5437,
+          "S_h": {
+            "mean": 26.866,
+            "median": 12.0,
+            "max": 134
+          },
+          "S_d": {
+            "mean": 100.524,
+            "median": 100.0,
+            "max": 124
+          },
+          "frac_S_h_gt_S_d": 0.1199,
+          "committed_distribution": {
+            "healthy": 623,
+            "bacterial_red": 398,
+            "bacterial_gill": 331,
+            "viral_white_tail": 307,
+            "fungal": 279,
+            "parasitic": 277,
+            "aeromoniasis": 187
+          }
+        },
+        {
+          "condition": "D — random non-top-1 document (any KB class) (seed 43)",
+          "agreement_with_retrieval_top1": 0.8818,
+          "n_overridden_to_healthy": 284,
+          "overall_DA": 0.719,
+          "overall_wilson95": [
+            0.7007,
+            0.7366
+          ],
+          "decisive_DA": 0.8132,
+          "decisive_wilson95": [
+            0.7911,
+            0.8334
+          ],
+          "coverage": 0.5437,
+          "S_h": {
+            "mean": 26.713,
+            "median": 12.0,
+            "max": 132
+          },
+          "S_d": {
+            "mean": 100.27,
+            "median": 100.0,
+            "max": 124
+          },
+          "frac_S_h_gt_S_d": 0.1182,
+          "committed_distribution": {
+            "healthy": 619,
+            "bacterial_red": 397,
+            "bacterial_gill": 327,
+            "viral_white_tail": 319,
+            "fungal": 278,
+            "parasitic": 275,
+            "aeromoniasis": 187
+          }
+        },
+        {
+          "condition": "D — random non-top-1 document (any KB class) (seed 44)",
+          "agreement_with_retrieval_top1": 0.888,
+          "n_overridden_to_healthy": 269,
+          "overall_DA": 0.7248,
+          "overall_wilson95": [
+            0.7066,
+            0.7423
+          ],
+          "decisive_DA": 0.8331,
+          "decisive_wilson95": [
+            0.8119,
+            0.8523
+          ],
+          "coverage": 0.5437,
+          "S_h": {
+            "mean": 25.918,
+            "median": 12.0,
+            "max": 132
+          },
+          "S_d": {
+            "mean": 100.608,
+            "median": 100.0,
+            "max": 124
+          },
+          "frac_S_h_gt_S_d": 0.112,
+          "committed_distribution": {
+            "healthy": 604,
+            "bacterial_red": 397,
+            "bacterial_gill": 338,
+            "viral_white_tail": 320,
+            "fungal": 290,
+            "parasitic": 270,
+            "aeromoniasis": 183
+          }
+        },
+        {
+          "condition": "D — random non-top-1 document (any KB class) (seed 45)",
+          "agreement_with_retrieval_top1": 0.8751,
+          "n_overridden_to_healthy": 300,
+          "overall_DA": 0.7169,
+          "overall_wilson95": [
+            0.6986,
+            0.7346
+          ],
+          "decisive_DA": 0.8139,
+          "decisive_wilson95": [
+            0.7919,
+            0.8341
+          ],
+          "coverage": 0.5437,
+          "S_h": {
+            "mean": 27.474,
+            "median": 12.0,
+            "max": 132
+          },
+          "S_d": {
+            "mean": 100.547,
+            "median": 100.0,
+            "max": 124
+          },
+          "frac_S_h_gt_S_d": 0.1249,
+          "committed_distribution": {
+            "healthy": 635,
+            "bacterial_red": 403,
+            "bacterial_gill": 332,
+            "viral_white_tail": 305,
+            "fungal": 274,
+            "parasitic": 273,
+            "aeromoniasis": 180
+          }
+        },
+        {
+          "condition": "D — random non-top-1 document (any KB class) (seed 46)",
+          "agreement_with_retrieval_top1": 0.8801,
+          "n_overridden_to_healthy": 288,
+          "overall_DA": 0.7219,
+          "overall_wilson95": [
+            0.7036,
+            0.7395
+          ],
+          "decisive_DA": 0.8109,
+          "decisive_wilson95": [
+            0.7887,
+            0.8312
+          ],
+          "coverage": 0.5437,
+          "S_h": {
+            "mean": 26.876,
+            "median": 12.0,
+            "max": 134
+          },
+          "S_d": {
+            "mean": 100.169,
+            "median": 100.0,
+            "max": 124
+          },
+          "frac_S_h_gt_S_d": 0.1199,
+          "committed_distribution": {
+            "healthy": 623,
+            "bacterial_red": 398,
+            "bacterial_gill": 331,
+            "viral_white_tail": 310,
+            "fungal": 283,
+            "parasitic": 279,
+            "aeromoniasis": 178
+          }
+        }
+      ]
+    },
+    "D2_random_non_top1_disease": {
+      "condition": "D2 — caption + random non-top-1 DISEASE document",
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "agreement_with_retrieval_top1": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "overall_DA": {
+        "mean": 0.8122,
+        "min": 0.8122,
+        "max": 0.8122,
+        "per_seed": [
+          0.8122,
+          0.8122,
+          0.8122,
+          0.8122,
+          0.8122
+        ]
+      },
+      "decisive_DA": {
+        "mean": 0.928,
+        "min": 0.928,
+        "max": 0.928,
+        "per_seed": [
+          0.928,
+          0.928,
+          0.928,
+          0.928,
+          0.928
+        ]
+      },
+      "frac_S_h_gt_S_d": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "per_seed_detail": [
+        {
+          "condition": "D2 — random non-top-1 DISEASE document (seed 42)",
+          "agreement_with_retrieval_top1": 1.0,
+          "n_overridden_to_healthy": 0,
+          "overall_DA": 0.8122,
+          "overall_wilson95": [
+            0.7961,
+            0.8274
+          ],
+          "decisive_DA": 0.928,
+          "decisive_wilson95": [
+            0.9127,
+            0.9408
+          ],
+          "coverage": 0.5437,
+          "S_h": {
+            "mean": 12.673,
+            "median": 12.0,
+            "max": 16
+          },
+          "S_d": {
+            "mean": 100.296,
+            "median": 96.5,
+            "max": 124
+          },
+          "frac_S_h_gt_S_d": 0.0,
+          "committed_distribution": {
+            "bacterial_red": 464,
+            "bacterial_gill": 384,
+            "viral_white_tail": 362,
+            "healthy": 335,
+            "fungal": 324,
+            "parasitic": 322,
+            "aeromoniasis": 211
+          }
+        },
+        {
+          "condition": "D2 — random non-top-1 DISEASE document (seed 43)",
+          "agreement_with_retrieval_top1": 1.0,
+          "n_overridden_to_healthy": 0,
+          "overall_DA": 0.8122,
+          "overall_wilson95": [
+            0.7961,
+            0.8274
+          ],
+          "decisive_DA": 0.928,
+          "decisive_wilson95": [
+            0.9127,
+            0.9408
+          ],
+          "coverage": 0.5437,
+          "S_h": {
+            "mean": 12.719,
+            "median": 12.0,
+            "max": 18
+          },
+          "S_d": {
+            "mean": 99.971,
+            "median": 96.0,
+            "max": 124
+          },
+          "frac_S_h_gt_S_d": 0.0,
+          "committed_distribution": {
+            "bacterial_red": 464,
+            "bacterial_gill": 384,
+            "viral_white_tail": 362,
+            "healthy": 335,
+            "fungal": 324,
+            "parasitic": 322,
+            "aeromoniasis": 211
+          }
+        },
+        {
+          "condition": "D2 — random non-top-1 DISEASE document (seed 44)",
+          "agreement_with_retrieval_top1": 1.0,
+          "n_overridden_to_healthy": 0,
+          "overall_DA": 0.8122,
+          "overall_wilson95": [
+            0.7961,
+            0.8274
+          ],
+          "decisive_DA": 0.928,
+          "decisive_wilson95": [
+            0.9127,
+            0.9408
+          ],
+          "coverage": 0.5437,
+          "S_h": {
+            "mean": 12.683,
+            "median": 12.0,
+            "max": 18
+          },
+          "S_d": {
+            "mean": 100.154,
+            "median": 97.0,
+            "max": 124
+          },
+          "frac_S_h_gt_S_d": 0.0,
+          "committed_distribution": {
+            "bacterial_red": 464,
+            "bacterial_gill": 384,
+            "viral_white_tail": 362,
+            "healthy": 335,
+            "fungal": 324,
+            "parasitic": 322,
+            "aeromoniasis": 211
+          }
+        },
+        {
+          "condition": "D2 — random non-top-1 DISEASE document (seed 45)",
+          "agreement_with_retrieval_top1": 1.0,
+          "n_overridden_to_healthy": 0,
+          "overall_DA": 0.8122,
+          "overall_wilson95": [
+            0.7961,
+            0.8274
+          ],
+          "decisive_DA": 0.928,
+          "decisive_wilson95": [
+            0.9127,
+            0.9408
+          ],
+          "coverage": 0.5437,
+          "S_h": {
+            "mean": 12.654,
+            "median": 12.0,
+            "max": 18
+          },
+          "S_d": {
+            "mean": 100.294,
+            "median": 96.0,
+            "max": 124
+          },
+          "frac_S_h_gt_S_d": 0.0,
+          "committed_distribution": {
+            "bacterial_red": 464,
+            "bacterial_gill": 384,
+            "viral_white_tail": 362,
+            "healthy": 335,
+            "fungal": 324,
+            "parasitic": 322,
+            "aeromoniasis": 211
+          }
+        },
+        {
+          "condition": "D2 — random non-top-1 DISEASE document (seed 46)",
+          "agreement_with_retrieval_top1": 1.0,
+          "n_overridden_to_healthy": 0,
+          "overall_DA": 0.8122,
+          "overall_wilson95": [
+            0.7961,
+            0.8274
+          ],
+          "decisive_DA": 0.928,
+          "decisive_wilson95": [
+            0.9127,
+            0.9408
+          ],
+          "coverage": 0.5437,
+          "S_h": {
+            "mean": 12.666,
+            "median": 12.0,
+            "max": 18
+          },
+          "S_d": {
+            "mean": 100.048,
+            "median": 96.0,
+            "max": 124
+          },
+          "frac_S_h_gt_S_d": 0.0,
+          "committed_distribution": {
+            "bacterial_red": 464,
+            "bacterial_gill": 384,
+            "viral_white_tail": 362,
+            "healthy": 335,
+            "fungal": 324,
+            "parasitic": 322,
+            "aeromoniasis": 211
+          }
+        }
+      ]
+    }
+  },
+  "structural_finding": {
+    "claim": "the evidence layer cannot change the retrieved disease identity",
+    "reason": "the commitment rule is 'healthy if S_h > S_d else c1'; the disease label always comes from the Stage-2 retrieval candidate c1, so varying the document can only move a sample between c1 and Healthy, never between two diseases",
+    "labels_ever_committed": [
+      "aeromoniasis",
+      "bacterial_gill",
+      "bacterial_red",
+      "fungal",
+      "healthy",
+      "parasitic",
+      "viral_white_tail"
+    ]
+  }
+}

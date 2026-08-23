@@ -115,9 +115,7 @@ def main():
     eus_test_size = len(eus_test)
     print(f"  EUS ref pool: {len(eus_ref_pool)}, EUS test: {eus_test_size}")
 
-    # But wait - EXP-15 used 50 ref + 56 test = 106, but we have 400 total
-    # Let me check EXP-15's protocol more carefully
-    # EXP-15: eus_ref_pool_size=50, eus_test_size=56
+    # EXP-15 protocol: eus_ref_pool_size=50, eus_test_size=56 (50 ref + 56 test = 106 of 400 total EUS).
     # Total EUS in D2 train_split = 400
     # So they used first 50 for ref, next 56 for test (indices 50-105)
 

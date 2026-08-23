@@ -1,0 +1,8 @@
+{
+  "n": 1242,
+  "DA_without_BVL": 0.9428,
+  "DA_with_BVL": 0.942,
+  "delta": -0.0008,
+  "top1_changed": 41,
+  "note": "PROXY reimplementation: grounding score = candidate class agrees with query visual-NN class; real Florence-2 grounding-score computation not reconstructable from available code"
+}

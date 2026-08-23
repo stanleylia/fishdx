@@ -1,0 +1,118 @@
+{
+  "experiment": "r5_matched_coverage_knn",
+  "reviewer_comment": "5-2(2): abstention rule for visual k-NN; risk, accuracy and CIs at matched coverage",
+  "protocol": "docs/reviewer5_analysis_protocol.md",
+  "protocol_status": "time-stamped prospectively specified analysis plan, fixed after the reviewer's request and before this re-analysis; NOT a pre-registration filed before the study began",
+  "source_archive": "results/reviewer5/selective_predictions_d2final.jsonl",
+  "models_rerun": false,
+  "n_d2final": 2402,
+  "pipeline": {
+    "threshold": 0.02,
+    "threshold_provenance": "fixed a priori on the EUS calibration half (Limitation 6)",
+    "coverage": 0.5437,
+    "n_decided": 1306,
+    "n_correct": 1212,
+    "selective_accuracy": 0.928,
+    "selective_accuracy_wilson95": [
+      0.9127,
+      0.9408
+    ],
+    "selective_risk": 0.072,
+    "selective_risk_wilson95": [
+      0.0592,
+      0.0873
+    ]
+  },
+  "R1_primary_matched_coverage": {
+    "threshold": 0.022978,
+    "threshold_provenance": "quantile of the D2-final visual-margin distribution reproducing the pipeline coverage; margins only, no labels (transductive)",
+    "coverage": 0.5437,
+    "n_decided": 1306,
+    "n_correct": 1230,
+    "selective_accuracy": 0.9418,
+    "selective_accuracy_wilson95": [
+      0.9278,
+      0.9533
+    ],
+    "selective_risk": 0.0582,
+    "selective_risk_wilson95": [
+      0.0467,
+      0.0722
+    ],
+    "coverage_gap_vs_pipeline_pp": 0.001,
+    "within_tolerance": true
+  },
+  "R2_split_conformal": {
+    "comparator": {
+      "threshold": 0.023353,
+      "threshold_provenance": "split conformal: quantile on a seed-42 calibration half of D2-final, evaluated on the disjoint complementary half",
+      "coverage": 0.5371,
+      "n_decided": 645,
+      "n_correct": 608,
+      "selective_accuracy": 0.9426,
+      "selective_accuracy_wilson95": [
+        0.9219,
+        0.9581
+      ],
+      "selective_risk": 0.0574,
+      "selective_risk_wilson95": [
+        0.0419,
+        0.0781
+      ],
+      "n_calibration": 1201,
+      "n_test_half": 1201
+    },
+    "pipeline_same_half": {
+      "threshold": 0.02,
+      "threshold_provenance": "pipeline evaluated on the same conformal test half",
+      "coverage": 0.5396,
+      "n_decided": 648,
+      "n_correct": 601,
+      "selective_accuracy": 0.9275,
+      "selective_accuracy_wilson95": [
+        0.9049,
+        0.945
+      ],
+      "selective_risk": 0.0725,
+      "selective_risk_wilson95": [
+        0.055,
+        0.0951
+      ]
+    }
+  },
+  "R3_locked_threshold_d1_loo": {
+    "threshold": 0.016148,
+    "threshold_provenance": "locked: quantile of the D1 gallery leave-one-out visual-margin distribution (development-only, disjoint from D2-final); not retuned",
+    "coverage": 0.6286,
+    "n_decided": 1510,
+    "n_correct": 1389,
+    "selective_accuracy": 0.9199,
+    "selective_accuracy_wilson95": [
+      0.9051,
+      0.9325
+    ],
+    "selective_risk": 0.0801,
+    "selective_risk_wilson95": [
+      0.0675,
+      0.0949
+    ],
+    "n_calibration_d1_loo": 1639,
+    "coverage_gap_vs_pipeline_pp": 8.489
+  },
+  "paired_bootstrap_R1_vs_pipeline": {
+    "n_resamples": 1000,
+    "seed": 42,
+    "resampling_unit": "sample (with replacement); threshold re-derived within each resample",
+    "delta_risk_mean": -0.0145,
+    "delta_risk_ci95": [
+      -0.0285,
+      0.0
+    ],
+    "pipeline_selective_accuracy_mean": 0.9282,
+    "knn_selective_accuracy_mean": 0.9427,
+    "crosses_zero": true,
+    "p_delta_risk_ge_0": 0.027,
+    "p_delta_risk_lt_0": 0.973,
+    "interpretation": "Delta risk < 0 means the deferring visual k-NN has LOWER selective risk than the pipeline at matched coverage"
+  }
+}

@@ -16,15 +16,14 @@ class DecisionEnum(str, Enum):
     INCONCLUSIVE = "Inconclusive"
 
 
-# Decision-path reason codes. The field is historically named
-# ``inconclusive_reason`` but is populated for the Disease path as well
-# (``"disease_path"``) to preserve end-to-end traceability of which
-# Eq. 10 branch produced the outcome.
+# Reason codes are populated only for Inconclusive outcomes.
 InconclusiveReason = Literal[
     "low_margin",
     "scoring_margin",
+    "low_health_score",
+    "tie",
+    "insufficient_candidates",
     "no_evidence",
-    "disease_path",
     "fallback",
 ]
 

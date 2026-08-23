@@ -1,4 +1,23 @@
 """
+DEPOSIT NOTE — verification-loop penalty statistic (retrieval-confidence proxy).
+
+This script produced the manuscript's verification-loop penalty rates
+(3.4% D1->D1, 47.2% D1->D2, 94.0% D1->EUS) and the Mann-Whitney U test
+(p = 2.12e-169, r = 1.000); its output is shipped as
+results/verification_penalty_proxy.json.
+
+IMPORTANT: the 'grounding' signal here is a RETRIEVAL-CONFIDENCE PROXY --
+a candidate is penalised when its top-1 gallery similarity / top-1-vs-top-2
+margin is low -- NOT a live Florence-2 visual-grounding call. A faithful
+Florence-2 grounding implementation is not reconstructable from the released
+code (see the manuscript Methods/Discussion and REPRODUCIBILITY_MAP.md Sec.1).
+
+DATA DEPENDENCY: this script reads the large-scale (D8) embedding cache under
+lab_dateset/organized/experiment_results/, which is NOT redistributed in this
+deposit. The shipped results/verification_penalty_proxy.json is the archival
+output. To re-run, regenerate that cache from the public datasets first.
+
+----------------------------------------------------------------------
 EXP-18: Verification Loop Adversarial Test (v2)
 Addresses Reviewer M4: Verification Loop never triggered in EXP-06
 

@@ -1,0 +1,397 @@
+{
+  "experiment": "E3_real_florence2",
+  "date": "2026-07-02 21:14:11 UTC",
+  "data_source": "D2 (3,473 images, real Florence-2 captions)",
+  "caption_generation": "Real Florence-2 DENSE_REGION_CAPTION task (num_beams=3)",
+  "target_coverage": 0.643,
+  "matched_threshold": 0.9100000000000004,
+  "matched_coverage": 0.01723610711200685,
+  "clip_text_only_selective_accuracy": 0.8168338421282163,
+  "pipeline_dual_path_accuracy": 0.924,
+  "modality_delta": -0.10716615787178374,
+  "verdict": "text_insufficient",
+  "full_threshold_curve": [
+    {
+      "threshold": 0.5,
+      "coverage": 1.0,
+      "selective_accuracy": 0.7244457241577886,
+      "num_decided": 3473
+    },
+    {
+      "threshold": 0.51,
+      "coverage": 1.0,
+      "selective_accuracy": 0.7244457241577886,
+      "num_decided": 3473
+    },
+    {
+      "threshold": 0.52,
+      "coverage": 1.0,
+      "selective_accuracy": 0.7244457241577886,
+      "num_decided": 3473
+    },
+    {
+      "threshold": 0.53,
+      "coverage": 1.0,
+      "selective_accuracy": 0.7244457241577886,
+      "num_decided": 3473
+    },
+    {
+      "threshold": 0.54,
+      "coverage": 1.0,
+      "selective_accuracy": 0.7244457241577886,
+      "num_decided": 3473
+    },
+    {
+      "threshold": 0.55,
+      "coverage": 1.0,
+      "selective_accuracy": 0.7244457241577886,
+      "num_decided": 3473
+    },
+    {
+      "threshold": 0.56,
+      "coverage": 1.0,
+      "selective_accuracy": 0.7244457241577886,
+      "num_decided": 3473
+    },
+    {
+      "threshold": 0.5700000000000001,
+      "coverage": 0.9997120644975526,
+      "selective_accuracy": 0.7246543778801844,
+      "num_decided": 3472
+    },
+    {
+      "threshold": 0.5800000000000001,
+      "coverage": 0.9997120644975526,
+      "selective_accuracy": 0.7246543778801844,
+      "num_decided": 3472
+    },
+    {
+      "threshold": 0.5900000000000001,
+      "coverage": 0.9994241289951051,
+      "selective_accuracy": 0.7248631518294439,
+      "num_decided": 3471
+    },
+    {
+      "threshold": 0.6000000000000001,
+      "coverage": 0.9988482579902102,
+      "selective_accuracy": 0.7252810608244451,
+      "num_decided": 3469
+    },
+    {
+      "threshold": 0.6100000000000001,
+      "coverage": 0.9979844514828679,
+      "selective_accuracy": 0.7253317945758799,
+      "num_decided": 3466
+    },
+    {
+      "threshold": 0.6200000000000001,
+      "coverage": 0.9979844514828679,
+      "selective_accuracy": 0.7253317945758799,
+      "num_decided": 3466
+    },
+    {
+      "threshold": 0.6300000000000001,
+      "coverage": 0.997408580477973,
+      "selective_accuracy": 0.7254618937644342,
+      "num_decided": 3464
+    },
+    {
+      "threshold": 0.6400000000000001,
+      "coverage": 0.9971206449755254,
+      "selective_accuracy": 0.7256713831937627,
+      "num_decided": 3463
+    },
+    {
+      "threshold": 0.6500000000000001,
+      "coverage": 0.9965447739706306,
+      "selective_accuracy": 0.7258017913897717,
+      "num_decided": 3461
+    },
+    {
+      "threshold": 0.6600000000000001,
+      "coverage": 0.9956809674632883,
+      "selective_accuracy": 0.7261422787738577,
+      "num_decided": 3458
+    },
+    {
+      "threshold": 0.6700000000000002,
+      "coverage": 0.9939533544486036,
+      "selective_accuracy": 0.7265353418308227,
+      "num_decided": 3452
+    },
+    {
+      "threshold": 0.6800000000000002,
+      "coverage": 0.9916498704290239,
+      "selective_accuracy": 0.7267711962833914,
+      "num_decided": 3444
+    },
+    {
+      "threshold": 0.6900000000000002,
+      "coverage": 0.9890584509069968,
+      "selective_accuracy": 0.7272197962154294,
+      "num_decided": 3435
+    },
+    {
+      "threshold": 0.7000000000000002,
+      "coverage": 0.9867549668874173,
+      "selective_accuracy": 0.7283338196673476,
+      "num_decided": 3427
+    },
+    {
+      "threshold": 0.7100000000000002,
+      "coverage": 0.9835876763604953,
+      "selective_accuracy": 0.7295081967213115,
+      "num_decided": 3416
+    },
+    {
+      "threshold": 0.7200000000000002,
+      "coverage": 0.9786927728188886,
+      "selective_accuracy": 0.7316857899382171,
+      "num_decided": 3399
+    },
+    {
+      "threshold": 0.7300000000000002,
+      "coverage": 0.9761013532968615,
+      "selective_accuracy": 0.7315634218289085,
+      "num_decided": 3390
+    },
+    {
+      "threshold": 0.7400000000000002,
+      "coverage": 0.970054707745465,
+      "selective_accuracy": 0.7316711190264173,
+      "num_decided": 3369
+    },
+    {
+      "threshold": 0.7500000000000002,
+      "coverage": 0.9645839331989634,
+      "selective_accuracy": 0.7325373134328358,
+      "num_decided": 3350
+    },
+    {
+      "threshold": 0.7600000000000002,
+      "coverage": 0.9576734811402245,
+      "selective_accuracy": 0.7339146121467228,
+      "num_decided": 3326
+    },
+    {
+      "threshold": 0.7700000000000002,
+      "coverage": 0.9470198675496688,
+      "selective_accuracy": 0.7366980845241715,
+      "num_decided": 3289
+    },
+    {
+      "threshold": 0.7800000000000002,
+      "coverage": 0.9403973509933775,
+      "selective_accuracy": 0.7363747703612982,
+      "num_decided": 3266
+    },
+    {
+      "threshold": 0.7900000000000003,
+      "coverage": 0.9288799308954794,
+      "selective_accuracy": 0.7389956602603843,
+      "num_decided": 3226
+    },
+    {
+      "threshold": 0.8000000000000003,
+      "coverage": 0.9190901238122661,
+      "selective_accuracy": 0.7412280701754386,
+      "num_decided": 3192
+    },
+    {
+      "threshold": 0.8100000000000003,
+      "coverage": 0.9081485747192629,
+      "selective_accuracy": 0.7444514901712111,
+      "num_decided": 3154
+    },
+    {
+      "threshold": 0.8200000000000003,
+      "coverage": 0.8949035416066801,
+      "selective_accuracy": 0.7483912483912484,
+      "num_decided": 3108
+    },
+    {
+      "threshold": 0.8300000000000003,
+      "coverage": 0.8799308954794126,
+      "selective_accuracy": 0.7545811518324608,
+      "num_decided": 3056
+    },
+    {
+      "threshold": 0.8400000000000003,
+      "coverage": 0.8571839907860639,
+      "selective_accuracy": 0.7631844138394357,
+      "num_decided": 2977
+    },
+    {
+      "threshold": 0.8500000000000003,
+      "coverage": 0.841923409156349,
+      "selective_accuracy": 0.7657318741450069,
+      "num_decided": 2924
+    },
+    {
+      "threshold": 0.8600000000000003,
+      "coverage": 0.818312697955658,
+      "selective_accuracy": 0.7730471498944406,
+      "num_decided": 2842
+    },
+    {
+      "threshold": 0.8700000000000003,
+      "coverage": 0.791534696228045,
+      "selective_accuracy": 0.7791924336122227,
+      "num_decided": 2749
+    },
+    {
+      "threshold": 0.8800000000000003,
+      "coverage": 0.7613014684710625,
+      "selective_accuracy": 0.7893343419062028,
+      "num_decided": 2644
+    },
+    {
+      "threshold": 0.8900000000000003,
+      "coverage": 0.7322199827238699,
+      "selective_accuracy": 0.8002359418010224,
+      "num_decided": 2543
+    },
+    {
+      "threshold": 0.9000000000000004,
+      "coverage": 0.6962280449179383,
+      "selective_accuracy": 0.8072787427626137,
+      "num_decided": 2418
+    },
+    {
+      "threshold": 0.9100000000000004,
+      "coverage": 0.6602361071120069,
+      "selective_accuracy": 0.8168338421282163,
+      "num_decided": 2293
+    },
+    {
+      "threshold": 0.9200000000000004,
+      "coverage": 0.6173337172473365,
+      "selective_accuracy": 0.8292910447761194,
+      "num_decided": 2144
+    },
+    {
+      "threshold": 0.9300000000000004,
+      "coverage": 0.5629139072847682,
+      "selective_accuracy": 0.8434782608695652,
+      "num_decided": 1955
+    },
+    {
+      "threshold": 0.9400000000000004,
+      "coverage": 0.4989922257414339,
+      "selective_accuracy": 0.8615118291979227,
+      "num_decided": 1733
+    },
+    {
+      "threshold": 0.9500000000000004,
+      "coverage": 0.4428448027641808,
+      "selective_accuracy": 0.8875162548764629,
+      "num_decided": 1538
+    },
+    {
+      "threshold": 0.9600000000000004,
+      "coverage": 0.38496976677224304,
+      "selective_accuracy": 0.9154824233358265,
+      "num_decided": 1337
+    },
+    {
+      "threshold": 0.9700000000000004,
+      "coverage": 0.3342931183414915,
+      "selective_accuracy": 0.9388458225667528,
+      "num_decided": 1161
+    },
+    {
+      "threshold": 0.9800000000000004,
+      "coverage": 0.2818888568960553,
+      "selective_accuracy": 0.9540347293156282,
+      "num_decided": 979
+    },
+    {
+      "threshold": 0.9900000000000004,
+      "coverage": 0.2280449179383818,
+      "selective_accuracy": 0.9861111111111112,
+      "num_decided": 792
+    },
+    {
+      "threshold": 1.0000000000000004,
+      "coverage": 0.02130722718111143,
+      "selective_accuracy": 1.0,
+      "num_decided": 74
+    }
+  ],
+  "caption_quality": {
+    "total_captions": 3473,
+    "successful_captions": 3473,
+    "failed_captions": 0,
+    "avg_caption_length": 83.89403973509934,
+    "captions_with_disease_keywords": 3298,
+    "keyword_coverage_percent": 94.96112870716959,
+    "sample_captions": [
+      {
+        "image": "Bacterial Red disease_100.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a person's hand holding a small fish. The fish appears to be a type of fish, possibly a mackerel, with a round body and a pointed snout. It has a white body with black spots and a yellow dorsal fin. The body of the fish is covered in small hairs, which are visible on the top and bottom of its head. The person's fingers are gently cradling the fish, and the background is blurred, making the fish the focal point of the image.",
+        "length": 89
+      },
+      {
+        "image": "Bacterial Red disease_101.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a person's hand holding a small bird. The bird appears to be a guinea pig, with white fur and a yellow beak. It is looking directly at the camera with its mouth slightly open, as if it is about to take a bite out of something. The background is blurred, but it seems like the person is standing in front of a white wall. The image is slightly out of focus, making it difficult to make out any details.",
+        "length": 85
+      },
+      {
+        "image": "Bacterial Red disease_102.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a person's hand holding a small object. The object appears to be a piece of paper or a notebook, with a grid-like pattern on the bottom. The person's fingers are visible, and they are holding the object with both hands. The background is blurred, but it seems like the person is in a room with a white wall and a window. The image is taken from a top-down perspective, looking down on the object.",
+        "length": 80
+      },
+      {
+        "image": "Bacterial Red disease_11.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image shows a close-up of a fish hanging from a window sill. The fish appears to be a catfish, with a long, slender body and a pointed head. It has a green body with a red stripe running down its back. The tail of the fish is visible, and it is hanging upside down from the window sill with its mouth open. The window sill is made of wood, and there is a white railing visible in the background. The image is taken from a low angle, looking up at the fish.",
+        "length": 93
+      },
+      {
+        "image": "Bacterial Red disease_112.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a green and yellow striped object. The object appears to be made of plastic or a similar material and has a rectangular shape with rounded edges. On the top left corner of the object, there is a small red dot, which could be a symbol or a logo. The red dot is slightly larger than the green one and is slightly smaller than the yellow one. The background is white, making the object stand out.",
+        "length": 81
+      },
+      {
+        "image": "Bacterial Red disease_114.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a plant with long, thin, green leaves. The leaves are arranged in a vertical line, with the topmost leaf being the largest and the bottommost being the smallest. The plant appears to be a type of fennel, with a round, bulbous shape and a pointed tip. The background is white, making the plant stand out. The image is slightly blurred, giving it a dreamy, ethereal quality.",
+        "length": 72
+      },
+      {
+        "image": "Bacterial Red disease_115.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a fish, specifically a triggerfish. The fish is facing towards the right side of the image, with its body slightly angled towards the left side. The body of the fish is predominantly white with black stripes running horizontally across its body. The stripes are evenly spaced and run horizontally across the body, creating a striped pattern. The fins are a lighter shade of green and the tail is a darker shade of orange. The background is white, making the fish stand out.",
+        "length": 88
+      },
+      {
+        "image": "Bacterial Red disease_116.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a fish's head. The fish appears to be a type of freshwater fish, with a round body and a pointed snout. The body of the fish is covered in small bumps and ridges, giving it a textured appearance. The fins are long and thin, and the tail is slightly curved. The background is white, making the fish stand out. The image is slightly blurred, making it difficult to make out any details.",
+        "length": 78
+      },
+      {
+        "image": "Bacterial Red disease_119.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of two airplanes flying in the sky. The airplanes are white in color and appear to be in motion. They are flying side by side, with their wings spread wide and their engines roaring. The background is blurred, but it appears to be an aerial view of a cityscape with tall buildings and trees. The image is taken from a low angle, looking up at the airplanes. There are two red circles on the airplanes, one on each side of the image, which could be blood stains or blood stains.",
+        "length": 95
+      },
+      {
+        "image": "Bacterial Red disease_122.jpg",
+        "label": "Bacterial Red disease",
+        "caption": "The image is a close-up of a person's hand holding a blue plastic container. The container appears to be filled with water and there is a small amount of dirt or debris scattered around it. The person is wearing a purple shirt and blue jeans. The background is blurred, but it seems to be a wooden surface. The image is taken from a low angle, looking up at the container.",
+        "length": 70
+      }
+    ]
+  },
+  "embedding_quality": {
+    "intra_class_distance_mean": 0.4691682895645499,
+    "inter_class_distance_mean": 0.5056745440363885,
+    "separability_ratio": 1.0778105751898133,
+    "separability_assessment": "POOR"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "experiment": "pareidolia_1537_noaug",
+  "n": 1537,
+  "ks_coverage_pct": 3.06,
+  "hard_path_fp_pct": 0.65,
+  "blocked_by_guard": 37,
+  "K_s": [
+    "cage",
+    "enclosure",
+    "fence",
+    "grid",
+    "lattice",
+    "mesh",
+    "net",
+    "netting",
+    "pen",
+    "wire"
+  ],
+  "K_b": [
+    "animal",
+    "body",
+    "eye",
+    "face",
+    "head",
+    "human",
+    "person"
+  ]
+}

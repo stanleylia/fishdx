@@ -1,0 +1,43 @@
+{
+  "experiment": "d2_clean_decisive_selective_prediction",
+  "subset": "D2 disjoint from D1 (pHash>5)",
+  "n_clean": 1941,
+  "n_eus": 442,
+  "lambda": 0.7,
+  "forced_choice_overall_DA": 0.6625,
+  "sweep": {
+    "theta_0.00": {
+      "coverage": 1.0,
+      "abstention": 0.0,
+      "decisive_DA": 0.6625,
+      "n_decided": 1941,
+      "eus_abstained_frac": 0.0
+    },
+    "theta_0.01": {
+      "coverage": 0.6548,
+      "abstention": 0.3452,
+      "decisive_DA": 0.7522,
+      "n_decided": 1271,
+      "eus_abstained_frac": 0.4842
+    },
+    "theta_0.02": {
+      "coverage": 0.4343,
+      "abstention": 0.5657,
+      "decisive_DA": 0.8316,
+      "n_decided": 843,
+      "eus_abstained_frac": 0.7376
+    },
+    "theta_0.05": {
+      "coverage": 0.1752,
+      "abstention": 0.8248,
+      "decisive_DA": 0.9353,
+      "n_decided": 340,
+      "eus_abstained_frac": 0.9502
+    }
+  },
+  "original_contaminated": {
+    "decisive_DA": 0.924,
+    "coverage": 0.643,
+    "at_theta": 0.02
+  }
+}

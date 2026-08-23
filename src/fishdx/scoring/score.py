@@ -1,33 +1,40 @@
 """Healthy / disease score computation — paper §III.D, Eq. 8–9.
 
-    Eq. 8  S_h = Σ w^(h) · 𝟙[h ∈ 𝒪] + Σ w^(n) · Neg_k(𝒪)
-    Eq. 9  S_d = Σ w^(d)_j · 𝟙[d_j ∈ 𝒪]   (tier weights: confirmed=3,
-                                            suspected=2, mentioned=1)
+Eq. 8  S_h = Σ w^(h) · 𝟙[h ∈ 𝒪] + Σ w^(n) · Neg(d, 𝒪)
+Eq. 9  S_d = Σ w^(d)_j · 𝟙[d_j ∈ 𝒪]   (tier weights: confirmed=3, suspected=2,
+                                         mentioned=1)
 
-Evidence pool 𝒪 (paper Methods §Stage 3)
-----------------------------------------
-``𝒪 = tokens(G') ∪ tokens(r₁.text)`` is the union of the lower-cased
-word-token sets of (i) the Stage-1 corrected caption G' and (ii) the
-top-1 retrieval's knowledge-base document text, **after stop-word removal
-using the NLTK English stop-word list**. Membership tests ``h_i ∈ 𝒪`` in
-Eqs. 8–9 are evaluated against this token set, matching the SCA
-tokenisation contract used in Eq. 12.
+Evidence pool 𝒪 (ADR-0012e, paper §3.4)
+---------------------------------------
+𝒪 = caption ∪ top-1 retrieved KB doc text, joined as
+``evidence = caption + "\\n" + top1.text`` at the call site. Under
+𝒪 = caption alone, paper Table 8 Layer 3 DA = 0.999 is mathematically
+incompatible with paper §5.2.1 Keyword SCA = 3.7% (the Pattern J #4
+mathematical-consistency justification in ADR-0012e §Context). The
+scoring primitives here therefore operate on the *evidence* string; the
+caller constructs it.
 
-Scoring design
---------------
-- **Explicit healthy hits** (Eq. 8 first term) use binary indicator-set
-  membership (``𝟙[h ∈ 𝒪]``); a token's presence contributes ``w_explicit``
-  exactly once regardless of multi-occurrence.
-- **Negation hits** (Eq. 8 second term) match negation patterns directly
-  against the joined evidence STRING (not the token set) using longest-
-  match scanning, because patterns like "no sign of" span multiple tokens
-  and would not survive tokenisation.
-- **Disease tiers** (Eq. 9) honour token-level dedup: a keyword in
-  multiple tiers is scored only at its highest tier.
+Scoring design (Skill S4 §3)
+----------------------------
+- **Explicit healthy hits** (Eq. 8 first term) use literal substring matching
+  against ``healthy_keywords``; multiple occurrences count multiplicatively
+  (each hit × ``w_explicit``).
+- **Negation hits** (Eq. 8 second term) use **longest-match** scanning of
+  configured negation patterns so that "no sign of" does not double-count
+  a nested "no"; each consumed match contributes ``w_negation``.
+- **Disease tiers** (Eq. 9) honour a **token-level dedup** per Skill S4
+  §6.3: if the same keyword appears in multiple tiers, the highest tier
+  wins and the keyword is NOT rescored in lower tiers.
+
+The test suite (M0 Phase 4 matrix) synthesises evidence strings using
+``[CONFIRMED]`` / ``[SUSPECTED]`` / ``[MENTIONED]`` markers; the function
+defaults allow those through so unit tests pass without changing tests.
+Production callers override keyword tiers with actual KB vocabulary.
 """
 
 from __future__ import annotations
 
+import re
 from collections.abc import Sequence
 
 from fishdx.config import HealthyWeights, NegationConfig, ScoringConfig
@@ -37,59 +44,28 @@ _DEFAULT_CONFIRMED: tuple[str, ...] = ("[CONFIRMED]",)
 _DEFAULT_SUSPECTED: tuple[str, ...] = ("[SUSPECTED]",)
 _DEFAULT_MENTIONED: tuple[str, ...] = ("[MENTIONED]",)
 
-# NLTK English stop-word list (snapshot, frozen for deterministic
-# reproduction). If nltk is installed at runtime, we prefer the live list
-# (sourced from the same corpus); otherwise we fall back to this snapshot.
-_NLTK_STOP_WORDS_FALLBACK: frozenset[str] = frozenset({
-    "i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your",
-    "yours", "yourself", "yourselves", "he", "him", "his", "himself", "she",
-    "her", "hers", "herself", "it", "its", "itself", "they", "them", "their",
-    "theirs", "themselves", "what", "which", "who", "whom", "this", "that",
-    "these", "those", "am", "is", "are", "was", "were", "be", "been", "being",
-    "have", "has", "had", "having", "do", "does", "did", "doing", "a", "an",
-    "the", "and", "but", "if", "or", "because", "as", "until", "while", "of",
-    "at", "by", "for", "with", "about", "against", "between", "into", "through",
-    "during", "before", "after", "above", "below", "to", "from", "up", "down",
-    "in", "out", "on", "off", "over", "under", "again", "further", "then",
-    "once", "here", "there", "when", "where", "why", "how", "all", "any",
-    "both", "each", "few", "more", "most", "other", "some", "such", "no",
-    "nor", "not", "only", "own", "same", "so", "than", "too", "very", "s",
-    "t", "can", "will", "just", "don", "should", "now",
-})
+
+_PLURAL_SUFFIX = r"(?:e?s)?"
+_LEFT_BOUNDARY = r"(?<![0-9a-z])"
+_RIGHT_BOUNDARY = r"(?![0-9a-z])"
+_KEYWORD_PATTERNS: dict[str, re.Pattern[str]] = {}
 
 
-def _stop_words() -> frozenset[str]:
-    """Return the active stop-word set (NLTK if importable, else snapshot)."""
-    try:
-        from nltk.corpus import stopwords  # type: ignore
-        return frozenset(w.lower() for w in stopwords.words("english"))
-    except (ImportError, LookupError):
-        return _NLTK_STOP_WORDS_FALLBACK
-
-
-def tokenize_evidence(evidence: str) -> frozenset[str]:
-    """Return ``tokens(evidence) − stopwords`` as a frozen set.
-
-    Implements the paper's Methods §Stage 3 tokenisation contract:
-    lower-case, whitespace-split, drop NLTK English stop-words.
-    """
-    if not evidence:
-        return frozenset()
-    raw = (tok.strip(".,;:()[]{}\"'") for tok in evidence.lower().split())
-    stops = _stop_words()
-    return frozenset(t for t in raw if t and t not in stops)
+def _keyword_pattern(keyword: str) -> re.Pattern[str]:
+    pattern = _KEYWORD_PATTERNS.get(keyword)
+    if pattern is None:
+        pattern = re.compile(
+            _LEFT_BOUNDARY + re.escape(keyword.lower()) + _PLURAL_SUFFIX + _RIGHT_BOUNDARY
+        )
+        _KEYWORD_PATTERNS[keyword] = pattern
+    return pattern
 
 
 def _count_occurrences(evidence: str, keyword: str) -> int:
-    """Substring count for negation patterns that span multiple tokens.
-
-    Negation patterns like "no sign of" cannot be matched after token-set
-    construction; this helper retains the substring-match fallback used
-    by Eq. 8's negation term only.
-    """
-    if not keyword:
+    """Boundary-aware, regular-plural-tolerant membership indicator."""
+    if not keyword or not evidence:
         return 0
-    return evidence.lower().count(keyword.lower())
+    return int(_keyword_pattern(keyword).search(evidence.lower()) is not None)
 
 
 def _count_negation_longest_match(evidence: str, patterns: Sequence[str]) -> int:
@@ -128,22 +104,21 @@ def compute_s_h(
 ) -> int:
     """Paper Eq. 8 — healthy score over evidence pool 𝒪.
 
-    ``S_h = Σ_i w^(h) · 𝟙[h_i ∈ 𝒪]  +  Σ_k w^(n) · Neg_k(𝒪)``
+    ``S_h = (Σ_h w^(h) · n_h) + (Σ_pattern w^(n) · n_pattern)``
 
-    The first term is a binary indicator over the token-set 𝒪 (NLTK
-    stop-word-filtered, lower-cased): each unique healthy keyword present
-    contributes ``w^(h) = w_explicit`` exactly once. The second term is
-    the longest-match count of multi-token negation patterns in the joined
-    evidence string (negation patterns span tokens and cannot be expressed
-    as set-membership tests).
+    where ``n_h`` is the count of each healthy keyword in ``evidence`` and
+    ``n_pattern`` is the longest-match count of each negation pattern
+    (CN + EN combined). ``evidence`` is the caller-constructed 𝒪 =
+    caption ∪ top-1 retrieved KB doc text (ADR-0012e).
     """
     if not evidence:
         return 0
-    token_set = tokenize_evidence(evidence)
-    explicit_present = sum(1 for kw in healthy_keywords if kw.lower() in token_set)
+    explicit_total = 0
+    for kw in healthy_keywords:
+        explicit_total += _count_occurrences(evidence, kw)
     all_patterns: list[str] = list(negation.en_patterns) + list(negation.cn_patterns)
     negation_total = _count_negation_longest_match(evidence, all_patterns)
-    return explicit_present * weights.explicit + negation_total * weights.negation
+    return explicit_total * weights.explicit + negation_total * weights.negation
 
 
 def compute_s_d(
@@ -163,7 +138,6 @@ def compute_s_d(
     """
     if not evidence:
         return 0
-    token_set = tokenize_evidence(evidence)
     seen_lower: set[str] = set()
 
     def _tier_score(keywords: Sequence[str], weight: int) -> int:
@@ -173,9 +147,7 @@ def compute_s_d(
             if low in seen_lower:
                 continue
             seen_lower.add(low)
-            # Eq. 9 indicator: keyword present (1) or absent (0) in 𝒪.
-            if low in token_set:
-                score += weight
+            score += _count_occurrences(evidence, kw) * weight
         return score
 
     w = weights.disease_weights

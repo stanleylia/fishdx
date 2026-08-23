@@ -1,0 +1,326 @@
+{
+  "seed": 42,
+  "n_per_dataset_per_class": 2,
+  "note": "Per-panel provenance: class, dataset, relative path, SHA-256, augmentation flag. Deterministic selection (seed 42) via figures/fig2_disease_gallery.py with an MD5+perceptual-hash no-duplicate guard ensuring all four panels per row are distinct and no D1 panel duplicates a D2 panel.",
+  "selection": {
+    "Aeromoniasis": {
+      "D1": [
+        "Bacterial diseases - Aeromoniasis (123).jpg",
+        "Bacterial diseases - Aeromoniasis (11).jpg"
+      ],
+      "D2": [
+        "Bacterial diseases - Aeromoniasis_100.jpg",
+        "Bacterial diseases - Aeromoniasis_119.jpg"
+      ]
+    },
+    "Bacterial Gill Disease": {
+      "D1": [
+        "Bacterial gill disease (1).jpg",
+        "Bacterial gill disease (106).jpg"
+      ],
+      "D2": [
+        "Bacterial gill disease_130.jpg",
+        "Bacterial gill disease_131.jpg"
+      ]
+    },
+    "Bacterial Red Disease": {
+      "D1": [
+        "Bacterial Red disease (1).jpeg",
+        "Bacterial Red disease (125).jpg"
+      ],
+      "D2": [
+        "Bacterial Red disease_143.jpg",
+        "Bacterial Red disease_146.jpg"
+      ]
+    },
+    "Fungal Saprolegniasis": {
+      "D1": [
+        "Fungal diseases Saprolegniasis (10).jpg",
+        "Fungal diseases Saprolegniasis (119).jpg"
+      ],
+      "D2": [
+        "Fungal diseases Saprolegniasis_12.jpg",
+        "Fungal diseases Saprolegniasis_26.jpg"
+      ]
+    },
+    "Healthy Fish": {
+      "D1": [
+        "Healthy Fish (10).jpg",
+        "Healthy Fish (112).jpg"
+      ],
+      "D2": [
+        "Healthy Fish_119.jpg",
+        "Healthy Fish_169.jpg"
+      ]
+    },
+    "Parasitic Diseases": {
+      "D1": [
+        "Parasitic diseases (1).png",
+        "Parasitic diseases (105).jpg"
+      ],
+      "D2": [
+        "Parasitic diseases_116.jpg",
+        "Parasitic diseases_115.jpg"
+      ]
+    },
+    "Viral White Tail Disease": {
+      "D1": [
+        "Viral diseases White tail disease (13).jpg",
+        "Viral diseases White tail disease (1).jpg"
+      ],
+      "D2": [
+        "Viral diseases White tail disease_180.jpg",
+        "Viral diseases White tail disease_163.jpg"
+      ]
+    },
+    "Epizootic Ulcerative Syndrome (EUS)": {
+      "D1": [],
+      "D2": [
+        "EUS_1.jpg",
+        "EUS_117.jpg"
+      ]
+    }
+  },
+  "panels": [
+    {
+      "class": "Aeromoniasis",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Bacterial diseases - Aeromoniasis/Bacterial diseases - Aeromoniasis (123).jpg",
+      "filename": "Bacterial diseases - Aeromoniasis (123).jpg",
+      "sha256": "e558a43d2d3823e1bfd3003f9c1b87a43c54afad825ec1f642c741b0c95ca3b3",
+      "augmented": false
+    },
+    {
+      "class": "Aeromoniasis",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Bacterial diseases - Aeromoniasis/Bacterial diseases - Aeromoniasis (11).jpg",
+      "filename": "Bacterial diseases - Aeromoniasis (11).jpg",
+      "sha256": "3783207205b2d8ae2dffa33fe3a7de8cfa28779c31f6f872bd846cbc504dbe0b",
+      "augmented": false
+    },
+    {
+      "class": "Aeromoniasis",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Bacterial diseases - Aeromoniasis_100.jpg",
+      "filename": "Bacterial diseases - Aeromoniasis_100.jpg",
+      "sha256": "e35d014b9283e87429d0dae2fad29361abde4c8646e4339ebd9921bb0bded09b",
+      "augmented": false
+    },
+    {
+      "class": "Aeromoniasis",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Bacterial diseases - Aeromoniasis_119.jpg",
+      "filename": "Bacterial diseases - Aeromoniasis_119.jpg",
+      "sha256": "3512dfa2e43179faa48da50fe9f6f393fb4b56a67434f077a2a637f3bd56acb1",
+      "augmented": false
+    },
+    {
+      "class": "Bacterial Gill Disease",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Bacterial gill disease/Bacterial gill disease (1).jpg",
+      "filename": "Bacterial gill disease (1).jpg",
+      "sha256": "fac6af7c113f0d08745ce021e53c05ea362a8e844902cc02643be01c4c28a6d9",
+      "augmented": false
+    },
+    {
+      "class": "Bacterial Gill Disease",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Bacterial gill disease/Bacterial gill disease (106).jpg",
+      "filename": "Bacterial gill disease (106).jpg",
+      "sha256": "d689760d709fcbdcec0105ac1a9af9358b97801edd34db537bf7738f09d1b1d6",
+      "augmented": false
+    },
+    {
+      "class": "Bacterial Gill Disease",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Bacterial gill disease_130.jpg",
+      "filename": "Bacterial gill disease_130.jpg",
+      "sha256": "9b5547d5fbb3170cfc77d611943ec7fc434432e7b9d175fdf035d26773950ddd",
+      "augmented": false
+    },
+    {
+      "class": "Bacterial Gill Disease",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Bacterial gill disease_131.jpg",
+      "filename": "Bacterial gill disease_131.jpg",
+      "sha256": "588971d9d39a40a3cd2d5bbb04467481d8637f8f849b3c16823141784ec8b13d",
+      "augmented": false
+    },
+    {
+      "class": "Bacterial Red Disease",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Bacterial Red disease/Bacterial Red disease (1).jpeg",
+      "filename": "Bacterial Red disease (1).jpeg",
+      "sha256": "1870efcff5289da8bbe726a5b007df187a31b081cb095db2092c1547a2d0608e",
+      "augmented": false
+    },
+    {
+      "class": "Bacterial Red Disease",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Bacterial Red disease/Bacterial Red disease (125).jpg",
+      "filename": "Bacterial Red disease (125).jpg",
+      "sha256": "f85d7461dce08b54d73f474ba309932f58b22e041309cd81c309f72c96afbc4c",
+      "augmented": false
+    },
+    {
+      "class": "Bacterial Red Disease",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Bacterial Red disease_143.jpg",
+      "filename": "Bacterial Red disease_143.jpg",
+      "sha256": "67b1e759bf0684fe519670c2eea2bdcface8866f81bcafe4bf2006c5e1016dec",
+      "augmented": false
+    },
+    {
+      "class": "Bacterial Red Disease",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Bacterial Red disease_146.jpg",
+      "filename": "Bacterial Red disease_146.jpg",
+      "sha256": "56cba6c492b52832a05d2c48b4b1eb83ae3ef4e8dac3586e032a78b3fa04a19e",
+      "augmented": false
+    },
+    {
+      "class": "Fungal Saprolegniasis",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Fungal diseases Saprolegniasis/Fungal diseases Saprolegniasis (10).jpg",
+      "filename": "Fungal diseases Saprolegniasis (10).jpg",
+      "sha256": "c864b023785edd7b4f209f7742cbe9a88d605c8e6036998ca6474717ecbaae77",
+      "augmented": false
+    },
+    {
+      "class": "Fungal Saprolegniasis",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Fungal diseases Saprolegniasis/Fungal diseases Saprolegniasis (119).jpg",
+      "filename": "Fungal diseases Saprolegniasis (119).jpg",
+      "sha256": "42a7a0b905155e43cf417decde297c5b343dbb91e331f80adfb1bbc6ae8774d4",
+      "augmented": false
+    },
+    {
+      "class": "Fungal Saprolegniasis",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Fungal diseases Saprolegniasis_12.jpg",
+      "filename": "Fungal diseases Saprolegniasis_12.jpg",
+      "sha256": "b415622d5576aeb1d45d5cc51df255cac1a3768a911ae660d5b2e25da17a0119",
+      "augmented": false
+    },
+    {
+      "class": "Fungal Saprolegniasis",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Fungal diseases Saprolegniasis_26.jpg",
+      "filename": "Fungal diseases Saprolegniasis_26.jpg",
+      "sha256": "25652a8644342a2cd0d6892b40b0042f84e90951c1bc9c281b228c58b838a660",
+      "augmented": false
+    },
+    {
+      "class": "Healthy Fish",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Healthy Fish/Healthy Fish (10).jpg",
+      "filename": "Healthy Fish (10).jpg",
+      "sha256": "1d65512ae278307ecbe25e862c3cddfdb7282fa179926a3c799c191840bf7ea2",
+      "augmented": false
+    },
+    {
+      "class": "Healthy Fish",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Healthy Fish/Healthy Fish (112).jpg",
+      "filename": "Healthy Fish (112).jpg",
+      "sha256": "b64e89f90692c567d74a55d64628253f7e3bf540afddccebc2489b11d92223ca",
+      "augmented": false
+    },
+    {
+      "class": "Healthy Fish",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Healthy Fish_119.jpg",
+      "filename": "Healthy Fish_119.jpg",
+      "sha256": "dd907777ab9ed96df5fa6f1d70f17abe36e1eec6a67ad139d0e9eeb52a39d25b",
+      "augmented": false
+    },
+    {
+      "class": "Healthy Fish",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Healthy Fish_169.jpg",
+      "filename": "Healthy Fish_169.jpg",
+      "sha256": "c1e09feb76f778c5d3e579dfee35f9d5b884119cc39c13983fc5f77c5050bf80",
+      "augmented": false
+    },
+    {
+      "class": "Parasitic Diseases",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Parasitic diseases/Parasitic diseases (1).png",
+      "filename": "Parasitic diseases (1).png",
+      "sha256": "409c31e0db82f8d364a1f31058a42acf1df67d467b1ac330ee9cdc3dd044b5de",
+      "augmented": false
+    },
+    {
+      "class": "Parasitic Diseases",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Parasitic diseases/Parasitic diseases (105).jpg",
+      "filename": "Parasitic diseases (105).jpg",
+      "sha256": "05a77bb0fff6b5ba60865d6a6b8539e1274f787937eaeb7afe44c74847f4dd6c",
+      "augmented": false
+    },
+    {
+      "class": "Parasitic Diseases",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Parasitic diseases_116.jpg",
+      "filename": "Parasitic diseases_116.jpg",
+      "sha256": "2deb556bb54a3deb585b37830080ceb56711159e763ca63e1de5326610644f14",
+      "augmented": false
+    },
+    {
+      "class": "Parasitic Diseases",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Parasitic diseases_115.jpg",
+      "filename": "Parasitic diseases_115.jpg",
+      "sha256": "c502aa0228bbaf12b81eb4e1dc4c8910ddd202171e3d57ac66c3c17571a7ea5a",
+      "augmented": false
+    },
+    {
+      "class": "Viral White Tail Disease",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Viral diseases White tail disease/Viral diseases White tail disease (13).jpg",
+      "filename": "Viral diseases White tail disease (13).jpg",
+      "sha256": "66d9283c9f5812f451a4f1dbf6ae41a57920ff5f40c5d1b55657c66551af58e1",
+      "augmented": false
+    },
+    {
+      "class": "Viral White Tail Disease",
+      "dataset": "D1",
+      "path": "data/datasets/D1_train/Viral diseases White tail disease/Viral diseases White tail disease (1).jpg",
+      "filename": "Viral diseases White tail disease (1).jpg",
+      "sha256": "039d92efc193713aeb0a0f70ad22bc4f536987c989945dd950bd3fac8f0078f5",
+      "augmented": false
+    },
+    {
+      "class": "Viral White Tail Disease",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Viral diseases White tail disease_180.jpg",
+      "filename": "Viral diseases White tail disease_180.jpg",
+      "sha256": "8b0743bfdd1ec7c203233ab98f3e6535740b1e900ac668f0d24f6e6f3a8b3e5e",
+      "augmented": false
+    },
+    {
+      "class": "Viral White Tail Disease",
+      "dataset": "D2",
+      "path": "data/datasets/D2/Viral diseases White tail disease_163.jpg",
+      "filename": "Viral diseases White tail disease_163.jpg",
+      "sha256": "06967cfde056f020dc2723c765d018a0d5eb382b658341a0c5756cb32e4b5c56",
+      "augmented": false
+    },
+    {
+      "class": "Epizootic Ulcerative Syndrome (EUS)",
+      "dataset": "D2",
+      "path": "data/datasets/D2/EUS_1.jpg",
+      "filename": "EUS_1.jpg",
+      "sha256": "fe8ca87689a7203846f5aca6045d5d4615f69ed1fda61faef8d9e45de5c6017f",
+      "augmented": false
+    },
+    {
+      "class": "Epizootic Ulcerative Syndrome (EUS)",
+      "dataset": "D2",
+      "path": "data/datasets/D2/EUS_117.jpg",
+      "filename": "EUS_117.jpg",
+      "sha256": "cf48ba3f1037a749a8acde5313fb9e9b0df5fe626e4d0247ad888af87b92d60d",
+      "augmented": false
+    }
+  ]
+}

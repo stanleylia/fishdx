@@ -1,0 +1,84 @@
+{
+  "experiment": "d2_dedup_threshold_sweep",
+  "purpose": "Table S6 \u2014 D2->D1 near-duplicate exclusion sensitivity of forced-choice modality DA; D2-side counterpart of the D1 Note S1 tau-sweep.",
+  "method": "each D2 query with max CLIP-visual cosine to the D1 gallery >= tau is removed; forced-choice retrieval DA (argmax over the D1 gallery, 7 shared classes) recomputed per tau for Fusion(lambda=0.7)/Visual-only/Caption-only. Same _cache_d1_gallery.npz and scorer as exp_d2_embedding_dedup.py.",
+  "gallery_size": 1639,
+  "gallery_classes": [
+    "aeromoniasis",
+    "bacterial_gill",
+    "bacterial_red",
+    "fungal",
+    "healthy",
+    "parasitic",
+    "viral_white_tail"
+  ],
+  "n_d2_total": 3473,
+  "max_cos_to_gallery_percentiles": {
+    "50": 0.8717,
+    "75": 0.9475,
+    "90": 1.0,
+    "95": 1.0,
+    "99": 1.0
+  },
+  "columns": [
+    "exclusion_tau",
+    "images_removed",
+    "n_remaining_all_classes",
+    "n_remaining_7class_scored",
+    "fusion_da",
+    "visual_da",
+    "caption_da"
+  ],
+  "sweep": {
+    "0.99": {
+      "images_removed": 579,
+      "n_remaining_all_classes": 2894,
+      "n_remaining_7class_scored": 2438,
+      "fusion_da": 0.9069,
+      "visual_da": 0.9032,
+      "caption_da": 0.5299
+    },
+    "0.95": {
+      "images_removed": 845,
+      "n_remaining_all_classes": 2628,
+      "n_remaining_7class_scored": 2176,
+      "fusion_da": 0.8966,
+      "visual_da": 0.8925,
+      "caption_da": 0.4954
+    },
+    "0.90": {
+      "images_removed": 1325,
+      "n_remaining_all_classes": 2148,
+      "n_remaining_7class_scored": 1706,
+      "fusion_da": 0.871,
+      "visual_da": 0.8658,
+      "caption_da": 0.4625
+    },
+    "0.85": {
+      "images_removed": 1983,
+      "n_remaining_all_classes": 1490,
+      "n_remaining_7class_scored": 1082,
+      "fusion_da": 0.8004,
+      "visual_da": 0.7902,
+      "caption_da": 0.414
+    },
+    "0.80": {
+      "images_removed": 2593,
+      "n_remaining_all_classes": 880,
+      "n_remaining_7class_scored": 602,
+      "fusion_da": 0.7093,
+      "visual_da": 0.696,
+      "caption_da": 0.4003
+    }
+  },
+  "primary_threshold_0.95": {
+    "images_removed": 845,
+    "n_remaining_all_classes": 2628,
+    "note": "cos>=0.95 removes the augmentation/near-duplicate leakage band; the 2,628 all-class survivors here are the pool from which D2-final n=2,402 is drawn after the separate seed-42 226-image EUS calibration hold-out (calibration removal is NOT a dedup step)."
+  },
+  "stability_verdict": {
+    "fusion_da_range_over_0.90_0.99_band": 0.0359,
+    "fusion_da_drop_0.90_to_0.80": 0.1617,
+    "interpretation": "Forced-choice DA is flat across the 0.90-0.99 exclusion band (Fusion varies by 0.0359); it declines steeply only below 0.90 (Fusion -0.1617 from 0.90 to 0.80) as legitimate same-class D2 images are removed, not leakage. cos>=0.95 sits inside the stable plateau, so it is a defensible operating point \u2014 same conclusion as the D1 table."
+  }
+}

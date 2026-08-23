@@ -1,0 +1,124 @@
+{
+  "n_d2final": 2402,
+  "n_overlap": 2176,
+  "n_eus_test": 226,
+  "table3_d2final": {
+    "Pipeline/kNN(0.7,k1)": {
+      "overall_DA": 0.8122,
+      "overall_wilson": [
+        0.7961,
+        0.8274
+      ],
+      "overlap_DA": 0.8966,
+      "overlap_wilson": [
+        0.8831,
+        0.9087
+      ]
+    },
+    "kNN(1.0,k1)": {
+      "overall_DA": 0.8085,
+      "overall_wilson": [
+        0.7923,
+        0.8237
+      ],
+      "overlap_DA": 0.8925,
+      "overlap_wilson": [
+        0.8787,
+        0.9048
+      ]
+    },
+    "kNN(0.7,k5)": {
+      "overall_DA": 0.786,
+      "overall_wilson": [
+        0.7692,
+        0.8019
+      ],
+      "overlap_DA": 0.8676,
+      "overlap_wilson": [
+        0.8528,
+        0.8812
+      ]
+    },
+    "kNN(1.0,k5)": {
+      "overall_DA": 0.7739,
+      "overall_wilson": [
+        0.7568,
+        0.7902
+      ],
+      "overlap_DA": 0.8543,
+      "overlap_wilson": [
+        0.8389,
+        0.8685
+      ]
+    },
+    "Caption-only(0.0,k1)": {
+      "overall_DA": 0.4488,
+      "overall_wilson": [
+        0.429,
+        0.4687
+      ],
+      "overlap_DA": 0.4954,
+      "overlap_wilson": [
+        0.4744,
+        0.5164
+      ]
+    }
+  },
+  "overlap_macro_f1": 0.8962,
+  "table4_d2final": {
+    "theta_0.00": {
+      "decisive_DA": 0.8122,
+      "wilson": [
+        0.7961,
+        0.8274
+      ],
+      "coverage": 1.0,
+      "inconclusive_pct": 0.0,
+      "eus_interception": 0.0
+    },
+    "theta_0.01": {
+      "decisive_DA": 0.88,
+      "wilson": [
+        0.864,
+        0.8943
+      ],
+      "coverage": 0.7319,
+      "inconclusive_pct": 0.2681,
+      "decided_macro_f1": 0.9036,
+      "eus_interception": 0.4867,
+      "n_eus": 226,
+      "n_decided": 1758
+    },
+    "theta_0.02": {
+      "decisive_DA": 0.928,
+      "wilson": [
+        0.9127,
+        0.9408
+      ],
+      "coverage": 0.5437,
+      "inconclusive_pct": 0.4563,
+      "decided_macro_f1": 0.9445,
+      "eus_interception": 0.7124,
+      "n_eus": 226,
+      "n_decided": 1306
+    },
+    "theta_0.05": {
+      "decisive_DA": 0.9806,
+      "wilson": [
+        0.9663,
+        0.9888
+      ],
+      "coverage": 0.2569,
+      "inconclusive_pct": 0.7431,
+      "decided_macro_f1": 0.9902,
+      "eus_interception": 0.9469,
+      "n_eus": 226,
+      "n_decided": 617
+    }
+  },
+  "deferring_knn_matched_cov": {
+    "coverage": 0.5437,
+    "decisive_DA": 0.9418
+  },
+  "gain_pp_decisive_vs_forcedchoice": 0.1158
+}

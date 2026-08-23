@@ -1,0 +1,22 @@
+# Reference environment for the reported runs (manuscript §Implementation details).
+# Python 3.10.12, CUDA 12.1, single NVIDIA GPU.
+#
+# torch is pinned to the manuscript-stated version. The remaining libraries are
+# the tested constraints (same as pyproject.toml); an exhaustively pinned
+# lockfile was not captured for the reference run, so ranges are given honestly
+# rather than fabricating exact patch versions.
+torch==2.1.0
+transformers>=4.44,<4.50
+open_clip_torch>=2.24,<3.0
+chromadb>=0.5,<0.6
+sentence-transformers>=3.0
+numpy<2.0
+scipy>=1.11
+statsmodels>=0.14
+pyyaml>=6.0
+pydantic>=2.5
+pillow>=10.0
+#
+# Fixed model artifacts (these ARE pinned, by immutable identifier):
+#   Florence-2-base revision : 5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac
+#   OpenCLIP ViT-B-32 checkpoint : laion2b_s34b_b79k

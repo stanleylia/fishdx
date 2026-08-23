@@ -1,0 +1,9 @@
+{
+ "design": "stratified 100/class matched subset, seed 42, caption-only k=1 retrieval, 7 classes",
+ "n_gallery": 700,
+ "n_query": 700,
+ "florence_caption_only_DA": 0.4257,
+ "qwen_caption_only_DA": 0.3814,
+ "florence_full_clean_D2_ref": 0.4954,
+ "max_new_tokens": 96
+}

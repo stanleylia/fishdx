@@ -3,7 +3,7 @@
 Thin query layer over a ChromaDB collection. Enforces Top-K,
 cosine-similarity cutoff, and deterministic fetch (HNSW single-thread
 per ADR-0002 M2). Per ADR-0012d, Stage 2 retrieval queries the
-``image_gallery`` collection (1,747 D1 Train fused embeddings) while
+``image_gallery`` collection (1,639 encoded D1 Train fused embeddings) while
 Stage 3 keyword scoring uses the ``fishdx_kb`` collection in a
 declarative role; this wrapper is collection-agnostic and parameterised
 by ``collection_name`` + ``expected_source_type`` (Pattern G Layer 4

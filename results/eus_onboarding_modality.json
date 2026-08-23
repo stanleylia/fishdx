@@ -1,0 +1,121 @@
+{
+ "experiment": "eus_onboarding_modality",
+ "purpose": "Freshly recompute EUS onboarding as visual-only vs λ=0.7 fused k-NN on the audited matched set (56 test / 50 ref), resolving the mislabeled 'Pipeline(Scoring) vs kNN' framing in Table 5 / §4.6.",
+ "gpu": "NVIDIA GeForce RTX 3070",
+ "test": "D2 test_split/EUS_* (56)",
+ "ref_pool": "D2 train_split/EUS (50, seed=42)",
+ "gallery": "results/_cache_d1_gallery.npz (D1, 7 classes)",
+ "lambda": 0.7,
+ "seed": 42,
+ "visual_only_curve": [
+  {
+   "n_ref": 0,
+   "recognition_DA": 0.0,
+   "n_correct": 0,
+   "n_test": 56,
+   "wilson_ci95": [
+    0.0,
+    0.0642
+   ]
+  },
+  {
+   "n_ref": 5,
+   "recognition_DA": 0.2857,
+   "n_correct": 16,
+   "n_test": 56,
+   "wilson_ci95": [
+    0.1842,
+    0.4148
+   ]
+  },
+  {
+   "n_ref": 10,
+   "recognition_DA": 0.4107,
+   "n_correct": 23,
+   "n_test": 56,
+   "wilson_ci95": [
+    0.2917,
+    0.5412
+   ]
+  },
+  {
+   "n_ref": 20,
+   "recognition_DA": 0.5,
+   "n_correct": 28,
+   "n_test": 56,
+   "wilson_ci95": [
+    0.3733,
+    0.6267
+   ]
+  },
+  {
+   "n_ref": 50,
+   "recognition_DA": 0.6964,
+   "n_correct": 39,
+   "n_test": 56,
+   "wilson_ci95": [
+    0.5666,
+    0.801
+   ]
+  }
+ ],
+ "fused_lambda07_curve": [
+  {
+   "n_ref": 0,
+   "recognition_DA": 0.0,
+   "n_correct": 0,
+   "n_test": 56,
+   "wilson_ci95": [
+    0.0,
+    0.0642
+   ]
+  },
+  {
+   "n_ref": 5,
+   "recognition_DA": 0.1964,
+   "n_correct": 11,
+   "n_test": 56,
+   "wilson_ci95": [
+    0.1134,
+    0.3184
+   ]
+  },
+  {
+   "n_ref": 10,
+   "recognition_DA": 0.3571,
+   "n_correct": 20,
+   "n_test": 56,
+   "wilson_ci95": [
+    0.2446,
+    0.4881
+   ]
+  },
+  {
+   "n_ref": 20,
+   "recognition_DA": 0.4821,
+   "n_correct": 27,
+   "n_test": 56,
+   "wilson_ci95": [
+    0.3567,
+    0.6099
+   ]
+  },
+  {
+   "n_ref": 50,
+   "recognition_DA": 0.6964,
+   "n_correct": 39,
+   "n_test": 56,
+   "wilson_ci95": [
+    0.5666,
+    0.801
+   ]
+  }
+ ],
+ "n_ref_50": {
+  "visual_only_DA": 0.6964,
+  "fused_DA": 0.6964,
+  "visual_over_fused_relative_pct": 0.0,
+  "interpretation": "Clean recompute on the audited matched set (56 test / 50 ref): at n_ref=50 both visual-only k-NN and lambda=0.7 fused k-NN reach recognition DA = 0.6964 (39/56); relative difference 0.0%. The manuscript's original '0.714 Pipeline (Scoring)' was in fact this visual-only k-NN value (no fusion, no scoring stage); the original '0.446 kNN / 0.386 W-kNN / 60.1% improvement' comparison does NOT reproduce and was removed."
+ },
+ "timestamp": "2026-07-08 06:25:24 UTC"
+}

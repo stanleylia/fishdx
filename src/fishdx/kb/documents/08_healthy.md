@@ -2,8 +2,8 @@
 doc_id: HLT
 disease_class: Healthy Fish
 title: Healthy Fish — Negative Reference Baseline
-source_reference: Wikipedia "Fish health" + FAO / WOAH healthy-fish indicators (oldid pending curator capture)
-source_url: https://en.wikipedia.org/w/index.php?title=Fish_health&oldid=PENDING_CURATOR_CAPTURE
+source_reference: Wikipedia "Fish health" + FAO / WOAH healthy-fish indicators
+source_url: https://en.wikipedia.org/w/index.php?title=Fish_health
 substitution_date: 2026-04-18
 rewrite_date: 2026-04-19
 substituted_under_adr: [0007, 0012a]

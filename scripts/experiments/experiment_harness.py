@@ -1,5 +1,7 @@
 """Experiment Harness — Unified infrastructure for all experiments.
 
+DEPOSIT NOTE — EXPLORATORY / SIMULATED SCAFFOLD. This script contains simulated or placeholder logic and does not perform a live pipeline run; its output is NOT shipped in results/ and backs NO number reported in the manuscript. Retained only for transparency about exploratory scaffolding.
+
 Provides:
   - Config override mechanism (swap parameters without modifying YAML)
   - Dataset/scene iteration
@@ -59,6 +61,7 @@ SCENE_EXPECTED_STATUS = {
     "S10_edge_cases_turbidity": "Healthy",
 }
 
+# LEGACY: simulated fixtures for archived exploratory scripts only; supports NO manuscript number.
 SIMULATED_LLM_OUTPUTS = {
     "S01_fish_health_tilapia": "The tilapia fish appears healthy with good condition. Normal body color, active swimming. No disease detected.",
     "S02_fish_health_grouper": "The grouper fish is healthy with normal appearance. Clear skin, no lesions observed. Good condition overall.",
@@ -73,6 +76,7 @@ SIMULATED_LLM_OUTPUTS = {
 }
 
 # Synthetic captions for scenes without COCO
+# LEGACY: synthetic fixtures for archived exploratory scripts only; supports NO manuscript number.
 SCENE_SYNTHETIC_CAPTIONS = {
     "S01_fish_health_tilapia": [
         "The image shows tilapia fish swimming in a pond with clear water",

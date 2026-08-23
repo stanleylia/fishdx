@@ -1,0 +1,231 @@
+{
+  "experiment": "r5_selective_predictions_d2final",
+  "reviewer_comment": "5-2(1): save per-sample outputs and re-run the comparison",
+  "seed": 42,
+  "dedup_threshold": 0.95,
+  "lambda": 0.7,
+  "theta_margin": 0.02,
+  "git_commit": "e812b460027e6b27224cccf8d54aa54b629f9b2c",
+  "inputs": {
+    "gallery_cache": {
+      "path": "results/_cache_d1_gallery.npz",
+      "sha256": "3f73b3d180489774218674715ea5cf6602a7ded6d81504d3c329223b6faa0fa2",
+      "rows": 1639
+    },
+    "query_cache": {
+      "path": "results/_cache_d2_query.npz",
+      "sha256": "b0108e49ec7f3c8662ba164c15789fccfed8dd518d4d5221a7136c4dfc8ebc32",
+      "rows": 3473
+    },
+    "config": {
+      "path": "configs/default.yaml",
+      "sha256": "d8b60b132bef68a48e433e66487f32216846342ea2aced2f3751c86ea32c0230"
+    }
+  },
+  "counts": {
+    "d2_raw_encoded": 3473,
+    "clean": 2628,
+    "d2_final": 2402,
+    "overlap7": 2176,
+    "eus_test": 226
+  },
+  "methods": [
+    "pipeline",
+    "fused_knn_k1",
+    "visual_knn_k1",
+    "fused_knn_k5",
+    "visual_knn_k5",
+    "caption_only_k1"
+  ],
+  "records": 14412,
+  "stage3_scores_present": true,
+  "artifact": {
+    "path": "results/reviewer5/selective_predictions_d2final.jsonl",
+    "sha256": "6bccdadb23f3372042420beff223fa279e71ce82c9981890d8e86cd0c3c40f31"
+  },
+  "fidelity_vs_d2_final_full": {
+    "table3": {
+      "Pipeline/kNN(0.7,k1)": {
+        "expected": {
+          "overall_DA": 0.8122,
+          "overlap_DA": 0.8966
+        },
+        "recomputed": {
+          "overall_DA": 0.8122,
+          "overlap_DA": 0.8966
+        },
+        "match": true
+      },
+      "kNN(1.0,k1)": {
+        "expected": {
+          "overall_DA": 0.8085,
+          "overlap_DA": 0.8925
+        },
+        "recomputed": {
+          "overall_DA": 0.8085,
+          "overlap_DA": 0.8925
+        },
+        "match": true
+      },
+      "kNN(0.7,k5)": {
+        "expected": {
+          "overall_DA": 0.786,
+          "overlap_DA": 0.8676
+        },
+        "recomputed": {
+          "overall_DA": 0.786,
+          "overlap_DA": 0.8676
+        },
+        "match": true
+      },
+      "kNN(1.0,k5)": {
+        "expected": {
+          "overall_DA": 0.7739,
+          "overlap_DA": 0.8543
+        },
+        "recomputed": {
+          "overall_DA": 0.7739,
+          "overlap_DA": 0.8543
+        },
+        "match": true
+      },
+      "Caption-only(0.0,k1)": {
+        "expected": {
+          "overall_DA": 0.4488,
+          "overlap_DA": 0.4954
+        },
+        "recomputed": {
+          "overall_DA": 0.4488,
+          "overlap_DA": 0.4954
+        },
+        "match": true
+      }
+    },
+    "table4": {
+      "theta_0.00": {
+        "expected": {
+          "decisive_DA": 0.8122,
+          "coverage": 1.0
+        },
+        "recomputed": {
+          "decisive_DA": 0.8122,
+          "coverage": 1.0
+        },
+        "match": true
+      },
+      "theta_0.01": {
+        "expected": {
+          "decisive_DA": 0.88,
+          "coverage": 0.7319,
+          "eus_interception": 0.4867,
+          "n_decided": 1758
+        },
+        "recomputed": {
+          "decisive_DA": 0.88,
+          "coverage": 0.7319,
+          "eus_interception": 0.4867,
+          "n_decided": 1758
+        },
+        "match": true
+      },
+      "theta_0.02": {
+        "expected": {
+          "decisive_DA": 0.928,
+          "coverage": 0.5437,
+          "eus_interception": 0.7124,
+          "n_decided": 1306
+        },
+        "recomputed": {
+          "decisive_DA": 0.928,
+          "coverage": 0.5437,
+          "eus_interception": 0.7124,
+          "n_decided": 1306
+        },
+        "match": true
+      },
+      "theta_0.05": {
+        "expected": {
+          "decisive_DA": 0.9806,
+          "coverage": 0.2569,
+          "eus_interception": 0.9469,
+          "n_decided": 617
+        },
+        "recomputed": {
+          "decisive_DA": 0.9806,
+          "coverage": 0.2569,
+          "eus_interception": 0.9469,
+          "n_decided": 617
+        },
+        "match": true
+      }
+    }
+  },
+  "paired_comparisons": {
+    "pipeline_vs_fused_knn_k1": {
+      "n": 2402,
+      "both_correct": 1951,
+      "b_a_correct_b_wrong": 0,
+      "c_a_wrong_b_correct": 0,
+      "both_wrong": 451,
+      "predictions_identical": true,
+      "chi2_continuity_corrected": null,
+      "p_value_two_tailed": null,
+      "note": "degenerate by construction: Stage 3 scores evidence for the retrieved candidate but does not re-rank it, so the committed class equals the fused k-NN top-1 for every sample; no test is reported"
+    },
+    "pipeline_vs_visual_knn_k1": {
+      "n": 2402,
+      "both_correct": 1882,
+      "b_a_correct_b_wrong": 69,
+      "c_a_wrong_b_correct": 60,
+      "both_wrong": 391,
+      "predictions_identical": false,
+      "chi2_continuity_corrected": 0.4961,
+      "p_value_two_tailed": 0.481,
+      "note": "non-degenerate paired test"
+    },
+    "pipeline_vs_fused_knn_k5": {
+      "n": 2402,
+      "both_correct": 1829,
+      "b_a_correct_b_wrong": 122,
+      "c_a_wrong_b_correct": 59,
+      "both_wrong": 392,
+      "predictions_identical": false,
+      "chi2_continuity_corrected": 21.2376,
+      "p_value_two_tailed": 4.06e-06,
+      "note": "non-degenerate paired test"
+    },
+    "pipeline_vs_visual_knn_k5": {
+      "n": 2402,
+      "both_correct": 1785,
+      "b_a_correct_b_wrong": 166,
+      "c_a_wrong_b_correct": 74,
+      "both_wrong": 377,
+      "predictions_identical": false,
+      "chi2_continuity_corrected": 34.5042,
+      "p_value_two_tailed": 4.25e-09,
+      "note": "non-degenerate paired test"
+    },
+    "fused_k5_vs_visual_k5": {
+      "n": 2402,
+      "both_correct": 1784,
+      "b_a_correct_b_wrong": 104,
+      "c_a_wrong_b_correct": 75,
+      "both_wrong": 439,
+      "predictions_identical": false,
+      "chi2_continuity_corrected": 4.3799,
+      "p_value_two_tailed": 0.0364,
+      "note": "non-degenerate paired test"
+    },
+    "fused_k1_vs_visual_k1": {
+      "n": 2402,
+      "both_correct": 1882,
+      "b_a_correct_b_wrong": 69,
+      "c_a_wrong_b_correct": 60,
+      "both_wrong": 391,
+      "predictions_identical": false,
+      "chi2_continuity_corrected": 0.4961,
+      "p_value_two_tailed": 0.481,
+      "note": "non-degenerate paired test"
+    }
+  }
+}

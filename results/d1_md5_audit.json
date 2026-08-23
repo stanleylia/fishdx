@@ -1,0 +1,2114 @@
+{
+  "experiment": "d1_md5_audit",
+  "purpose": "Byte-level (MD5) evidence for D1 train/test leakage (Supplementary Note S1).",
+  "test_dir": "data/datasets/D1/test",
+  "train_dir": "data/datasets/D1/train",
+  "n_test": 350,
+  "n_test_with_same_filename_in_train": 350,
+  "n_md5_identical": 350,
+  "md5_identical_fraction": 1.0,
+  "conclusion": "D1 test is a byte-identical subset of D1 train",
+  "pairs": [
+    {
+      "test": "Bacterial Red disease (116).jpg",
+      "train": "Bacterial Red disease (116).jpg",
+      "md5": "d2118ae7970516fe0b8bf41696a89660",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (117).jpg",
+      "train": "Bacterial Red disease (117).jpg",
+      "md5": "0c12a492deca35e064e07246792e833b",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (129).jpg",
+      "train": "Bacterial Red disease (129).jpg",
+      "md5": "25fbbc8265b95d6f06427b98ee18e259",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (130).jpg",
+      "train": "Bacterial Red disease (130).jpg",
+      "md5": "1b81eaca008d8c923052e16b3c4cb06a",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (143).jpg",
+      "train": "Bacterial Red disease (143).jpg",
+      "md5": "606c1410460b266de80f094988ed6653",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (152).jpg",
+      "train": "Bacterial Red disease (152).jpg",
+      "md5": "e7e51040013730815b4982ccd5f71666",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (37).jpg",
+      "train": "Bacterial Red disease (37).jpg",
+      "md5": "355ab9df866459fed57891a8a9e5a5bc",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (38).jpg",
+      "train": "Bacterial Red disease (38).jpg",
+      "md5": "411763b253b13ccdd21067aaa9870886",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (39).jpg",
+      "train": "Bacterial Red disease (39).jpg",
+      "md5": "50b4088276dc4a01d2fac425866b37bd",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (40).jpg",
+      "train": "Bacterial Red disease (40).jpg",
+      "md5": "8da502d8571242475fed8c4b52747449",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (41).jpg",
+      "train": "Bacterial Red disease (41).jpg",
+      "md5": "ed8fae50f930755fe388b055cb3fb74d",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (42).jpg",
+      "train": "Bacterial Red disease (42).jpg",
+      "md5": "a2282af44b00baba7bb8990e337d9711",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (43).jpg",
+      "train": "Bacterial Red disease (43).jpg",
+      "md5": "dd38622051b3316451e5bd1a164d758c",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (44).jpg",
+      "train": "Bacterial Red disease (44).jpg",
+      "md5": "64a2c9f847e2d6885e118fd9e70c84a4",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (45).jpg",
+      "train": "Bacterial Red disease (45).jpg",
+      "md5": "f424307b49d0c7296e9cb01e5b7ccde2",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (46).jpg",
+      "train": "Bacterial Red disease (46).jpg",
+      "md5": "aec37f6012337a89b090d43c6647bfb1",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (47).jpg",
+      "train": "Bacterial Red disease (47).jpg",
+      "md5": "b4cbaaf644b41737bffd1b778a406b08",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (48).jpg",
+      "train": "Bacterial Red disease (48).jpg",
+      "md5": "f25106a9cb816d64d7943b706a8e1475",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (49).jpg",
+      "train": "Bacterial Red disease (49).jpg",
+      "md5": "b40e20bcedf30e30ca4304c290154662",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (50).jpg",
+      "train": "Bacterial Red disease (50).jpg",
+      "md5": "d01260c76181a6a9ed19183952ec1734",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (51).jpg",
+      "train": "Bacterial Red disease (51).jpg",
+      "md5": "42c736dc273f6c3b9df757290ed609ac",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (52).jpg",
+      "train": "Bacterial Red disease (52).jpg",
+      "md5": "e5effdfbc8b348bae675e225a1943692",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (53).jpg",
+      "train": "Bacterial Red disease (53).jpg",
+      "md5": "ab3879b53a83d843925c9c2b1d021aad",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (54).jpg",
+      "train": "Bacterial Red disease (54).jpg",
+      "md5": "35159cd6c998d184c37be2eebb0b62ff",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (55).jpg",
+      "train": "Bacterial Red disease (55).jpg",
+      "md5": "b1608217fbaefcd62d4e85294df229f1",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (56).jpg",
+      "train": "Bacterial Red disease (56).jpg",
+      "md5": "72c75a13ca691889ca76c375ecb44050",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (57).jpg",
+      "train": "Bacterial Red disease (57).jpg",
+      "md5": "d2004ef8d9d7fe97b932116422f10e5f",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (58).jpg",
+      "train": "Bacterial Red disease (58).jpg",
+      "md5": "9cbfbc0ee9e946e87af7a2a01d3351eb",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (59).jpg",
+      "train": "Bacterial Red disease (59).jpg",
+      "md5": "d1bb1620ef006014b3a5a094e9af4f89",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (60).jpg",
+      "train": "Bacterial Red disease (60).jpg",
+      "md5": "1da35178c64345505dd566de4abb0ac7",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (61).jpg",
+      "train": "Bacterial Red disease (61).jpg",
+      "md5": "6a353f39cbe624eb31d1a670dfe60e5e",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (62).jpg",
+      "train": "Bacterial Red disease (62).jpg",
+      "md5": "f7149824968fd05ca895e5d3c75a7036",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (63).jpg",
+      "train": "Bacterial Red disease (63).jpg",
+      "md5": "2b40dafa1430f95b80f02f97436c7f12",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (64).jpg",
+      "train": "Bacterial Red disease (64).jpg",
+      "md5": "bf5518aa272d316280e8ae09e571920d",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (65).jpg",
+      "train": "Bacterial Red disease (65).jpg",
+      "md5": "75922605a64c0243054ad45ef31b6027",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (66).jpg",
+      "train": "Bacterial Red disease (66).jpg",
+      "md5": "6bd012e9431b9c415b03165cbda6d088",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (67).jpg",
+      "train": "Bacterial Red disease (67).jpg",
+      "md5": "887a89391def792e0e150c9fd9725fb4",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (68).jpg",
+      "train": "Bacterial Red disease (68).jpg",
+      "md5": "fae5fcaa30e604830ae81c17f5d8b091",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (69).jpg",
+      "train": "Bacterial Red disease (69).jpg",
+      "md5": "3801c89ec11709c79bf4d92f1b09e64c",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (70).jpg",
+      "train": "Bacterial Red disease (70).jpg",
+      "md5": "aa832eb7ce1a1913b4965f75648ea79e",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (71).jpg",
+      "train": "Bacterial Red disease (71).jpg",
+      "md5": "b56c9351f89dbb6f6f82c0e5456e2c2b",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (72).jpg",
+      "train": "Bacterial Red disease (72).jpg",
+      "md5": "5c8e83b6502b1acd959f4e1bf7b31982",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (73).jpg",
+      "train": "Bacterial Red disease (73).jpg",
+      "md5": "5c1fd75461607bc5f0ad4acc3b859344",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (74).jpg",
+      "train": "Bacterial Red disease (74).jpg",
+      "md5": "93b3c48428856c13ec94e589a1df5fbc",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (75).jpg",
+      "train": "Bacterial Red disease (75).jpg",
+      "md5": "d48772e52cfdd5d590672181a1300acb",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (76).jpg",
+      "train": "Bacterial Red disease (76).jpg",
+      "md5": "0f94b8e72b3c18ce85a650a467174224",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (77).jpg",
+      "train": "Bacterial Red disease (77).jpg",
+      "md5": "309b58380e563f5db8b2892b8b846ed5",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (83).jpg",
+      "train": "Bacterial Red disease (83).jpg",
+      "md5": "84a699e43ddd102c302f78d445b411ba",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (87).jpg",
+      "train": "Bacterial Red disease (87).jpg",
+      "md5": "3146dfd7b62409ea979170959b03ab1f",
+      "identical": true
+    },
+    {
+      "test": "Bacterial Red disease (95).jpg",
+      "train": "Bacterial Red disease (95).jpg",
+      "md5": "28b6f1e09b004f52fa54569c7bb84ed2",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (100).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (100).jpg",
+      "md5": "8ba4527d299a3b324195b691304ab706",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (102).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (102).jpg",
+      "md5": "097a4d1af747632dda705a393cd11506",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (103).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (103).jpg",
+      "md5": "1c3f12d342e2e54a0fac0ebd55488cdf",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (104).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (104).jpg",
+      "md5": "416cbe9f5b6c7ca8974abfa0bfc0d1d7",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (105).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (105).jpg",
+      "md5": "d1d94fb0763796cb35defcdd47898f51",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (106).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (106).jpg",
+      "md5": "f9c1d785ffbf93ac9bc3af6fae5b7526",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (107).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (107).jpg",
+      "md5": "bf2206884be1676598477eac0c6b4536",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (108).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (108).jpg",
+      "md5": "167083297fa8f087bcdfe802d20d47d0",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (109).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (109).jpg",
+      "md5": "df4ccb2df6f1b69c0b600b2f04631def",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (110).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (110).jpg",
+      "md5": "8b76abfa56aa2e2d1c182fdbc9ccae01",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (111).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (111).jpg",
+      "md5": "0bdb976318f6d55c65429733c6f230c3",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (42).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (42).jpg",
+      "md5": "a046e88cc97f5f299aaf8b1e138cd984",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (43).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (43).jpg",
+      "md5": "8cfdad7391d3e30eaea72ceeaf510e32",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (44).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (44).jpg",
+      "md5": "f2c80223f29582eeea56e39307776ebd",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (45).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (45).jpg",
+      "md5": "25bf48c7747a39e9147539317901ec6f",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (46).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (46).jpg",
+      "md5": "7497a0ae62de634acafb7b552d9dd06d",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (47).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (47).jpg",
+      "md5": "51e41e74cd93b6fbd730907fb7cc8228",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (48).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (48).jpg",
+      "md5": "b894817682119a0951c5a30ed9b76f26",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (49).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (49).jpg",
+      "md5": "5959a6b5367cc6945d8ec19b3bf625fa",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (50).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (50).jpg",
+      "md5": "3d9e4f1dfc9429a65bb2a7712bde5eef",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (51).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (51).jpg",
+      "md5": "d62d087b7930a68e17f717dfeacf9e89",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (52).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (52).jpg",
+      "md5": "0b12e84fcefac5136f9e65cf202d1dea",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (53).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (53).jpg",
+      "md5": "a4dea3045d9d3ff7170da3d2bf62c356",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (54).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (54).jpg",
+      "md5": "79d57049de6cb4dfa1b5905f4e5f8d59",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (55).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (55).jpg",
+      "md5": "ff9b4def343144974ec5f5d6a9387322",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (56).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (56).jpg",
+      "md5": "cca43aa5d922f0c8fe0610978b67da16",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (57).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (57).jpg",
+      "md5": "df055e5e20c1b7a25e5b8ad34f55a276",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (58).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (58).jpg",
+      "md5": "eb918dee43fd71cff1e78d3d9735f3a4",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (59).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (59).jpg",
+      "md5": "0e07923dc1b075b7c2b8651d9a3aba6c",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (61).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (61).jpg",
+      "md5": "90ae6b463f6d0d34846c06c0aceab591",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (62).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (62).jpg",
+      "md5": "a77dda9867c691bf6c7be9629f2f2b1b",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (63).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (63).jpg",
+      "md5": "5d494fce7e54c322111b8783a98484dd",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (64).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (64).jpg",
+      "md5": "f89c5bbdb964bcbb59553da57b9458dc",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (65).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (65).jpg",
+      "md5": "366b3cd702783d937e2e35f1947bd739",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (66).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (66).jpg",
+      "md5": "38d5276f65dfdd96b3943ff2cae93b62",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (67).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (67).jpg",
+      "md5": "2841330fe2315746521cab656ff8d6ae",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (68).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (68).jpg",
+      "md5": "dca8077013fa4f03fa65e5c252ee29fb",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (77).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (77).jpg",
+      "md5": "1dbd1a3fd51dfff248bc41ea578ae8c0",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (78).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (78).jpg",
+      "md5": "9e7ef259cfa65b7ebf9c542bd10ca979",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (79).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (79).jpg",
+      "md5": "b99e395a1695ebda5942b8f7a6aad88b",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (89).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (89).jpg",
+      "md5": "8fd490bee156f47fdc62ac8b6b2e8b74",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (90).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (90).jpg",
+      "md5": "347ba02399a538662376fe86107758db",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (91).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (91).jpg",
+      "md5": "f02ad3161dc6ac890e2d291da0d88e0a",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (92).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (92).jpg",
+      "md5": "fd3a9483f46407260424cb94c13dc08e",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (93).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (93).jpg",
+      "md5": "dfb6fa03e19f0b254064cfc1a97875d7",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (94).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (94).jpg",
+      "md5": "12ace45d6353008983e053adcce85741",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (95).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (95).jpg",
+      "md5": "398a94972468b2ac72e24bbdb11cc4db",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (96).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (96).jpg",
+      "md5": "f8fc2051bc72dad5269245127047ce3e",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (97).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (97).jpg",
+      "md5": "7de6b37097c2d5a05853c099276698a3",
+      "identical": true
+    },
+    {
+      "test": "Bacterial diseases - Aeromoniasis (98).jpg",
+      "train": "Bacterial diseases - Aeromoniasis (98).jpg",
+      "md5": "3fc67a27e1ed741e9615a98922e66d0d",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (100).jpg",
+      "train": "Bacterial gill disease (100).jpg",
+      "md5": "dfd6d2aa20363957abc49688ae562f01",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (101).jpg",
+      "train": "Bacterial gill disease (101).jpg",
+      "md5": "e48fd56ba90d863fdb3dc43d9f65841a",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (103).jpg",
+      "train": "Bacterial gill disease (103).jpg",
+      "md5": "a1e766e6d7fcdbe5bb85fd6a6c1a3890",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (104).jpg",
+      "train": "Bacterial gill disease (104).jpg",
+      "md5": "6f1703f34e477828eee2c2092feba067",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (105).jpg",
+      "train": "Bacterial gill disease (105).jpg",
+      "md5": "c6dccb073ef75fb5d5aaa353b141103c",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (106).jpg",
+      "train": "Bacterial gill disease (106).jpg",
+      "md5": "153647f23702b4b6a07c22c70e41e4e4",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (107).jpg",
+      "train": "Bacterial gill disease (107).jpg",
+      "md5": "f611262f48508487e73885106a6ecfc4",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (108).jpg",
+      "train": "Bacterial gill disease (108).jpg",
+      "md5": "1faeb815b24b5d8b0fd824fb593e964b",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (109).jpg",
+      "train": "Bacterial gill disease (109).jpg",
+      "md5": "589965b25f53b676c0a9c5ff1831083d",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (29).jpg",
+      "train": "Bacterial gill disease (29).jpg",
+      "md5": "5a9ea383094ed4eb00fd123e377a6d66",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (30).jpg",
+      "train": "Bacterial gill disease (30).jpg",
+      "md5": "5ffb20043115bf111883ae6416bebc1f",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (31).jpg",
+      "train": "Bacterial gill disease (31).jpg",
+      "md5": "780c8d8eb1dc63d8596bfde3bb8288fe",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (32).jpg",
+      "train": "Bacterial gill disease (32).jpg",
+      "md5": "d6d0f2d0b2979a193a9a4350dc957b78",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (33).jpg",
+      "train": "Bacterial gill disease (33).jpg",
+      "md5": "ae950ec596b4f1310ab536da12f7b339",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (34).jpg",
+      "train": "Bacterial gill disease (34).jpg",
+      "md5": "1fd2822673b1cf3d002a10415eca62c2",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (35).jpg",
+      "train": "Bacterial gill disease (35).jpg",
+      "md5": "880514ed076b206c9efa33b1466561eb",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (36).jpg",
+      "train": "Bacterial gill disease (36).jpg",
+      "md5": "e304f72e8ab77b1ccfad85083a91eb74",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (37).jpg",
+      "train": "Bacterial gill disease (37).jpg",
+      "md5": "491d3b1aa42a444e9d2ac9cf5b3941c6",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (38).jpg",
+      "train": "Bacterial gill disease (38).jpg",
+      "md5": "a490371eb1e91264b9747dd0eb335ac8",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (39).jpg",
+      "train": "Bacterial gill disease (39).jpg",
+      "md5": "72fa134d7990714da3c1d5aa27da1e7f",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (40).jpg",
+      "train": "Bacterial gill disease (40).jpg",
+      "md5": "de8e109d8f6e91d33b38c033c14010d9",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (41).jpg",
+      "train": "Bacterial gill disease (41).jpg",
+      "md5": "d1127c235c7a7cc50e6accbf49771b94",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (42).jpg",
+      "train": "Bacterial gill disease (42).jpg",
+      "md5": "56b7eb94963469c54d6b624e99e7fbe8",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (43).jpg",
+      "train": "Bacterial gill disease (43).jpg",
+      "md5": "e24223e124bb9139007d11ca55b42c13",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (44).jpg",
+      "train": "Bacterial gill disease (44).jpg",
+      "md5": "b4263b2c23bcfddaded8cc27d3acf1c9",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (45).jpg",
+      "train": "Bacterial gill disease (45).jpg",
+      "md5": "f61629465bd4483c1e27d555f23d2570",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (46).jpg",
+      "train": "Bacterial gill disease (46).jpg",
+      "md5": "380866244450a4929b34fad22432a9f6",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (47).jpg",
+      "train": "Bacterial gill disease (47).jpg",
+      "md5": "456513b91f1346856e7acd954766d047",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (48).jpg",
+      "train": "Bacterial gill disease (48).jpg",
+      "md5": "a4e1981ed15d564b242e5e817b891b1c",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (49).jpg",
+      "train": "Bacterial gill disease (49).jpg",
+      "md5": "e52a6132e9a2e29e10a5e5cb445acd51",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (50).jpg",
+      "train": "Bacterial gill disease (50).jpg",
+      "md5": "9ee5ca7c543fddce5c479649b35ed9c2",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (51).jpg",
+      "train": "Bacterial gill disease (51).jpg",
+      "md5": "6e38f5b8789451b081644e52af1dd5cd",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (52).jpg",
+      "train": "Bacterial gill disease (52).jpg",
+      "md5": "7278ca4c633cac2f0688cfb55181c926",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (53).jpg",
+      "train": "Bacterial gill disease (53).jpg",
+      "md5": "1e6ed7e7537a16bfd0b5b6b4dbc66946",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (54).jpg",
+      "train": "Bacterial gill disease (54).jpg",
+      "md5": "ff9e1f95ee16045e4f33e99e28876bc9",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (55).jpg",
+      "train": "Bacterial gill disease (55).jpg",
+      "md5": "e56def6a5cf5f8ce0ff20b8eb178bf77",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (65).jpg",
+      "train": "Bacterial gill disease (65).jpg",
+      "md5": "61dbcff7f71568df76b4845d0cb3bf06",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (66).jpg",
+      "train": "Bacterial gill disease (66).jpg",
+      "md5": "734879cdbb90c20b81e9387511ad91f9",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (77).jpg",
+      "train": "Bacterial gill disease (77).jpg",
+      "md5": "188af917186eabe0b73a6769e6c29087",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (83).jpg",
+      "train": "Bacterial gill disease (83).jpg",
+      "md5": "610f770d262561401bccc1de0ce1d5f4",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (84).jpg",
+      "train": "Bacterial gill disease (84).jpg",
+      "md5": "beb531e053769ab6afbf1d82be9ed359",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (86).jpg",
+      "train": "Bacterial gill disease (86).jpg",
+      "md5": "31d925249666fec4695a532abdae5d82",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (87).jpg",
+      "train": "Bacterial gill disease (87).jpg",
+      "md5": "5b15b8d1a6cfe9c1bf9d22ccd7063837",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (88).jpg",
+      "train": "Bacterial gill disease (88).jpg",
+      "md5": "c19e12faaa211b799157085af7307f0b",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (94).jpg",
+      "train": "Bacterial gill disease (94).jpg",
+      "md5": "e86ddaf8cf1be5e41ed1f75932f8da12",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (95).jpg",
+      "train": "Bacterial gill disease (95).jpg",
+      "md5": "9e28c4030335777f854efd854e449f4f",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (96).jpg",
+      "train": "Bacterial gill disease (96).jpg",
+      "md5": "4691b971591b1ed778daf452e0d4ceb3",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (97).jpg",
+      "train": "Bacterial gill disease (97).jpg",
+      "md5": "794a1644bdb68a311f4a01f47b8c818d",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (98).jpg",
+      "train": "Bacterial gill disease (98).jpg",
+      "md5": "f5ae8e21551075238e22c0926d026810",
+      "identical": true
+    },
+    {
+      "test": "Bacterial gill disease (99).jpg",
+      "train": "Bacterial gill disease (99).jpg",
+      "md5": "7ace988af3528ab2ba6f82877f3b6c62",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (109).jpg",
+      "train": "Fungal diseases Saprolegniasis (109).jpg",
+      "md5": "6e52739677fe85c085782344f72f4e46",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (110).jpg",
+      "train": "Fungal diseases Saprolegniasis (110).jpg",
+      "md5": "5d1268eed104d6cb009bcffce7b03df7",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (111).jpg",
+      "train": "Fungal diseases Saprolegniasis (111).jpg",
+      "md5": "2764bb7e9df0c6c0f31fba44d8e540d8",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (117).jpg",
+      "train": "Fungal diseases Saprolegniasis (117).jpg",
+      "md5": "fa172b3f280c95227042b19e4222ce56",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (118).jpg",
+      "train": "Fungal diseases Saprolegniasis (118).jpg",
+      "md5": "cc19cd971b2d08a86fd448d7a1fd7ed7",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (119).jpg",
+      "train": "Fungal diseases Saprolegniasis (119).jpg",
+      "md5": "e292a62a317ec28ad9926d30bcb8f431",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (138).jpg",
+      "train": "Fungal diseases Saprolegniasis (138).jpg",
+      "md5": "d709604bde2c8e15ab8d6c879ca47a8b",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (139).jpg",
+      "train": "Fungal diseases Saprolegniasis (139).jpg",
+      "md5": "952dea2c6b530ada1c7cbe995f7e95e9",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (140).jpg",
+      "train": "Fungal diseases Saprolegniasis (140).jpg",
+      "md5": "2768232cbafba8ec53b95847b1fcaf31",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (152).jpg",
+      "train": "Fungal diseases Saprolegniasis (152).jpg",
+      "md5": "4f86f60a0ef30d5189627811c34d0ae0",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (175).jpg",
+      "train": "Fungal diseases Saprolegniasis (175).jpg",
+      "md5": "adf5086cb2192b7142cb2f98097af8f7",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (176).jpg",
+      "train": "Fungal diseases Saprolegniasis (176).jpg",
+      "md5": "257c55635c2b06e254667b1915152f22",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (181).jpg",
+      "train": "Fungal diseases Saprolegniasis (181).jpg",
+      "md5": "923247bbe5961272251b84349f7a150f",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (37).jpg",
+      "train": "Fungal diseases Saprolegniasis (37).jpg",
+      "md5": "97040ce6427f75da437eff64ebd7a428",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (38).jpg",
+      "train": "Fungal diseases Saprolegniasis (38).jpg",
+      "md5": "171472f0bd227971ddc3eaca68ac43af",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (39).jpg",
+      "train": "Fungal diseases Saprolegniasis (39).jpg",
+      "md5": "057e6430799587eab100f8dcb0e81a42",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (40).jpg",
+      "train": "Fungal diseases Saprolegniasis (40).jpg",
+      "md5": "a3d07ed62aa9bafc53c91b58a31bd0fd",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (41).jpg",
+      "train": "Fungal diseases Saprolegniasis (41).jpg",
+      "md5": "456cc6975b094efc61692559a96cb560",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (42).jpg",
+      "train": "Fungal diseases Saprolegniasis (42).jpg",
+      "md5": "c85b80347588688a647f811f757e93b9",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (43).jpg",
+      "train": "Fungal diseases Saprolegniasis (43).jpg",
+      "md5": "8b79c2b1b0e6b4eb29a9f50d7a452f77",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (44).jpg",
+      "train": "Fungal diseases Saprolegniasis (44).jpg",
+      "md5": "b8855e2fe7155958bdff73b02541c18e",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (45).jpg",
+      "train": "Fungal diseases Saprolegniasis (45).jpg",
+      "md5": "72e1ee004f846fa08c589661776cfb6c",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (46).jpg",
+      "train": "Fungal diseases Saprolegniasis (46).jpg",
+      "md5": "5ea4792a2c0e48143ee93cbd2d8b2817",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (47).jpg",
+      "train": "Fungal diseases Saprolegniasis (47).jpg",
+      "md5": "3c9bc3e4f2154d6da343ef55dca2d11b",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (48).jpg",
+      "train": "Fungal diseases Saprolegniasis (48).jpg",
+      "md5": "c48d25e6fb13cf71108ae822c9ac52bd",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (49).jpg",
+      "train": "Fungal diseases Saprolegniasis (49).jpg",
+      "md5": "455d7c9b10b9b13a512a37ba3b5a88ca",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (50).jpg",
+      "train": "Fungal diseases Saprolegniasis (50).jpg",
+      "md5": "111bd49e52c70a36467aa4145a41be90",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (51).jpg",
+      "train": "Fungal diseases Saprolegniasis (51).jpg",
+      "md5": "e8f8d23e9dcb65983860fbabb32e0462",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (52).jpg",
+      "train": "Fungal diseases Saprolegniasis (52).jpg",
+      "md5": "a970dca2d89ac3ea4483a75df0883ba6",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (53).jpg",
+      "train": "Fungal diseases Saprolegniasis (53).jpg",
+      "md5": "51ae8e8ed06c1fd5cf84c8d2345ff91d",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (55).jpg",
+      "train": "Fungal diseases Saprolegniasis (55).jpg",
+      "md5": "4230d026d10f17555bc3f8bf5d7e78cb",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (56).jpg",
+      "train": "Fungal diseases Saprolegniasis (56).jpg",
+      "md5": "1af8fd12f71f021d024bf0e0bd3c0513",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (57).jpg",
+      "train": "Fungal diseases Saprolegniasis (57).jpg",
+      "md5": "9191ddd95d78af927de50a4899ad985f",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (59).jpg",
+      "train": "Fungal diseases Saprolegniasis (59).jpg",
+      "md5": "b5a3f8319328b919da1f00819be24900",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (60).jpg",
+      "train": "Fungal diseases Saprolegniasis (60).jpg",
+      "md5": "bfd6bda4a71e16e0ad3f0a3d8afc7019",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (61).jpg",
+      "train": "Fungal diseases Saprolegniasis (61).jpg",
+      "md5": "cbe0f18676d6d70ccb39a003569e6a09",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (62).jpg",
+      "train": "Fungal diseases Saprolegniasis (62).jpg",
+      "md5": "c40de210acd70323ae6575508cb4791b",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (64).jpg",
+      "train": "Fungal diseases Saprolegniasis (64).jpg",
+      "md5": "6d64894429fb33ab1fd4aaf9769293bd",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (65).jpg",
+      "train": "Fungal diseases Saprolegniasis (65).jpg",
+      "md5": "69c30294a12664123731efa54c7b3d18",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (67).jpg",
+      "train": "Fungal diseases Saprolegniasis (67).jpg",
+      "md5": "86ce087aacece4e3bc4e628cc5af70c5",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (68).jpg",
+      "train": "Fungal diseases Saprolegniasis (68).jpg",
+      "md5": "ff81f08e54b8f785e63005db2b8458aa",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (70).jpg",
+      "train": "Fungal diseases Saprolegniasis (70).jpg",
+      "md5": "2fa45ec69132af50cf28d5765450c665",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (71).jpg",
+      "train": "Fungal diseases Saprolegniasis (71).jpg",
+      "md5": "3149c3b663ef12ac66ec6446d0ad24e2",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (73).jpg",
+      "train": "Fungal diseases Saprolegniasis (73).jpg",
+      "md5": "3578ed74295f6c091ea7d19becf71f03",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (75).jpg",
+      "train": "Fungal diseases Saprolegniasis (75).jpg",
+      "md5": "a4df3f760320d9cb2aeb3ffc2ce0abb2",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (76).jpg",
+      "train": "Fungal diseases Saprolegniasis (76).jpg",
+      "md5": "0392aa31b3eb9db5d4cc3804647108b0",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (77).jpg",
+      "train": "Fungal diseases Saprolegniasis (77).jpg",
+      "md5": "d62b25dc69ac3b0befc4068b40e5b3bd",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (94).jpg",
+      "train": "Fungal diseases Saprolegniasis (94).jpg",
+      "md5": "ea6c5b400d47771c48bf91c3992284ef",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (95).jpg",
+      "train": "Fungal diseases Saprolegniasis (95).jpg",
+      "md5": "f19c3d0bd7743f84088b77cfaf9ce6b3",
+      "identical": true
+    },
+    {
+      "test": "Fungal diseases Saprolegniasis (96).jpg",
+      "train": "Fungal diseases Saprolegniasis (96).jpg",
+      "md5": "83bfe8f8b89de5af8ddae145034018c7",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (109).jpg",
+      "train": "Healthy Fish (109).jpg",
+      "md5": "37e5e8220ff981929052cd75119fc7b0",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (117).jpg",
+      "train": "Healthy Fish (117).jpg",
+      "md5": "fb9b87079308bfa20b030112494dc055",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (119).jpg",
+      "train": "Healthy Fish (119).jpg",
+      "md5": "44607a7f6496e4d431cfec93e94c0e5f",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (120).jpg",
+      "train": "Healthy Fish (120).jpg",
+      "md5": "12ec222dfdafdb642ae4c8cc2c19ac28",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (128).jpg",
+      "train": "Healthy Fish (128).jpg",
+      "md5": "30fcd35b9ea36fd4b4691b4bbe59b7c9",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (27).jpg",
+      "train": "Healthy Fish (27).jpg",
+      "md5": "fa45cb0ff6e5352f7de66f8f7983aa30",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (28).jpg",
+      "train": "Healthy Fish (28).jpg",
+      "md5": "d1ccd21feb1daa014c9f61051e5dd3f3",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (29).jpg",
+      "train": "Healthy Fish (29).jpg",
+      "md5": "e7e24616c7a28944cb7eb13cdc9c849c",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (30).jpg",
+      "train": "Healthy Fish (30).jpg",
+      "md5": "5bc0bfb46c626d0b28a4c23858423271",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (31).jpg",
+      "train": "Healthy Fish (31).jpg",
+      "md5": "c5eba2aff38c679af05a54c373c3b0fe",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (32).jpg",
+      "train": "Healthy Fish (32).jpg",
+      "md5": "ecca64c36a1d010ed76f782bbee5d0b1",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (36).jpg",
+      "train": "Healthy Fish (36).jpg",
+      "md5": "e1fb5f9a3b62fbf52998c3afc1431e5a",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (37).jpg",
+      "train": "Healthy Fish (37).jpg",
+      "md5": "205e80b387ccb430a195e710e095c2ae",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (38).jpg",
+      "train": "Healthy Fish (38).jpg",
+      "md5": "37229f9538c7db70df03a383079b2807",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (39).jpg",
+      "train": "Healthy Fish (39).jpg",
+      "md5": "d76765aff995270cb9fcc0c503e66c3b",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (40).jpg",
+      "train": "Healthy Fish (40).jpg",
+      "md5": "c37b027503400adb9042abb19f67f1de",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (41).jpg",
+      "train": "Healthy Fish (41).jpg",
+      "md5": "d2657fb956e3082e215c29f75c1589ed",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (42).jpg",
+      "train": "Healthy Fish (42).jpg",
+      "md5": "eb79715c931ce239e98ce56ba97b43e9",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (43).jpg",
+      "train": "Healthy Fish (43).jpg",
+      "md5": "e64e270ddf8745853fed57bf4776d81d",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (44).jpg",
+      "train": "Healthy Fish (44).jpg",
+      "md5": "fe7203bf342815d1dce5f869c8d3e885",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (45).jpg",
+      "train": "Healthy Fish (45).jpg",
+      "md5": "ae6ee65298bc63fe9850cae2d4b31495",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (46).jpg",
+      "train": "Healthy Fish (46).jpg",
+      "md5": "b147c20384a6a83be1f839a3ca6094b2",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (49).jpg",
+      "train": "Healthy Fish (49).jpg",
+      "md5": "a2c8846b3dedd40ea7b2ed67427a6b71",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (50).jpg",
+      "train": "Healthy Fish (50).jpg",
+      "md5": "e9b26054684f64aac30b01d09a4302ea",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (51).jpg",
+      "train": "Healthy Fish (51).jpg",
+      "md5": "039ca4f93db4c05aa020902be247a9ab",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (52).jpg",
+      "train": "Healthy Fish (52).jpg",
+      "md5": "ac9a1bd35479e23492767ea3cb17a74d",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (53).jpg",
+      "train": "Healthy Fish (53).jpg",
+      "md5": "76f6e64099aeb2b58dd3e56bb9d756a7",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (54).jpg",
+      "train": "Healthy Fish (54).jpg",
+      "md5": "58e94ff4df4e912c1c872b9f30bdfb94",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (55).jpg",
+      "train": "Healthy Fish (55).jpg",
+      "md5": "b8182cd73ff6dfbd1ea963e296ad859f",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (56).jpg",
+      "train": "Healthy Fish (56).jpg",
+      "md5": "9441bd6071834084b85a7d63c71bb7e0",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (57).jpg",
+      "train": "Healthy Fish (57).jpg",
+      "md5": "fd5d1b6b528059b4304328f290345875",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (58).jpg",
+      "train": "Healthy Fish (58).jpg",
+      "md5": "ca4e54bb0cb0d643c00877ece1ad4064",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (60).jpg",
+      "train": "Healthy Fish (60).jpg",
+      "md5": "f5323ef189f0d67c4138df0936c3af7c",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (61).jpg",
+      "train": "Healthy Fish (61).jpg",
+      "md5": "9f131a25a774176a55407195f57d41d5",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (62).jpg",
+      "train": "Healthy Fish (62).jpg",
+      "md5": "12832711dd78876b2c196340e2e145d7",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (63).jpg",
+      "train": "Healthy Fish (63).jpg",
+      "md5": "741b7de7af93fca224c3a1a94937aa1e",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (64).jpg",
+      "train": "Healthy Fish (64).jpg",
+      "md5": "9fc3eb76f2b77223ed9dde50db63af63",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (66).jpg",
+      "train": "Healthy Fish (66).jpg",
+      "md5": "96bba34b81d422f32e05125fc61fb910",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (67).jpg",
+      "train": "Healthy Fish (67).jpg",
+      "md5": "780fd94d17f6f263760db5cb243cca1e",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (73).jpg",
+      "train": "Healthy Fish (73).jpg",
+      "md5": "33162e123afa5f3c4c4efe0c0bc73c55",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (74).jpg",
+      "train": "Healthy Fish (74).jpg",
+      "md5": "fd6c69a06df4ba68ec9dcdf4e324696e",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (75).jpg",
+      "train": "Healthy Fish (75).jpg",
+      "md5": "0d0f125605cfbe096ca1bb39ccfda233",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (76).jpg",
+      "train": "Healthy Fish (76).jpg",
+      "md5": "0e33f2534e1b36e10b6cd7ab9604362b",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (77).jpg",
+      "train": "Healthy Fish (77).jpg",
+      "md5": "2cae471abb043827b9e96271bddb3249",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (78).jpg",
+      "train": "Healthy Fish (78).jpg",
+      "md5": "23c671ed708b22fad3911546c2ef5987",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (84).jpg",
+      "train": "Healthy Fish (84).jpg",
+      "md5": "5c9606ec5da71dd1cdb9e3b3bb2117bc",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (85).jpg",
+      "train": "Healthy Fish (85).jpg",
+      "md5": "d1a8af9386b24ea63885308ec978fb73",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (86).jpg",
+      "train": "Healthy Fish (86).jpg",
+      "md5": "a5da30e8d5e84a0a132d1b0d8d7d9090",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (87).jpg",
+      "train": "Healthy Fish (87).jpg",
+      "md5": "ddb956e7b4d3d251694d293e9901664c",
+      "identical": true
+    },
+    {
+      "test": "Healthy Fish (95).jpg",
+      "train": "Healthy Fish (95).jpg",
+      "md5": "74d075d46382ea71f7866fa2cde25bcf",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (100).jpg",
+      "train": "Parasitic diseases (100).jpg",
+      "md5": "d8ebf3d86fa909b266a7da71d9cc21f1",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (110).jpg",
+      "train": "Parasitic diseases (110).jpg",
+      "md5": "cfad0925b5a4b5dd94d1cea7e4acd020",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (144).jpg",
+      "train": "Parasitic diseases (144).jpg",
+      "md5": "fd99d72cace1e1df5b0dbcf1a8a18bc7",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (154).jpg",
+      "train": "Parasitic diseases (154).jpg",
+      "md5": "f3bfeb863725d3135937be9677052bb9",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (155).jpg",
+      "train": "Parasitic diseases (155).jpg",
+      "md5": "fb1c9bbf2979aa32c7d43872031fbcce",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (165).jpg",
+      "train": "Parasitic diseases (165).jpg",
+      "md5": "1647d7f9f42dced248f5e0f9be93c98b",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (166).jpg",
+      "train": "Parasitic diseases (166).jpg",
+      "md5": "5eb5105b636fcafe47fdda4b4bc51bbd",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (41).jpg",
+      "train": "Parasitic diseases (41).jpg",
+      "md5": "1e1122ff27499a73452bf3ba04e3fd67",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (42).jpg",
+      "train": "Parasitic diseases (42).jpg",
+      "md5": "61a2b1a04100d7cd8818332a63d659d5",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (43).jpg",
+      "train": "Parasitic diseases (43).jpg",
+      "md5": "2aec3dbcd4a56124401ba3bdf4640618",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (44).jpg",
+      "train": "Parasitic diseases (44).jpg",
+      "md5": "298d4cf78050870d1a28d865ab9a03f7",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (45).jpg",
+      "train": "Parasitic diseases (45).jpg",
+      "md5": "d9fa10550949d0676bff3733d2dfcbaf",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (46).jpg",
+      "train": "Parasitic diseases (46).jpg",
+      "md5": "f85a08439e073fdf84d8c4a1d6002f74",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (47).jpg",
+      "train": "Parasitic diseases (47).jpg",
+      "md5": "9275d06e4c4db0c4277570a1109c2c19",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (48).jpg",
+      "train": "Parasitic diseases (48).jpg",
+      "md5": "640ba316f8055c249f4826f1849fa0b3",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (49).jpg",
+      "train": "Parasitic diseases (49).jpg",
+      "md5": "08d668ab66cbad1c849c1e9e7eeb0ded",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (50).jpg",
+      "train": "Parasitic diseases (50).jpg",
+      "md5": "49f32329566c89b5c2e72785b08303b6",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (51).jpg",
+      "train": "Parasitic diseases (51).jpg",
+      "md5": "4ab8f820b794fa89113945254669897e",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (52).jpg",
+      "train": "Parasitic diseases (52).jpg",
+      "md5": "cd282e73ef4f7872f5eb360020a705d0",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (53).jpg",
+      "train": "Parasitic diseases (53).jpg",
+      "md5": "8a74ffb5b6996fc3ea7f7a910a9e984a",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (54).jpg",
+      "train": "Parasitic diseases (54).jpg",
+      "md5": "22a58dff86eb830e989478567251cb78",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (55).jpg",
+      "train": "Parasitic diseases (55).jpg",
+      "md5": "cb44de19b1076d5046cb340713a4fb43",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (56).jpg",
+      "train": "Parasitic diseases (56).jpg",
+      "md5": "5651c7a3d6d6eefab8350c1bef2b90cd",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (57).jpg",
+      "train": "Parasitic diseases (57).jpg",
+      "md5": "c4f86c1fbe3fb9d4280af67940860509",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (58).jpg",
+      "train": "Parasitic diseases (58).jpg",
+      "md5": "8e4c455352cc5019df43145aaf8169da",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (59).jpg",
+      "train": "Parasitic diseases (59).jpg",
+      "md5": "10e74fa4583c85d18c7303bc1066c591",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (60).jpg",
+      "train": "Parasitic diseases (60).jpg",
+      "md5": "bf2000b4d0286af09cfb36d143bae8d5",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (61).jpg",
+      "train": "Parasitic diseases (61).jpg",
+      "md5": "bd1f65198a8ccfc8a943eedd13668de3",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (62).jpg",
+      "train": "Parasitic diseases (62).jpg",
+      "md5": "50435384820805f640aca6e8378026f3",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (63).jpg",
+      "train": "Parasitic diseases (63).jpg",
+      "md5": "3f761b2cbb902e109c71261b7d064acf",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (64).jpg",
+      "train": "Parasitic diseases (64).jpg",
+      "md5": "46e76bef19a10b5a4346dea25be5bcc0",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (65).jpg",
+      "train": "Parasitic diseases (65).jpg",
+      "md5": "96d4d2eb7c600d344f46db261cf7fdef",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (66).jpg",
+      "train": "Parasitic diseases (66).jpg",
+      "md5": "14a7541b94ed90d636483423f9c70a88",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (67).jpg",
+      "train": "Parasitic diseases (67).jpg",
+      "md5": "12c18ce5856c5b0b8d58952d8da370f2",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (68).jpg",
+      "train": "Parasitic diseases (68).jpg",
+      "md5": "39ae45b3a2507c1e55495f2a756419ed",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (69).jpg",
+      "train": "Parasitic diseases (69).jpg",
+      "md5": "97968880e0b2fdf16cd362d6b008a2b8",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (70).jpg",
+      "train": "Parasitic diseases (70).jpg",
+      "md5": "1ccdfa3cc68b864a4744aebf1b5c2248",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (71).jpg",
+      "train": "Parasitic diseases (71).jpg",
+      "md5": "1a82fd3bdc0dd6be94682bbcd4214650",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (72).jpg",
+      "train": "Parasitic diseases (72).jpg",
+      "md5": "5ff46617da43f9c9cf7fc81adab4fe49",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (73).jpg",
+      "train": "Parasitic diseases (73).jpg",
+      "md5": "6c2a23f7bb58ddcf1291437a6b5889e8",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (74).jpg",
+      "train": "Parasitic diseases (74).jpg",
+      "md5": "c639713a49cbfe4d76e2d56a391db787",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (75).jpg",
+      "train": "Parasitic diseases (75).jpg",
+      "md5": "9305868d6441197fc6ad06c459d609bd",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (76).jpg",
+      "train": "Parasitic diseases (76).jpg",
+      "md5": "2efa98c9ebfe8e4ad15c38e3154ab98f",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (77).jpg",
+      "train": "Parasitic diseases (77).jpg",
+      "md5": "049b7b8113993df2e2ccd6880106b6d9",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (78).jpg",
+      "train": "Parasitic diseases (78).jpg",
+      "md5": "1990c7adf66f8895287a83cac067c5ff",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (79).jpg",
+      "train": "Parasitic diseases (79).jpg",
+      "md5": "493f5c736645ace8758d658d684058d9",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (81).jpg",
+      "train": "Parasitic diseases (81).jpg",
+      "md5": "b748b3923d025567aeca7412a7809d12",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (88).jpg",
+      "train": "Parasitic diseases (88).jpg",
+      "md5": "fa128380bc602e6d6842c953815950ab",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (89).jpg",
+      "train": "Parasitic diseases (89).jpg",
+      "md5": "540330bf4d328839499019d342fd817c",
+      "identical": true
+    },
+    {
+      "test": "Parasitic diseases (99).jpg",
+      "train": "Parasitic diseases (99).jpg",
+      "md5": "6a43b4f701a5a82fdb953fd33dab220f",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (104).jpg",
+      "train": "Viral diseases White tail disease (104).jpg",
+      "md5": "3a1f264cc0731f8f262a2f66d06a9da8",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (105).jpg",
+      "train": "Viral diseases White tail disease (105).jpg",
+      "md5": "6c07ec663eb04c23c52780cad448dee4",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (116).jpg",
+      "train": "Viral diseases White tail disease (116).jpg",
+      "md5": "805ddf59e2115662146bdef1528ba5eb",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (117).jpg",
+      "train": "Viral diseases White tail disease (117).jpg",
+      "md5": "ac21c06d3d9f3551e1eef3d9549e55e1",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (118).jpg",
+      "train": "Viral diseases White tail disease (118).jpg",
+      "md5": "893fcb18c66178395c0c2e3b294f7d8f",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (35).jpg",
+      "train": "Viral diseases White tail disease (35).jpg",
+      "md5": "ba0d3ad9a594fb3df21cf6e9d5cf9f99",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (36).jpg",
+      "train": "Viral diseases White tail disease (36).jpg",
+      "md5": "3627145ebb55bfe4b014f55c06a80b4c",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (37).jpg",
+      "train": "Viral diseases White tail disease (37).jpg",
+      "md5": "a6ea661a77806f46a6edd9bafea9dfa5",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (38).jpg",
+      "train": "Viral diseases White tail disease (38).jpg",
+      "md5": "0a9dbebe3ae13ddf5a236d3f1bca7d63",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (39).jpg",
+      "train": "Viral diseases White tail disease (39).jpg",
+      "md5": "7ce28c6808da64d515b87244f0a3f6fc",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (40).jpg",
+      "train": "Viral diseases White tail disease (40).jpg",
+      "md5": "c76ac6fcaa3a491c3408a1ef57acea8f",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (41).jpg",
+      "train": "Viral diseases White tail disease (41).jpg",
+      "md5": "6714f378815e5104a54f9e1059e41e78",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (42).jpg",
+      "train": "Viral diseases White tail disease (42).jpg",
+      "md5": "653bf288c4b9dfe21c73992b7b0ad889",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (43).jpg",
+      "train": "Viral diseases White tail disease (43).jpg",
+      "md5": "22afc81b8122faa8c7c6ceea8d140bcb",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (44).jpg",
+      "train": "Viral diseases White tail disease (44).jpg",
+      "md5": "c9fb9a935ebdaca9b165feaba56775d5",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (45).jpg",
+      "train": "Viral diseases White tail disease (45).jpg",
+      "md5": "4f9a11f187c90f2fc6ae293433a4d96e",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (46).jpg",
+      "train": "Viral diseases White tail disease (46).jpg",
+      "md5": "a3d8d2330eb535b2f70266abd5369482",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (47).jpg",
+      "train": "Viral diseases White tail disease (47).jpg",
+      "md5": "2f6cd3787ea4155d995b9b8f5f52261c",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (48).jpg",
+      "train": "Viral diseases White tail disease (48).jpg",
+      "md5": "79a874ce2a246414365cc2a8da748eae",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (49).jpg",
+      "train": "Viral diseases White tail disease (49).jpg",
+      "md5": "433df9dcfad117138ec358a5035b7d41",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (50).jpg",
+      "train": "Viral diseases White tail disease (50).jpg",
+      "md5": "3bb0e13ccba88ccac93dd7915dcccbed",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (51).jpg",
+      "train": "Viral diseases White tail disease (51).jpg",
+      "md5": "c51d0531823fbff36e1a6d805d03e023",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (52).jpg",
+      "train": "Viral diseases White tail disease (52).jpg",
+      "md5": "4588709672b29512924528d8738a86ee",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (53).jpg",
+      "train": "Viral diseases White tail disease (53).jpg",
+      "md5": "43b6407a219081e3f87104ec2f0c7caa",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (54).jpg",
+      "train": "Viral diseases White tail disease (54).jpg",
+      "md5": "f4eb69b0fdae9fdda4693bca66f7c8a3",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (55).jpg",
+      "train": "Viral diseases White tail disease (55).jpg",
+      "md5": "320ff1326dfedf39f345f02cbcc81ab0",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (56).jpg",
+      "train": "Viral diseases White tail disease (56).jpg",
+      "md5": "618fb8d2a242b07d6f085db67d95e388",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (57).jpg",
+      "train": "Viral diseases White tail disease (57).jpg",
+      "md5": "fe78c39dda325f671aac54d63c816e15",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (58).jpg",
+      "train": "Viral diseases White tail disease (58).jpg",
+      "md5": "da8c9b572c345835608e8f395c6377f1",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (59).jpg",
+      "train": "Viral diseases White tail disease (59).jpg",
+      "md5": "a1617c53c5878c8b3d67c9b7d1bfaec1",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (60).jpg",
+      "train": "Viral diseases White tail disease (60).jpg",
+      "md5": "b2a10f7f328a839054e969f71e62684e",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (61).jpg",
+      "train": "Viral diseases White tail disease (61).jpg",
+      "md5": "dcdeae7cf2a1c91c872b7d24f861e355",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (62).jpg",
+      "train": "Viral diseases White tail disease (62).jpg",
+      "md5": "4f927c79ef7730ad68acac409379a464",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (63).jpg",
+      "train": "Viral diseases White tail disease (63).jpg",
+      "md5": "2383a80deb386ba0f1bd73c7e70f5914",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (69).jpg",
+      "train": "Viral diseases White tail disease (69).jpg",
+      "md5": "c0160ee4455c8419152f0568e449e064",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (70).jpg",
+      "train": "Viral diseases White tail disease (70).jpg",
+      "md5": "b893eac12db63be4ba9637640778e3f8",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (71).jpg",
+      "train": "Viral diseases White tail disease (71).jpg",
+      "md5": "af452c52162fff555086a51859e5c6f2",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (72).jpg",
+      "train": "Viral diseases White tail disease (72).jpg",
+      "md5": "5518196f175d9a5573c7bae3bd9d9c97",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (73).jpg",
+      "train": "Viral diseases White tail disease (73).jpg",
+      "md5": "4b4b48ba990b3ee18d6edfe7f8a9e705",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (74).jpg",
+      "train": "Viral diseases White tail disease (74).jpg",
+      "md5": "0bbdc85b2d42815406d006c0fe48b83d",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (75).jpg",
+      "train": "Viral diseases White tail disease (75).jpg",
+      "md5": "f80bdda1bbb710076d91f59d75b39f9e",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (76).jpg",
+      "train": "Viral diseases White tail disease (76).jpg",
+      "md5": "53eb9116fa41df6532a1c9ae58249208",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (77).jpg",
+      "train": "Viral diseases White tail disease (77).jpg",
+      "md5": "360badfbe618f1e4fe0042c1822c7a05",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (78).jpg",
+      "train": "Viral diseases White tail disease (78).jpg",
+      "md5": "687a4fbf2994bccf5fe4a2c1cf84e24b",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (83).jpg",
+      "train": "Viral diseases White tail disease (83).jpg",
+      "md5": "846f5fe2b576dc70945f2b23b3faec1e",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (85).jpg",
+      "train": "Viral diseases White tail disease (85).jpg",
+      "md5": "b186cee2fc9a1eeb8fa67debf402b682",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (86).jpg",
+      "train": "Viral diseases White tail disease (86).jpg",
+      "md5": "ed155ed76d87c66462822e9b071639ed",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (87).jpg",
+      "train": "Viral diseases White tail disease (87).jpg",
+      "md5": "bf15f30280cd5f15856a975dd408cbe1",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (91).jpg",
+      "train": "Viral diseases White tail disease (91).jpg",
+      "md5": "0869fc0c2f81945b7f9b82837b37f637",
+      "identical": true
+    },
+    {
+      "test": "Viral diseases White tail disease (92).jpg",
+      "train": "Viral diseases White tail disease (92).jpg",
+      "md5": "8d7ce82177b955c1c7f6c62c2ef02a0a",
+      "identical": true
+    }
+  ],
+  "timestamp": "2026-07-05 14:48:09 UTC"
+}
