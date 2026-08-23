@@ -113,8 +113,8 @@ fishdx/
 │
 ├── tests/                       # Unit + integration
 ├── experiments/                 # Supporting development experiments
-├── scripts/experiments/         # Manuscript and Reviewer 5 analyses
-├── results/reviewer5/           # Per-sample and aggregate review artefacts
+├── scripts/experiments/         # Manuscript and per-sample evaluation analyses
+├── results/reviewer5/           # Per-sample and aggregate evaluation artefacts
 ├── REPRODUCIBILITY_MAP.md       # Equation, script and result map
 ├── MANIFEST.txt                 # Archival file inventory
 ├── scripts/                     # CLI tools (KB build, dataset organise, latency bench)
@@ -125,13 +125,15 @@ fishdx/
 
 ---
 
-## Reviewer 5 reproducibility archive
+## Per-sample evaluation archive (D2-final)
 
-The review-requested D2-final archive is provided under `results/reviewer5/`:
+The complete per-sample archive for the D2-final evaluation set is released
+under `results/reviewer5/`, so that every D2-final number in the manuscript can
+be recomputed directly from the published records without re-running inference:
 
-- `selective_predictions_d2final.jsonl`: 14,412 sample–method records for the
-  identical ordered 2,402-image evaluation set;
-- `run_manifest.json`: configuration, input and archive hashes;
+- `selective_predictions_d2final.jsonl`: 14,412 sample–method records spanning
+  the identical ordered 2,402-image evaluation set across all six methods;
+- `run_manifest.json`: configuration, input and archive SHA-256 hashes;
 - `matched_coverage_knn.json`, `per_class_abstention.json` and
   `stage3_document_ablation.json`: matched-coverage, class-level abstention and
   candidate-conditioned evidence analyses;
